@@ -37,21 +37,66 @@
   <title>Clonify</title>
 </head>
 
-<body>
+<body class="d-flex">
 
 
   <div class="barra-sinistra"></div>
 
   <main class="bg-black gradient-bg-diagonalGray ">
+    <div class="userBar">
 
+      <div class="d-flex gap-3 my-auto mx-1">
+        <button type="button"
+          class="btn btn-tertiary d-flex d-flex justify-content-center align-items-end btn-circle p-0 m-0">
+          <i class="bi bi-chevron-left fs-4 m-0 p-0"></i>
+        </button>
+        <button type="button"
+          class="btn btn-tertiary d-flex d-flex justify-content-center align-items-end btn-circle p-0 m-0">
+          <i class="bi bi-chevron-right fs-4 m-0 p-0"></i>
+        </button>
+
+
+
+      </div>
+      <div class="">
+        <div class="dropdown d-flex align-items-center gap-2">
+          <button
+            class="btn btn-dark userButton text-white dropdown-toggle rounded-pill p-1 d-flex align-items-center gap-1"
+            type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <img src="./assets/media/imgs/placeholder/currentuser.jpg" class="rounded-circle" height="30px">
+            UserNameCorrente
+          </button>
+          <ul class="dropdown-menu bg-dark ">
+            <li><a class="dropdown-item text-white" href="#">Action</a></li>
+            <li><a class="dropdown-item text-white" href="#">Another action</a></li>
+            <li><a class="dropdown-item text-white" href="#">Something else here</a></li>
+          </ul>
+        </div>
+      </div>
+
+
+    </div>
+    <div class="hero">
+      <p>
+
+      </p>
+    </div>
+
+    <div class="buonasera">
+
+    </div>
+
+    <div class="altroDiCioCheTiPiace"></div>
+
+  </main>
+
+
+  </main>
+
+  <div class="barra-destra">
     <div class="barra-destra bg-dark">
       <div class="dropdown">
-        <button
-          class="btn btn-dark dropdown-toggle"
-          type="button"
-          data-bs-toggle="dropdown"
-          aria-expanded="false"
-        >
+        <button class="btn btn-dark dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
           Attività amici
         </button>
         <ul class="dropdown-menu">
@@ -86,62 +131,11 @@
         </ul>
       </div>
     </div>
-
-    <script src="./scripts/bootstrap/bootstrap.bundle.min.js"></script>
-  </body>
-</html>
-    <div class="userBar">
-
-      <div class="d-flex gap-3 my-auto mx-1">
-        <button type="button"
-          class="btn btn-tertiary d-flex d-flex justify-content-center align-items-end btn-circle p-0 m-0">
-          <i class="bi bi-chevron-left fs-4 m-0 p-0"></i>
-        </button>
-        <button type="button"
-          class="btn btn-tertiary d-flex d-flex justify-content-center align-items-end btn-circle p-0 m-0">
-          <i class="bi bi-chevron-right fs-4 m-0 p-0"></i>
-        </button>
-
-
-
-      </div>
-      <div class="">
-        <div class="dropdown d-flex align-items-center gap-2">
-          <button
-            class="btn btn-dark userButton text-white dropdown-toggle rounded-pill p-1 d-flex align-items-center gap-1"
-            type="button" data-bs-toggle="dropdown" aria-expanded="false">
-            <img src="./assets/media/imgs/placeholder/currentuser.jpg" class="rounded-circle" height="30px">
-            UserNameCorrente
-          </button>
-          <ul class="dropdown-menu bg-dark ">
-            <li><a class="dropdown-item text-white" href="#">Action</a></li>
-            <li><a class="dropdown-item text-white" href="#">Another action</a></li>
-            <li><a class="dropdown-item text-white" href="#">Something else here</a></li>
-          </ul>
-        </div>
-      </div>
-
-
-    </div>
-
-    <div class="hero">
-      <p>
-
-      </p>
-    </div>
-
-    <div class="buonasera">
-
-    </div>
-
-    <div class="altroDiCioCheTiPiace"></div>
-
-  </main>
-
-  <div class="barra-destra"></div>
+  </div>
 
   <script src="./scripts/bootstrap/bootstrap.bundle.min.js"></script>
   <script src="./scripts/index.js"></script>
+
 </body>
 
 </html>
