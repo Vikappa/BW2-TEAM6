@@ -50,5 +50,13 @@
 .ridimensiona {
     height: 70px;
     width: 70px;
+    border-radius: 100%;
 }
-/* parametri da stabilire  */
+
+.cardBuonasera {
+    width: 30% !important;
+}
+
+.cardBuonasera:hover {
+    filter: brightness(150%);
+}
