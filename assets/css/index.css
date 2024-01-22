@@ -46,3 +46,9 @@
     border-radius: var(--bs-btn-border-radius);
     background-color: var(--bs-btn-bg);
 }
+
+.ridimensiona {
+    height: 70px;
+    width: 70px;
+}
+/* parametri da stabilire  */
