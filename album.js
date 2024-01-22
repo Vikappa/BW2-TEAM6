@@ -33,8 +33,8 @@ fetch(albumAPI)
       class="shadow-lg w-100"
     />
   </div>
-  <div class="col-10">
-    <p class="text-white">ALBUM</p>
+  <div class="col-10 d-flex flex-column justify-content-end">
+    <small class="text-white mb-2">ALBUM</small>
     <h1 class="text-white">${album.title}</h1>
     <div class="text-white d-flex align-items-center">
         <img
@@ -44,10 +44,10 @@ fetch(albumAPI)
         style="width: 40px"
         />
       <p class="d-inline-block m-0">
-      ${album.artist.name} · ${album.release_date} · ${album.nb_tracks},
-        <span class="text-secondary">${Math.floor(
-          album.duration / 60
-        )}min</span>
+      ${album.artist.name} · ${album.release_date} · ${album.nb_tracks} brani,
+        <span class="text-secondary">${Math.floor(album.duration / 60)} min ${
+      album.duration % 60
+    } sec.</span>
       </p>
     </div>
   </div>`;
@@ -58,7 +58,7 @@ fetch(albumAPI)
       newRow2.classList.add("row");
       newRow2.innerHTML = `
       <div class="col-7 d-flex mb-3">
-      <p class="me-3 mb-0 text-secondary d-flex align-items-center">${i + 1}</p>
+      <p class="me-4 mb-0 text-secondary d-flex align-items-center">${i + 1}</p>
       <div class="d-flex flex-column">
       <p class="text-white mb-1">${element.title}</p>
       <p class="m-0 text-secondary">${element.artist.name}
@@ -69,7 +69,9 @@ fetch(albumAPI)
       <p class="mb-0">${element.rank}</p>
     </div>
     <div class="col-2 text-center d-flex align-items-center justify-content-center text-secondary">
-    <p class="mb-0">${element.duration}</p>
+    <p class="mb-0">${Math.floor(element.duration / 60)}:${
+        element.duration % 60
+      }</p>
     </div>`;
       albumTracks.appendChild(newRow2);
     });
