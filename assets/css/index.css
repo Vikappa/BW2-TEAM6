@@ -60,3 +60,10 @@
 .cardBuonasera:hover {
     filter: brightness(150%);
 }
+
+#albumCoverPlayerbar {
+    height: auto;
+    object-fit: contain;
+    object-position: center;
+    height: 100%;
+}
