@@ -57,13 +57,11 @@ fetch(albumAPI)
       const newRow2 = document.createElement("div");
       newRow2.classList.add("row");
       newRow2.innerHTML = `
-      <div class="col-7 d-flex align-items-center">
-      <p class="m-0 text-secondary d-flex align-items-center">${i + 1}</p>
+      <div class="col-7 d-flex mb-3">
+      <p class="me-3 mb-0 text-secondary d-flex align-items-center">${i + 1}</p>
       <div class="d-flex flex-column">
       <p class="text-white mb-1">${element.title}</p>
-      <p class="m-0 text-secondary"><span class="me-4"></span>${
-        element.artist.name
-      }
+      <p class="m-0 text-secondary">${element.artist.name}
       </p>
       </div>
     </div>
