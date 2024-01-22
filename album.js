@@ -65,10 +65,10 @@ fetch(albumAPI)
       </p>
       </div>
     </div>
-    <div class="col-3 d-flex align-items-center text-secondary">
+    <div class="col-3 d-flex align-items-center text-secondary mb-3">
       <p class="mb-0">${element.rank}</p>
     </div>
-    <div class="col-2 text-center d-flex align-items-center justify-content-center text-secondary">
+    <div class="col-2 text-center d-flex align-items-center justify-content-center text-secondary mb-3">
     <p class="mb-0">${Math.floor(element.duration / 60)}:${
         element.duration % 60
       }</p>
