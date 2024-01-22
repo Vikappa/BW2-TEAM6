@@ -1,5 +1,5 @@
 class Artist {
-    constructor(id, name, picture = "", picture_big = "", picture_medium = "", picture_small = "", picture_xl = "", tracklist, type) {
+    constructor(id, name, picture, picture_big, picture_medium, picture_small, picture_xl, tracklist, type) {
         this.id = id,
             this.name = name,
             this.picture = picture,

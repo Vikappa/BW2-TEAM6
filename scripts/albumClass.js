@@ -1,9 +1,9 @@
 class Album {
-    constructor(artist = "", available = "", contributors = [], cover, cover_big,
-        cover_medium, cover_small, cover_xl, duration = "", explicit_content_cover = "",
-        explicit_content_lyrics = "", explicit_lyrics = "", fans = "", genre_id = "", genres = "", id, label = "",
-        link = "", md5_image, nb_tracks = "", record_type = "", release_date = "", share = "", title, tracklist,
-        tracks = "", type, upc = "") {
+    constructor(artist, available, contributors = [], cover, cover_big,
+        cover_medium, cover_small, cover_xl, duration, explicit_content_cover,
+        explicit_content_lyrics, explicit_lyrics, fans, genre_id, genres, id, label,
+        link, md5_image, nb_tracks, record_type, release_date, share, title, tracklist,
+        tracks, type, upc) {
 
         this.artist = artist // Artist
         this.available = available // Boolean

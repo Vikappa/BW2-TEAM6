@@ -4,7 +4,7 @@ import { Genre } from './genreClass.js'
 import { Track } from './tracksClass.js'
 const catchAlbum = function (queryAlbumID) {
 
-    fetch("https://striveschool-api.herokuapp.com/api/deezer/album/" + queryAlbumID, { // FETCHA L'ALBUM PREFERITO DI VINCENZO
+    fetch("https://striveschool-api.herokuapp.com/api/deezer/album/" + queryAlbumID, {
         headers: {}
     })
         .then((response) => {
@@ -15,7 +15,7 @@ const catchAlbum = function (queryAlbumID) {
             }
         })
         .then((data) => {
-            console.log(data.contributors.length)
+            //console.log(data.contributors.length)
 
             let contributorsArray = []
 
@@ -38,32 +38,31 @@ const catchAlbum = function (queryAlbumID) {
                 contributorsArray.push(newContributor)
             }
 
-            let arrayTracks = [];
+            let arrayTracks = []
 
-            for (let indexTracks = 0; indexTracks < data.tracks.length; indexTracks++) {
-                let trackData = data.tracks[indexTracks]
+            console.log(data.tracks.data[0])
 
-
+            for (let indexTracks = 0; indexTracks < data.tracks.data.length; indexTracks++) {
                 let newTrack = new Track(
-                    trackData.album, // Supponendo che questi dati siano disponibili
-                    trackData.artist,
-                    trackData.duration,
-                    trackData.explicit_content_cover,
-                    trackData.explicit_content_lyrics,
-                    trackData.explicit_lyrics,
-                    trackData.id,
-                    trackData.link,
-                    trackData.md5_image,
-                    trackData.preview,
-                    trackData.rank,
-                    trackData.readable,
-                    trackData.title,
-                    trackData.title_short,
-                    trackData.title_version
-                );
-                arrayTracks.push(newTrack);
-            }
+                    data.tracks.data[indexTracks].album,
+                    data.tracks.data[indexTracks].artist,
+                    data.tracks.data[indexTracks].duration,
+                    data.tracks.data[indexTracks].explicit_content_cover,
+                    data.tracks.data[indexTracks].explicit_content_lyrics,
+                    data.tracks.data[indexTracks].explicit_lyrics,
+                    data.tracks.data[indexTracks].id,
+                    data.tracks.data[indexTracks].link,
+                    data.tracks.data[indexTracks].md5_image,
+                    data.tracks.data[indexTracks].preview,
+                    data.tracks.data[indexTracks].rank,
+                    data.tracks.data[indexTracks].readable,
+                    data.tracks.data[indexTracks].title,
+                    data.tracks.data[indexTracks].title_short,
+                    data.tracks.data[indexTracks].title_version
+                )
+                arrayTracks.push(newTrack)
 
+            }
 
             let heroAlbumObj = new Album(
                 data.artist, // Artist
