@@ -66,3 +66,12 @@
     object-position: center;
     height: 100%;
 }
+
+.hover-red:hover {
+    color: var(--bs-danger) !important;
+
+}
+
+.hover-green:hover {
+    color: var(--bs-primary) !important;
+}

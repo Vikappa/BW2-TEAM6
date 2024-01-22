@@ -12,7 +12,7 @@ const audioPlayer = function (trackObj) {
     const leftSide = document.createElement('div')
     const leftSideTitoli = document.createElement('div')
     leftSide.classList.add("d-flex")
-    leftSide.classList.add("m-2")
+    leftSide.classList.add("mx-2")
     leftSide.classList.add("text-nowrap")
     leftSideTitoli.classList.add("d-flex")
     leftSideTitoli.classList.add("flex-column")
@@ -24,6 +24,7 @@ const audioPlayer = function (trackObj) {
     const currentPlayingArtist = document.createElement('p')
     currentPlayingAlbum.src = trackObj.album.cover_small
     currentPlayingAlbum.id = "albumCoverPlayerbar"
+    currentPlayingAlbum.classList.add("p-2")
     currentPlayingSong.innerText = trackObj.title
     currentPlayingArtist.innerText = trackObj.artist.name
     leftSideTitoli.appendChild(currentPlayingSong)
@@ -40,6 +41,8 @@ const audioPlayer = function (trackObj) {
     buttonRewind.classList.add('text-white')
     buttonRewind.classList.add('btn')
     buttonRewind.classList.add('fs-3')
+    buttonRewind.classList.add('hover-red')
+    buttonRewind.classList.add('p-0')
     buttonRewind.innerHTML = `<i class="bi bi-play-circle-fill"></i>`
     let buttonPlay = document.createElement('button')
     buttonPlay.addEventListener('click', () => {
@@ -54,11 +57,17 @@ const audioPlayer = function (trackObj) {
     buttonPlay.classList.add('text-white')
     buttonPlay.classList.add('btn')
     buttonPlay.classList.add('fs-1')
+    buttonPlay.classList.add('hover-green')
+    buttonPlay.classList.add('p-0')
     buttonPlay.innerHTML = `<i class="bi bi-play-circle-fill"></i>`
     let buttonForward = document.createElement('button')
     buttonForward.classList.add('text-white')
     buttonForward.classList.add('btn')
     buttonForward.classList.add('fs-3')
+    buttonForward.classList.add('hover-red')
+    buttonForward.classList.add('p-0')
+
+
     buttonForward.innerHTML = `<i class="bi bi-play-circle-fill"></i>`
     midDiv.appendChild(buttonRewind)
     midDiv.appendChild(buttonPlay)
@@ -68,6 +77,7 @@ const audioPlayer = function (trackObj) {
     rightDiv.classList.add('d-flex')
     rightDiv.classList.add('flex-align-center')
     rightDiv.classList.add('text-white')
+    rightDiv.classList.add('me-5')
     const filler = document.createElement('p')
     const barraAudio = document.createElement('input')
     barraAudio.type = 'range'
