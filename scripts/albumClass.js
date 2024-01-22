@@ -31,7 +31,7 @@ class Album {
         this.title = title // Titolo album
         this.tracklist = tracklist // Link API Deezer tracklist
         this.tracks = tracks // Array Track
-        this.type = "Album" // Tipo
+        this.type = type // Tipo
         this.upc = upc // ???
     }
 }
