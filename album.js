@@ -45,7 +45,7 @@ fetch(albumAPI)
         />
       <p class="d-inline-block m-0">
       ${album.artist.name} · ${album.release_date} · ${album.nb_tracks},
-        <span class="text-body-tertiary">${Math.floor(
+        <span class="text-secondary">${Math.floor(
           album.duration / 60
         )}min</span>
       </p>
@@ -57,17 +57,20 @@ fetch(albumAPI)
       const newRow2 = document.createElement("div");
       newRow2.classList.add("row");
       newRow2.innerHTML = `
-      <div class="col-7 d-flex flex-column justify-content-center">
-      <p class="text-secondary mb-1"><span class="me-4">${i + 1}</span>${
-        element.title
-      }</p>
-      <p class="ms-2"><span class="me-4"></span>${element.artist.name}
+      <div class="col-7 d-flex align-items-center">
+      <p class="m-0 text-secondary d-flex align-items-center">${i + 1}</p>
+      <div class="d-flex flex-column">
+      <p class="text-white mb-1">${element.title}</p>
+      <p class="m-0 text-secondary"><span class="me-4"></span>${
+        element.artist.name
+      }
       </p>
+      </div>
     </div>
-    <div class="col-3 d-flex align-items-center">
+    <div class="col-3 d-flex align-items-center text-secondary">
       <p class="mb-0">${element.rank}</p>
     </div>
-    <div class="col-2 text-center d-flex align-items-center justify-content-center">
+    <div class="col-2 text-center d-flex align-items-center justify-content-center text-secondary">
     <p class="mb-0">${element.duration}</p>
     </div>`;
       albumTracks.appendChild(newRow2);
