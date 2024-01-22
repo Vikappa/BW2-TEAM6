@@ -11,9 +11,9 @@ const updatePlayBar = function () {
     const nextIcon = document.createElement('i')
     const playIcon = document.createElement('i')
 
-    playIcon.innerHTML = `<i class="bi bi-play-circle-fill text-primary p-0 m-0" style="font-size:4.5rem;"></i>`
+    playIcon.innerHTML = `<i class="bi bi-play-circle-fill text-primary p-0 m-0" style="font-size:2rem;"></i>`
     backIcon.innerHTML = `<i class="bi bi-play-circle-fill text-primary p-0 m-0" style="font-size:4.5rem;"></i>`
-    nextIcon.innerHTML = `<i class="bi bi-skip-forward-fill text-primary p-0 m-0" style="font-size:4.5rem;"></i>`
+    nextIcon.innerHTML = `<i class="bi bi-skip-forward-fill text-primary p-0 m-0" style="font-size:2rem;"></i>`
     document.getElementById('playBar').appendChild(playerControls)
 }
 
