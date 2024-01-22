@@ -10,7 +10,7 @@ const updatePlayBar = function (trackObj) {
 }
 
 const start = function () {
-    searchAlbum("Die Antwoord").then(arrayRitorno => {
+    searchAlbum("Post Human Survival Horror").then(arrayRitorno => {
         document.getElementById('titoloHeaderTrack').textContent = arrayRitorno[0].title
         document.getElementById('artistHeaderTrack').textContent = arrayRitorno[0].artist.name
         document.getElementById('ascolta').textContent = arrayRitorno[0].artist.name

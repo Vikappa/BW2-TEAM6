@@ -69,11 +69,16 @@ const audioPlayer = function (trackObj) {
     rightDiv.classList.add('flex-align-center')
     rightDiv.classList.add('text-white')
     const filler = document.createElement('p')
-    const audio = document.createElement('p')
-    filler.innerText = `blablabla`
-    audio.innerText = `Controlli audio`
-    rightDiv.appendChild(filler)
-    rightDiv.appendChild(audio)
+    const barraAudio = document.createElement('input')
+    barraAudio.type = 'range'
+    barraAudio.min = 0
+    barraAudio.max = 1
+    barraAudio.step = 0.01
+    barraAudio.value = audioElement.volume
+    barraAudio.addEventListener('input', () => {
+        audioElement.volume = barraAudio.value
+    })
+    rightDiv.appendChild(barraAudio)
 
     mainDiv.appendChild(leftSide)
     mainDiv.appendChild(midDiv)
