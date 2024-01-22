@@ -1,4 +1,9 @@
-fetch("https://striveschool-api.herokuapp.com/api/deezer/search?q=Trending", {
+import { Album } from './albumClass.js'
+import { Artist } from './artistClass.js'
+import { Genre } from './genreClass.js'
+import { Track } from './tracksClass.js'
+
+fetch("https://striveschool-api.herokuapp.com/api/deezer/album/182475962", { // FETCHA L'ALBUM PREFERITO DI VINCENZO
     headers: {}
 })
     .then((response) => {
@@ -9,7 +14,7 @@ fetch("https://striveschool-api.herokuapp.com/api/deezer/search?q=Trending", {
         }
     })
     .then((data) => {
-        console.log(data.data)
+        console.log(data)
     }
     )
     .catch((err) => {
