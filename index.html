@@ -1,97 +1,238 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Breve descrizione della pagina" />
+    <meta name="keywords" content="keyword1, keyword2, keyword3" />
+    <meta name="author" content="Nome dell'autore" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="description" content="Breve descrizione della pagina">
-  <meta name="keywords" content="keyword1, keyword2, keyword3">
-  <meta name="author" content="Nome dell'autore">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Open Graph tags per la condivisione sui social media -->
+    <meta property="og:title" content="Titolo della Pagina" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.tuosito.it/pagina" />
+    <meta property="og:image" content="https://www.tuosito.it/immagine.jpg" />
+    <meta property="og:description" content="Breve descrizione della pagina" />
+    <meta property="og:site_name" content="Nome del Sito" />
 
-  <!-- Open Graph tags per la condivisione sui social media -->
-  <meta property="og:title" content="Titolo della Pagina" />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://www.tuosito.it/pagina" />
-  <meta property="og:image" content="https://www.tuosito.it/immagine.jpg" />
-  <meta property="og:description" content="Breve descrizione della pagina" />
-  <meta property="og:site_name" content="Nome del Sito" />
+    <!-- Twitter Card tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@nomeutenteTwitter" />
+    <meta name="twitter:title" content="Titolo della Pagina" />
+    <meta name="twitter:description" content="Breve descrizione della pagina" />
+    <meta name="twitter:image" content="https://www.tuosito.it/immagine.jpg" />
 
-  <!-- Twitter Card tags -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:site" content="@nomeutenteTwitter">
-  <meta name="twitter:title" content="Titolo della Pagina">
-  <meta name="twitter:description" content="Breve descrizione della pagina">
-  <meta name="twitter:image" content="https://www.tuosito.it/immagine.jpg">
+    <!-- Canonical Link per evitare contenuto duplicato -->
+    <link rel="canonical" href="https://www.tuosito.it/pagina" />
 
-  <!-- Canonical Link per evitare contenuto duplicato -->
-  <link rel="canonical" href="https://www.tuosito.it/pagina">
+    <!-- Controllo della cache (opzionale) -->
+    <meta
+      http-equiv="Cache-Control"
+      content="no-cache, no-store, must-revalidate"
+    />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
 
-  <!-- Controllo della cache (opzionale) -->
-  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-  <meta http-equiv="Pragma" content="no-cache">
-  <meta http-equiv="Expires" content="0">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="stylesheet" href="./assets/scss/style.css" />
+    <title></title>
+  </head>
 
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <link rel="stylesheet" href="./assets/scss/style.css">
-  <title></title>
-</head>
-
-<body>
-
-
-  <div class="barra-sinistra">
-
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#">Navbar</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Link</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                aria-expanded="false">
-                Dropdown
-              </a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Action</a></li>
-                <li><a class="dropdown-item" href="#">Another action</a></li>
-                <li>
-                  <hr class="dropdown-divider">
-                </li>
-                <li><a class="dropdown-item" href="#">Something else here</a></li>
-              </ul>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-            </li>
-          </ul>
-          <form class="d-flex" role="search">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success" type="submit">Search</button>
-          </form>
+  <body>
+    <div class="barra-sinistra bg-dark text-secondary">
+      <nav
+        class="navbar bg-dark border-bottom border-body navbar-expand-lg bg-body-tertiary"
+        data-bs-theme="dark"
+      >
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">...</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarTogglerDemo02"
+            aria-controls="navbarTogglerDemo02"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    class="bi bi-house-door"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4.5a.5.5 0 0 0 .5-.5v-4h2v4a.5.5 0 0 0 .5.5H14a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293zM2.5 14V7.707l5.5-5.5 5.5 5.5V14H10v-4a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v4z"
+                    /></svg
+                  >Home</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="#">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    class="bi bi-search"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"
+                    /></svg
+                  >Cerca</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-disabled="true">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    class="bi bi-collection"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M2.5 3.5a.5.5 0 0 1 0-1h11a.5.5 0 0 1 0 1zm2-2a.5.5 0 0 1 0-1h7a.5.5 0 0 1 0 1zM0 13a1.5 1.5 0 0 0 1.5 1.5h13A1.5 1.5 0 0 0 16 13V6a1.5 1.5 0 0 0-1.5-1.5h-13A1.5 1.5 0 0 0 0 6zm1.5.5A.5.5 0 0 1 1 13V6a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-.5.5z"
+                    />
+                  </svg>
+                  La tua libreria</a
+                >
+              </li>
+            </ul>
+          </div>
         </div>
+      </nav>
+      <div class="ps-2 border-bottom border-secondary">
+        <p>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            fill="currentColor"
+            class="bi bi-plus-square"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"
+            />
+            <path
+              d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4"
+            /></svg
+          >Crea playlist
+        </p>
+        <p>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            fill="currentColor"
+            class="bi bi-chat-square-heart"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M14 1a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1h-2.5a2 2 0 0 0-1.6.8L8 14.333 6.1 11.8a2 2 0 0 0-1.6-.8H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1zM2 0a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2.5a1 1 0 0 1 .8.4l1.9 2.533a1 1 0 0 0 1.6 0l1.9-2.533a1 1 0 0 1 .8-.4H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"
+            />
+            <path
+              d="M8 3.993c1.664-1.711 5.825 1.283 0 5.132-5.825-3.85-1.664-6.843 0-5.132"
+            /></svg
+          >Brani che ti piacciono
+        </p>
+        <p>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            fill="currentColor"
+            class="bi bi-bookmark"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.777.416L8 13.101l-5.223 2.815A.5.5 0 0 1 2 15.5zm2-1a1 1 0 0 0-1 1v12.566l4.723-2.482a.5.5 0 0 1 .554 0L13 14.566V2a1 1 0 0 0-1-1z"
+            /></svg
+          >I tuoi episodi
+        </p>
       </div>
-    </nav>
+      <div class="overflow ps-3">
+        <p>early stage emily syndrome (sett-ott-2022)</p>
+        <p>Be The Young</p>
+        <p>"..." cit.Kimiko (lug-ago-2022)</p>
+        <p>saggio vibes</p>
+        <p>main character energy (mag-giu 2022)</p>
+        <p>that fucking mood</p>
+        <p>VEE, CARLOTTA E GIACOMO VANNO A BOSIO</p>
+        <p>An Emily Winchester kind of mood</p>
+        <p>landing page (mar-apr 2022)</p>
+        <p>2021 lol</p>
+        <p>cosa cazzo vuol dire questa affermazione ( gen-fe...</p>
+        <p>honey and glass (nov-dic 2021)</p>
+        <p>(Revenge) Training Arc</p>
+        <p>Lidia Emily</p>
+        <p>minecraft e nintendo switch (sep-oct 2021)</p>
+        <p>silvano d'orba? I hardly know her (lug-ago 2021)</p>
+        <p>Culo 2021</p>
+        <p>Frah Quintale Mix</p>
+        <p>Francesco Guccini Mix</p>
+      </div>
+    </div>
 
-  </div>
+    <main></main>
 
-  <main></main>
+    <div class="barra-destra bg-dark">
+      <div class="dropdown">
+        <button
+          class="btn btn-dark dropdown-toggle"
+          type="button"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+        >
+          Attività amici
+        </button>
+        <ul class="dropdown-menu">
+          <li>
+            <div class="card bg-black text-white" style="width: 8rem">
+              <img src="..." class="card-img-top" alt="..." />
+              <div class="card-body">
+                <h5 class="card-title">Charlie Hookham</h5>
+                <p class="card-text">in Camera Yumi Zouma</p>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="card bg-black text-white" style="width: 8rem">
+              <img src="..." class="card-img-top" alt="..." />
+              <div class="card-body">
+                <h5 class="card-title">lightdark02</h5>
+                <p class="card-text">Aimed to Kill Jade LeMac</p>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="card bg-black text-white" style="width: 8rem">
+              <img src="..." class="card-img-top" alt="..." />
+              <div class="card-body">
+                <h5 class="card-title">Valeria Traverso</h5>
+                <p class="card-text">New Kings Sleeping Wolf</p>
+                <p>Twint Badass modd</p>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
 
-  <div class="barra-destra"></div>
-
-  <script src="./scripts/bootstrap/bootstrap.bundle.min.js"></script>
-</body>
-
+    <script src="./scripts/bootstrap/bootstrap.bundle.min.js"></script>
+  </body>
 </html>
