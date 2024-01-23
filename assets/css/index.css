@@ -47,8 +47,8 @@
 }
 
 .ridimensiona {
-    height: 70px;
-    width: 70px;
+    height: 35px;
+    width: 35px;
     border-radius: 100%;
 }
 
@@ -80,3 +80,12 @@
     color: var(--bs-primary) !important;
 
 }
+
+.smalltext {
+    font-size: 11px !important;
+}
+
+.smalltitle {
+    font-size: 17px !important;
+}
+
