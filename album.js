@@ -44,19 +44,17 @@ fetch(albumAPI)
         style="width: 40px"
         />
       <p class="d-none d-md-inline-block m-0">
-      ${album.artist.name} · ${album.release_date.slice(0, 4)} · ${
-      album.nb_tracks
-    } brani,
-        <span class="text-secondary">${Math.floor(album.duration / 60)} min ${
-      album.duration % 60
-    } sec.</span>
+      ${album.artist.name} · ${album.release_date.slice(0, 4)} · ${album.nb_tracks
+      } brani,
+        <span class="text-secondary">${Math.floor(album.duration / 60)} min ${album.duration % 60
+      } sec.</span>
       </p>
       <p class="d-md-none m-0">${album.artist.name}</p>
     </div>
     <p class="text-secondary mt-2 mb-0 d-md-none">Album · ${album.release_date.slice(
-      0,
-      4
-    )}</p>
+        0,
+        4
+      )}</p>
   </div>`;
     albumCover.appendChild(newRow);
     // POPOLAMENTO DINAMICO DELLE TRACCE DELL'ALBUM
@@ -78,9 +76,8 @@ fetch(albumAPI)
       <p class="mb-0">${element.rank}</p>
     </div>
     <div class="col-2 text-center d-flex align-items-center justify-content-center text-secondary mb-3">
-    <p class="mb-0">${Math.floor(element.duration / 60)}:${
-        element.duration % 60
-      }</p>
+    <p class="mb-0">${Math.floor(element.duration / 60)}:${element.duration % 60
+        }</p>
     </div>`;
       albumTracks.appendChild(newRowDesktop);
       const newRowMobile = document.createElement("div");
