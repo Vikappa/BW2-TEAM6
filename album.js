@@ -125,6 +125,7 @@ catchAlbum(albumId)
         <span class="text-secondary">${Math.floor(album.duration / 60)} min ${
       album.duration % 60
     } sec.</span>
+
       </p>
       <a href="./artist.html?artistId=${
         album.artist.id
