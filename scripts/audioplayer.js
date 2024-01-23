@@ -6,7 +6,14 @@ const audioPlayer = function (trackObj) {
     mainDiv.classList.add("d-flex")
     mainDiv.classList.add("justify-content-between")
     const audioElement = new Audio(trackObj.preview)
-
+    const observer = new MutationObserver((mutations) => {
+        mutations.forEach((mutation) => {
+            if (!document.body.contains(mainDiv)) {
+                audioElement.pause()
+                observer.disconnect()
+            }
+        })
+    })
     console.log()
 
     const leftSide = document.createElement('div')
@@ -96,6 +103,8 @@ const audioPlayer = function (trackObj) {
     mainDiv.appendChild(leftSide)
     mainDiv.appendChild(midDiv)
     mainDiv.appendChild(rightDiv)
+    observer.observe(document.getElementById('playBar'), { childList: true })
+
     return mainDiv
 }
 
