@@ -54,3 +54,80 @@ document.getElementById("Vincenzos").addEventListener('click', () => {
         console.error(err)
     })
 })
+
+document.getElementById("Ermias").addEventListener('click', () => {
+
+
+    searchAlbum("Kung fu fighting").then(arrayRitorno => {
+        document.getElementById('titoloHeaderTrack').textContent = arrayRitorno[0].title
+        document.getElementById('artistHeaderTrack').textContent = arrayRitorno[0].artist.name
+        document.getElementById('ascolta').textContent = arrayRitorno[0].artist.name
+        document.getElementById('recordType').textContent = arrayRitorno[0].album.type
+        document.getElementById('imgHeroTrack').src = arrayRitorno[0].album.cover_medium
+        updatePlayBar(arrayRitorno[0])
+
+
+
+
+    }).catch(err => {
+        console.error(err)
+    })
+})
+
+document.getElementById("Fabios").addEventListener('click', () => {
+
+
+    searchAlbum("Californication Red Hot").then(arrayRitorno => {
+        document.getElementById('titoloHeaderTrack').textContent = arrayRitorno[0].title
+        document.getElementById('artistHeaderTrack').textContent = arrayRitorno[0].artist.name
+        document.getElementById('ascolta').textContent = arrayRitorno[0].artist.name
+        document.getElementById('recordType').textContent = arrayRitorno[0].album.type
+        document.getElementById('imgHeroTrack').src = arrayRitorno[0].album.cover_medium
+        updatePlayBar(arrayRitorno[0])
+
+
+
+
+    }).catch(err => {
+        console.error(err)
+    })
+})
+
+document.getElementById("Giuseppes").addEventListener('click', () => {
+
+
+    searchAlbum("Highway hell ACDC").then(arrayRitorno => {
+        document.getElementById('titoloHeaderTrack').textContent = arrayRitorno[0].title
+        document.getElementById('artistHeaderTrack').textContent = arrayRitorno[0].artist.name
+        document.getElementById('ascolta').textContent = arrayRitorno[0].artist.name
+        document.getElementById('recordType').textContent = arrayRitorno[0].album.type
+        document.getElementById('imgHeroTrack').src = arrayRitorno[0].album.cover_medium
+        updatePlayBar(arrayRitorno[0])
+
+
+
+
+    }).catch(err => {
+        console.error(err)
+    })
+})
+
+
+document.getElementById("Francescos").addEventListener('click', () => {
+
+
+    searchAlbum("Body parts Marracash").then(arrayRitorno => {
+        document.getElementById('titoloHeaderTrack').textContent = arrayRitorno[0].title
+        document.getElementById('artistHeaderTrack').textContent = arrayRitorno[0].artist.name
+        document.getElementById('ascolta').textContent = arrayRitorno[0].artist.name
+        document.getElementById('recordType').textContent = arrayRitorno[0].album.type
+        document.getElementById('imgHeroTrack').src = arrayRitorno[0].album.cover_medium
+        updatePlayBar(arrayRitorno[0])
+
+
+
+
+    }).catch(err => {
+        console.error(err)
+    })
+})

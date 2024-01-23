@@ -89,6 +89,8 @@ const updateRisultatiRicerca = function () {
                         album.style.fontSize = ".8rem"
                         album.innerHTML = result[index].album.title
 
+                        console.log(result[index])
+
                         divTitoli.appendChild(artista)
                         divTitoli.appendChild(titolo)
                         divTitoli.appendChild(album)
