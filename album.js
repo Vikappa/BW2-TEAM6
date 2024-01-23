@@ -26,15 +26,15 @@ fetch(albumAPI)
     const newRow = document.createElement("div");
     newRow.classList.add("row");
     newRow.innerHTML = `
-    <div class="col-2">
+    <div class="col-md-2 col-10 mx-auto">
     <img
       src=${album.cover}
       alt=${album.title}
-      class="shadow-lg w-100"
+      class="shadow-lg w-100 mb-3 mb-md-0"
     />
   </div>
   <div class="col-10 d-flex flex-column justify-content-end">
-    <small class="text-white mb-2">ALBUM</small>
+    <small class="d-none d-md-block text-white mb-2">ALBUM</small>
     <h1 class="text-white">${album.title}</h1>
     <div class="text-white d-flex align-items-center">
         <img
@@ -43,20 +43,27 @@ fetch(albumAPI)
         class="d-inline-block rounded-circle me-2"
         style="width: 40px"
         />
-      <p class="d-inline-block m-0">
+      <p class="d-none d-md-inline-block m-0">
       ${album.artist.name} · ${album.release_date} · ${album.nb_tracks} brani,
         <span class="text-secondary">${Math.floor(album.duration / 60)} min ${
       album.duration % 60
     } sec.</span>
       </p>
+      <p class="d-md-none m-0">${album.artist.name}</p>
     </div>
+    <p class="text-secondary mt-2 mb-0 d-md-none">Album · ${album.release_date.slice(
+      0,
+      4
+    )}</p>
   </div>`;
     albumCover.appendChild(newRow);
     // POPOLAMENTO DINAMICO DELLE TRACCE DELL'ALBUM
     album.tracks.data.forEach((element, i) => {
-      const newRow2 = document.createElement("div");
-      newRow2.classList.add("row");
-      newRow2.innerHTML = `
+      const newRowDesktop = document.createElement("div");
+      newRowDesktop.classList.add("row");
+      newRowDesktop.classList.add("d-none");
+      newRowDesktop.classList.add("d-md-flex");
+      newRowDesktop.innerHTML = `
       <div class="col-7 d-flex mb-3">
       <p class="me-4 mb-0 text-secondary d-flex align-items-center">${i + 1}</p>
       <div class="d-flex flex-column">
@@ -73,7 +80,20 @@ fetch(albumAPI)
         element.duration % 60
       }</p>
     </div>`;
-      albumTracks.appendChild(newRow2);
+      albumTracks.appendChild(newRowDesktop);
+      const newRowMobile = document.createElement("div");
+      newRowMobile.classList.add("row");
+      newRowMobile.classList.add("d-md-none");
+      newRowMobile.innerHTML = `
+      <div class="col-12 d-flex justify-content-between align-items-center mb-3">
+        <div>
+          <p class="text-white mb-1">${element.title_short}</p>
+          <p class="text-secondary mb-0">${element.artist.name}</p>
+        </div>
+        <button class="btn btn-black text-secondary fs-3"><i class="bi bi-three-dots-vertical"></i></button>
+      </div>
+      `;
+      albumTracks.appendChild(newRowMobile);
     });
   })
   .catch((err) => {
