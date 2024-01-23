@@ -4,6 +4,10 @@ import { searchAlbum } from './searchAlbumQuery.js'
 import { searchBar } from './searchBar.js'
 
 // UTILITY
+document.getElementById('closeRightBar').addEventListener("click", function () {
+    document.getElementById('barraDestra').classList.add("closing")
+})
+
 
 const updatePlayBar = function (trackObj) {
     document.getElementById('playBar').innerHTML = ``
