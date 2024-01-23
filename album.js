@@ -88,7 +88,7 @@ const start = function () {
 
 // FETCH
 let album;
-catchAlbum("75621062")
+catchAlbum(albumId)
   .then((result) => {
     album = result;
 
@@ -108,21 +108,29 @@ catchAlbum("75621062")
     <small class="d-none d-md-block text-white mb-2">ALBUM</small>
     <h1 class="text-white">${album.title}</h1>
     <div class="text-white d-flex align-items-center">
-        <img
-        src=${album.artist.picture}
-        alt=${album.artist.name}
-        class="d-inline-block rounded-circle me-2"
-        style="width: 40px"
-        />
+        <a href="./artist.html?artistId=${album.artist.id}"> 
+          <img
+          src=${album.artist.picture}
+          alt=${album.artist.name}
+          class="d-inline-block rounded-circle me-2"
+          style="width: 40px"
+          />
+        </a>
       <p class="d-none d-md-inline-block m-0">
-      ${album.artist.name} · ${album.release_date.slice(0, 4)} · ${
-      album.nb_tracks
-    } brani,
+      <a href="./artist.html?artistId=${
+        album.artist.id
+      }" class="text-decoration-none text-white">${
+      album.artist.name
+    }</a> · ${album.release_date.slice(0, 4)} · ${album.nb_tracks} brani,
         <span class="text-secondary">${Math.floor(album.duration / 60)} min ${
       album.duration % 60
     } sec.</span>
       </p>
-      <p class="d-md-none m-0">${album.artist.name}</p>
+      <a href="./artist.html?artistId=${
+        album.artist.id
+      }" class="d-md-none m-0 text-decoration-none text-white">
+        <p class="m-0">${album.artist.name}</p>
+      </a>
     </div>
     <p class="text-secondary mt-2 mb-0 d-md-none">Album · ${album.release_date.slice(
       0,
@@ -143,7 +151,11 @@ catchAlbum("75621062")
               }</p>
               <div class="d-flex flex-column">
                   <p class="text-white mb-1">${element.title}</p>
-                  <p class="m-0 text-secondary">${element.artist.name}</p>
+                  <a href="./artist.html?artistId=${
+                    album.artist.id
+                  }" class="text-decoration-none">
+                    <p class="m-0 text-secondary">${element.artist.name}</p>
+                  </a>
               </div>
           </div>
           <div class="col-3 d-flex align-items-center text-secondary mb-3">
@@ -162,7 +174,9 @@ catchAlbum("75621062")
           <div class="col-12 d-flex justify-content-between align-items-center mb-3">
               <div>
                   <p class="text-white mb-0">${element.title_short}</p>
-                  <p class="text-secondary mb-0">${element.artist.name}</p>
+                  <a href="./artist.html?artistId=${album.artist.id}" class="text-decoration-none">
+                    <p class="text-secondary mb-0">${element.artist.name}</p>
+                  </a>
               </div>
               <button class="btn btn-black text-secondary fs-3"><i class="bi bi-three-dots-vertical"></i></button>
           </div>`;
