@@ -89,7 +89,7 @@ fetch(albumAPI)
       newRowMobile.innerHTML = `
       <div class="col-12 d-flex justify-content-between align-items-center mb-3">
         <div>
-          <p class="text-white mb-1">${element.title_short}</p>
+          <p class="text-white mb-0">${element.title_short}</p>
           <p class="text-secondary mb-0">${element.artist.name}</p>
         </div>
         <button class="btn btn-black text-secondary fs-3"><i class="bi bi-three-dots-vertical"></i></button>
