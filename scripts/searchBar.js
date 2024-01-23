@@ -1,3 +1,5 @@
+import { searchAlbum } from './searchAlbumQuery.js'
+
 const ripristino = function () {
     document.getElementById('inputRicerca').remove()
     document.getElementById('cercaLi').innerHTML = `<a class="nav-link " href="#" id="cercaAnchor">
@@ -13,6 +15,19 @@ const ripristino = function () {
     })
 }
 
+const updateRisultatiRicerca = function () {
+    let queryToSearch = document.getElementById('inputRicerca').value
+
+    searchAlbum(queryToSearch)
+        .then(result => {
+            console.log(result)
+        })
+        .catch(error => {
+            console.error('Si è verificato un errore nella casella di ricerca:', error)
+        })
+}
+
+
 const searchBar = function () {
     const divContainer = document.createElement('div')
     divContainer.id = "containerRicerca"
@@ -22,6 +37,8 @@ const searchBar = function () {
     input.className = 'form-control'
     input.id = 'inputRicerca'
     input.placeholder = 'Cerca..'
+
+    input.addEventListener('input', updateRisultatiRicerca)
 
     divContainer.appendChild(input)
 
@@ -33,7 +50,6 @@ document.addEventListener('click', function (event) {
 
     if (input && divContainer && document.body.contains(divContainer)) {
         if (event.target !== input && !input.contains(event.target)) {
-            console.log('Cliccato fuori dall\'input')
             ripristino()
         }
     }
