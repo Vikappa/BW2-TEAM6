@@ -66,7 +66,7 @@ const updateRisultatiRicerca = function () {
                         divTitoli.classList.add('grow-1')
 
 
-                        const titolo = document.createElement('p')
+                        const titolo = document.createElement('a')
                         titolo.classList.add('p-0')
                         titolo.classList.add('m-0')
                         titolo.style.fontSize = "1rem"
@@ -75,13 +75,13 @@ const updateRisultatiRicerca = function () {
                             titolo.innerHTML = titolo.innerHTML.substring(0, 12) + '...'
                         }
 
-                        const artista = document.createElement('p')
+                        const artista = document.createElement('a')
                         artista.classList.add('p-0')
                         artista.classList.add('m-0')
                         artista.style.fontSize = ".8rem"
                         artista.innerHTML = result[index].artist.name
 
-                        const album = document.createElement('p')
+                        const album = document.createElement('a')
                         album.classList.add('p-0')
                         album.classList.add('m-0')
                         album.style.fontSize = ".8rem"
