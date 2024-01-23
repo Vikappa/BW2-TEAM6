@@ -78,6 +78,7 @@ const updateRisultatiRicerca = function () {
                         const artista = document.createElement('a')
                         artista.classList.add('p-0')
                         artista.classList.add('m-0')
+                        artista.href = 'album.html?albumId=' + result[index].album.id
                         artista.style.fontSize = ".8rem"
                         artista.innerHTML = result[index].artist.name
 

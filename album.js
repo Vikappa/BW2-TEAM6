@@ -88,7 +88,7 @@ const start = function () {
 
 // FETCH
 let album;
-catchAlbum("75621062")
+catchAlbum(albumId)
   .then((result) => {
     album = result;
 
@@ -115,19 +115,17 @@ catchAlbum("75621062")
         style="width: 40px"
         />
       <p class="d-none d-md-inline-block m-0">
-      ${album.artist.name} · ${album.release_date.slice(0, 4)} · ${
-      album.nb_tracks
-    } brani,
-        <span class="text-secondary">${Math.floor(album.duration / 60)} min ${
-      album.duration % 60
-    } sec.</span>
+      ${album.artist.name} · ${album.release_date.slice(0, 4)} · ${album.nb_tracks
+      } brani,
+        <span class="text-secondary">${Math.floor(album.duration / 60)} min ${album.duration % 60
+      } sec.</span>
       </p>
       <p class="d-md-none m-0">${album.artist.name}</p>
     </div>
     <p class="text-secondary mt-2 mb-0 d-md-none">Album · ${album.release_date.slice(
-      0,
-      4
-    )}</p>
+        0,
+        4
+      )}</p>
   </div>`;
     albumCover.appendChild(newRow);
     console.log(album);
@@ -138,9 +136,8 @@ catchAlbum("75621062")
       newRowDesktop.classList.add("row", "d-none", "d-md-flex");
       newRowDesktop.innerHTML = `
           <div class="col-7 d-flex mb-3">
-              <p class="me-4 mb-0 text-secondary d-flex align-items-center">${
-                i + 1
-              }</p>
+              <p class="me-4 mb-0 text-secondary d-flex align-items-center">${i + 1
+        }</p>
               <div class="d-flex flex-column">
                   <p class="text-white mb-1">${element.title}</p>
                   <p class="m-0 text-secondary">${element.artist.name}</p>
@@ -150,9 +147,8 @@ catchAlbum("75621062")
               <p class="mb-0">${element.rank}</p>
           </div>
           <div class="col-2 text-center d-flex align-items-center justify-content-center text-secondary mb-3">
-              <p class="mb-0">${Math.floor(element.duration / 60)}:${
-        element.duration % 60
-      }</p>
+              <p class="mb-0">${Math.floor(element.duration / 60)}:${element.duration % 60
+        }</p>
           </div>`;
       albumTracks.appendChild(newRowDesktop);
 
