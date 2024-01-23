@@ -75,3 +75,8 @@
 .hover-green:hover {
     color: var(--bs-primary) !important;
 }
+
+.bi-pause-circle-fill {
+    color: var(--bs-primary) !important;
+
+}

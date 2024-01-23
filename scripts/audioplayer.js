@@ -53,7 +53,10 @@ const audioPlayer = function (trackObj) {
             audioElement.pause()
             buttonPlay.innerHTML = `<i class="bi bi-play-circle-fill"></i>`
         }
-    });
+    })
+    audioElement.addEventListener('ended', () => {
+        buttonPlay.innerHTML = `<i class="bi bi-play-circle-fill"></i>`
+    })
     buttonPlay.classList.add('text-white')
     buttonPlay.classList.add('btn')
     buttonPlay.classList.add('fs-1')
