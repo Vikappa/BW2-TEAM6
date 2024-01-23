@@ -60,6 +60,11 @@
     filter: brightness(150%);
 }
 
+.liRicerca:hover {
+    filter: brightness(150%);
+    background-color: var(--bs-gray-700);
+}
+
 #albumCoverPlayerbar {
     height: auto;
     object-fit: contain;
@@ -79,4 +84,9 @@
 .bi-pause-circle-fill {
     color: var(--bs-primary) !important;
 
+}
+
+.imgSearchBar {
+    height: 60px !important;
+    width: auto !important;
 }

@@ -21,6 +21,7 @@ const updateRisultatiRicerca = function () {
     if (queryToSearch.length >= 3) {
         searchAlbum(queryToSearch)
             .then(result => {
+                console.log(result)
 
                 if (document.getElementById('ulDropDown')) {
                     document.getElementById('ulDropDown').remove()
@@ -31,7 +32,6 @@ const updateRisultatiRicerca = function () {
                         document.getElementById('ulDropDown').remove()
                     }
                 } else {
-
                     const ulDropDown = document.createElement('ul')
                     ulDropDown.id = "ulDropDown"
                     ulDropDown.classList.add('dropdown-menu')
@@ -46,13 +46,16 @@ const updateRisultatiRicerca = function () {
                         newLiDropDown.classList.add('p-0')
                         newLiDropDown.classList.add('m-0')
                         newLiDropDown.classList.add('d-flex')
+                        newLiDropDown.classList.add('liRicerca')
 
                         const divRisultato = document.createElement('div')
                         divRisultato.classList.add('d-flex')
+                        divRisultato.classList.add('p-2')
 
                         const imgRisultato = document.createElement('img')
-                        imgRisultato.src = result[index].album.cover
-                        imgRisultato.classList.add('img-fluid')
+                        imgRisultato.src = result[index].album.cover_small
+                        imgRisultato.classList.add('imgSearchBar')
+                        imgRisultato.classList.add('p-1')
                         divRisultato.appendChild(imgRisultato)
 
                         const divTitoli = document.createElement('div')
@@ -60,20 +63,28 @@ const updateRisultatiRicerca = function () {
                         divTitoli.classList.add('flex-column')
                         divTitoli.classList.add('p-0')
                         divTitoli.classList.add('m-0')
+                        divTitoli.classList.add('grow-1')
+
 
                         const titolo = document.createElement('p')
                         titolo.classList.add('p-0')
                         titolo.classList.add('m-0')
+                        titolo.style.fontSize = "1rem"
                         titolo.innerHTML = result[index].title
+                        if (titolo.innerHTML.length > 15) {
+                            titolo.innerHTML = titolo.innerHTML.substring(0, 12) + '...'
+                        }
 
                         const artista = document.createElement('p')
                         artista.classList.add('p-0')
                         artista.classList.add('m-0')
+                        artista.style.fontSize = ".8rem"
                         artista.innerHTML = result[index].artist.name
 
                         const album = document.createElement('p')
                         album.classList.add('p-0')
                         album.classList.add('m-0')
+                        album.style.fontSize = ".8rem"
                         album.innerHTML = result[index].album.title
 
                         divTitoli.appendChild(artista)
