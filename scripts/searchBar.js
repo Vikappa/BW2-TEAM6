@@ -20,7 +20,41 @@ const updateRisultatiRicerca = function () {
 
     searchAlbum(queryToSearch)
         .then(result => {
-            console.log(result)
+
+            if (document.getElementById('ulDropDown')) {
+                document.getElementById('ulDropDown').remove()
+            }
+
+            if (result.length === 0) {
+                if (document.getElementById('ulDropDown')) {
+                    document.getElementById('ulDropDown').remove()
+                }
+            } else {
+
+                const ulDropDown = document.createElement('ul')
+                ulDropDown.id = "ulDropDown"
+                ulDropDown.classList.add('dropdown-menu')
+                ulDropDown.classList.add('show')
+                ulDropDown.classList.add('p-0')
+                ulDropDown.classList.add('m-0')
+
+                for (let index = 0; index < result.length; index++) {
+                    const newLiDropDown = document.createElement('li')
+                    newLiDropDown.classList.add('p-0')
+                    newLiDropDown.classList.add('m-0')
+                    const newPDropDown = document.createElement('p')
+                    newPDropDown.classList.add('p-0')
+                    newPDropDown.classList.add('m-0')
+                    newPDropDown.innerHTML = result[index].title
+
+                    newLiDropDown.appendChild(newPDropDown)
+                    ulDropDown.appendChild(newLiDropDown)
+
+                }
+
+                document.getElementById('cercaLi').appendChild(ulDropDown)
+
+            }
         })
         .catch(error => {
             console.error('Si è verificato un errore nella casella di ricerca:', error)
@@ -37,6 +71,7 @@ const searchBar = function () {
     input.className = 'form-control'
     input.id = 'inputRicerca'
     input.placeholder = 'Cerca..'
+    input.autocomplete = 'off'
 
     input.addEventListener('input', updateRisultatiRicerca)
 
