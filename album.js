@@ -44,7 +44,9 @@ fetch(albumAPI)
         style="width: 40px"
         />
       <p class="d-none d-md-inline-block m-0">
-      ${album.artist.name} · ${album.release_date} · ${album.nb_tracks} brani,
+      ${album.artist.name} · ${album.release_date.slice(0, 4)} · ${
+      album.nb_tracks
+    } brani,
         <span class="text-secondary">${Math.floor(album.duration / 60)} min ${
       album.duration % 60
     } sec.</span>
