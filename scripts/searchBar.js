@@ -14,33 +14,32 @@ const ripristino = function () {
 }
 
 const searchBar = function () {
-    const divContainer = document.createElement('div');
-    divContainer.id = "containerRicerca";
+    const divContainer = document.createElement('div')
+    divContainer.id = "containerRicerca"
 
-    const input = document.createElement('input');
-    input.type = 'text';
-    input.className = 'form-control';
-    input.id = 'inputRicerca';
-    input.placeholder = 'Cerca..';
+    const input = document.createElement('input')
+    input.type = 'text'
+    input.className = 'form-control'
+    input.id = 'inputRicerca'
+    input.placeholder = 'Cerca..'
 
-    function handleClickOutside(event) {
-        // Controlla se l'elemento cliccato non è l'input e non è contenuto nell'input
+    divContainer.appendChild(input)
+
+    return divContainer
+}
+document.addEventListener('click', function (event) {
+    const input = document.getElementById('inputRicerca')
+    const divContainer = document.getElementById('containerRicerca')
+
+    if (input && divContainer && document.body.contains(divContainer)) {
         if (event.target !== input && !input.contains(event.target)) {
-            console.log('Cliccato fuori dall\'input');
-            ripristino();
+            console.log('Cliccato fuori dall\'input')
+            ripristino()
         }
     }
+}, true)
 
-    document.addEventListener('click', handleClickOutside, true);
 
-    divContainer.addEventListener('removed', function () {
-        document.removeEventListener('click', handleClickOutside, true);
-    });
-
-    divContainer.appendChild(input);
-
-    return divContainer;
-}
 
 
 
