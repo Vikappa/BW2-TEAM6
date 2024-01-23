@@ -2,9 +2,8 @@ import { catchAlbum } from "./scripts/fetchAlbumObg.js";
 
 const albumCover = document.getElementById("albumCover");
 const albumTracks = document.getElementById("albumTracks");
-const trackName = document.getElementById("trackName");
-const trackReproductions = document.getElementById("trackReproductions");
-const trackDuration = document.getElementById("trackDuration");
+const addressBar = new URLSearchParams(location.search);
+const albumId = addressBar.get("albumId");
 
 // IMAGE AVERAGE COLOR
 
@@ -131,7 +130,7 @@ catchAlbum("75621062")
     )}</p>
   </div>`;
     albumCover.appendChild(newRow);
-    console.log(album.tracks);
+    console.log(album);
     for (let i = 0; i < album.tracks.length; i++) {
       const element = album.tracks[i];
       // POPOLAMENTO DINAMICO DELLE TRACCE DELL'ALBUM
