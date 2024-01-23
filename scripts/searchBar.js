@@ -38,17 +38,52 @@ const updateRisultatiRicerca = function () {
                     ulDropDown.classList.add('show')
                     ulDropDown.classList.add('p-0')
                     ulDropDown.classList.add('m-0')
+                    ulDropDown.classList.add('d-flex')
+                    ulDropDown.classList.add('flex-column')
 
-                    for (let index = 0; index < result.length; index++) {
+                    for (let index = 0; index < 10; index++) {
                         const newLiDropDown = document.createElement('li')
                         newLiDropDown.classList.add('p-0')
                         newLiDropDown.classList.add('m-0')
-                        const newPDropDown = document.createElement('p')
-                        newPDropDown.classList.add('p-0')
-                        newPDropDown.classList.add('m-0')
-                        newPDropDown.innerHTML = result[index].title
+                        newLiDropDown.classList.add('d-flex')
 
-                        newLiDropDown.appendChild(newPDropDown)
+                        const divRisultato = document.createElement('div')
+                        divRisultato.classList.add('d-flex')
+
+                        const imgRisultato = document.createElement('img')
+                        imgRisultato.src = result[index].album.cover
+                        imgRisultato.classList.add('img-fluid')
+                        divRisultato.appendChild(imgRisultato)
+
+                        const divTitoli = document.createElement('div')
+                        divTitoli.classList.add('d-flex')
+                        divTitoli.classList.add('flex-column')
+                        divTitoli.classList.add('p-0')
+                        divTitoli.classList.add('m-0')
+
+                        const titolo = document.createElement('p')
+                        titolo.classList.add('p-0')
+                        titolo.classList.add('m-0')
+                        titolo.innerHTML = result[index].title
+
+                        const artista = document.createElement('p')
+                        artista.classList.add('p-0')
+                        artista.classList.add('m-0')
+                        artista.innerHTML = result[index].artist.name
+
+                        const album = document.createElement('p')
+                        album.classList.add('p-0')
+                        album.classList.add('m-0')
+                        album.innerHTML = result[index].album.title
+
+                        divTitoli.appendChild(artista)
+                        divTitoli.appendChild(titolo)
+                        divTitoli.appendChild(album)
+
+                        divRisultato.appendChild(divTitoli)
+
+                        newLiDropDown.appendChild(divRisultato)
+
                         ulDropDown.appendChild(newLiDropDown)
 
                     }
