@@ -34,6 +34,11 @@ class Album {
         this.type = type // Tipo
         this.upc = upc // ???
     }
+
+    coloreMedio() {
+        console.log('prova')
+    }
+
 }
 
 export { Album }

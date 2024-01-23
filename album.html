@@ -55,16 +55,19 @@
     <div class="barra-sinistra"></div>
 
     <main class="bg-black">
-      <div class="container py-4">
+      <div class="container pb-2 pb-md-4 pt-md-0">
         <div class="row">
           <!--Parte superiore frecce e utente-->
-          <div class="col-12 d-flex justify-content-between">
+          <div
+            class="col-md-12 d-none pt-2 pb-4 d-md-flex justify-content-between bg-color"
+          >
             <div class="d-flex align-items-center">
-              <button
+              <a
                 class="me-5 bg-dark text-light btn-circle px-2 py-1 d-flex align-items-center border-0"
+                href="./index.html"
               >
                 <i class="bi bi-chevron-left"></i>
-              </button>
+              </a>
               <button
                 class="bg-dark text-light btn-circle px-2 py-1 d-flex align-items-center opacity-75 border-0"
               >
@@ -86,35 +89,67 @@
                 <li>
                   <a class="dropdown-item" href="#">Something else here</a>
                 </li>
-                <li><hr class="dropdown-divider" /></li>
+                <li>
+                  <hr class="dropdown-divider" />
+                </li>
                 <li><a class="dropdown-item" href="#">Separated link</a></li>
               </ul>
             </div>
           </div>
           <!-- Album e info dell'album -->
-          <div class="col-12 py-5" id="albumCover">
+          <div class="col-12 pb-md-0 py-2 bg-color" id="albumCover">
             <div class="row"></div>
           </div>
-          <!-- Sezione play e album interaction -->
-          <div class="col-12 d-flex align-items-center">
+          <!-- Sezione play e album interaction desktop -->
+          <div
+            class="col-12 d-none d-md-flex align-items-center py-5 bg-linear"
+          >
             <button
-              class="bg-primary me-5 fs-2 text-black border-0 rounded-circle"
+              class="bg-primary me-5 fs-2 text-black border-0 rounded-circle pt-1 px-2"
             >
               <i class="bi bi-caret-right-fill"></i>
             </button>
-            <button class="text-white fs-3 bg-black border-0">
+            <button class="text-white fs-3 btn btn-body border-0">
               <i class="bi bi-heart"></i>
             </button>
-            <button class="text-white fs-3 bg-black border-0 mx-4">
+            <button class="text-white fs-3 btn btn-body border-0 mx-4">
               <i class="bi bi-arrow-down-circle"></i>
             </button>
-            <button class="text-white fs-3 bg-black border-0">
+            <button class="text-white fs-3 btn btn-body border-0">
               <i class="bi bi-three-dots"></i>
             </button>
           </div>
+          <!-- Sezione play e album interaction mobile  -->
+          <div
+            class="col-12 d-md-none d-flex align-items-center justify-content-between py-3 bg-linear"
+          >
+            <div>
+              <button class="text-white fs-3 btn btn-body border-0">
+                <i class="bi bi-heart"></i>
+              </button>
+              <button class="text-white fs-3 btn btn-body border-0 mx-3">
+                <i class="bi bi-arrow-down-circle"></i>
+              </button>
+              <button class="text-white fs-3 btn btn-body border-0">
+                <i class="bi bi-three-dots-vertical"></i>
+              </button>
+            </div>
+            <div>
+              <button class="text-white fs-3 btn btn-body border-0">
+                <i class="bi bi-shuffle"></i>
+              </button>
+              <button
+                class="bg-primary fs-2 text-white ms-3 border-0 rounded-circle pt-1 px-2"
+              >
+                <i class="bi bi-caret-right-fill"></i>
+              </button>
+            </div>
+          </div>
           <!-- Sezione tracce -->
-          <div class="col-12 pt-5" id="albumTracks">
-            <div class="row border-bottom border-secondary mb-3">
+          <div class="col-12 pt-0 pt-md-3" id="albumTracks">
+            <div
+              class="row d-none d-md-flex border-bottom border-secondary mb-3"
+            >
               <div class="col-7" id="trackName">
                 <p class="text-secondary"><span class="me-4">#</span>TITOLO</p>
               </div>
@@ -133,6 +168,7 @@
     <div class="barra-destra"></div>
 
     <script src="./scripts/bootstrap/bootstrap.bundle.min.js"></script>
-    <script src="./album.js"></script>
+    <script type="module" src="./album.js"></script>
+    <script type="module" src="./scripts/fetchAlbumObg.js"></script>
   </body>
 </html>

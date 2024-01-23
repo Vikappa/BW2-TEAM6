@@ -1,24 +1,31 @@
 // IMPORT
 import { audioPlayer } from './audioplayer.js'
 import { searchAlbum } from './searchAlbumQuery.js'
-
+import { searchBar } from './searchBar.js'
 
 // UTILITY
 
 const updatePlayBar = function (trackObj) {
-    console.log('prova')
     document.getElementById('playBar').innerHTML = ``
     document.getElementById('playBar').appendChild(audioPlayer(trackObj))
 }
 
 const start = function () {
-    searchAlbum("Banana Brain").then(arrayRitorno => {
+    searchAlbum("Die Antwoord").then(arrayRitorno => {
         document.getElementById('titoloHeaderTrack').textContent = arrayRitorno[0].title
         document.getElementById('artistHeaderTrack').textContent = arrayRitorno[0].artist.name
         document.getElementById('ascolta').textContent = arrayRitorno[0].artist.name
         document.getElementById('recordType').textContent = arrayRitorno[0].album.type
         document.getElementById('imgHeroTrack').src = arrayRitorno[0].album.cover_medium
         updatePlayBar(arrayRitorno[0])
+
+
+        document.getElementById("cercaAnchor").addEventListener('click', () => {
+            document.getElementById("cercaAnchor").remove()
+            document.getElementById('cercaLi').appendChild(searchBar())
+            console.log()
+        })
+
 
     }).catch(err => {
         console.error(err)
@@ -30,6 +37,8 @@ const start = function () {
 start()
 
 document.getElementById("Vincenzos").addEventListener('click', () => {
+
+
     searchAlbum("Mantra Bring Me The Horizon").then(arrayRitorno => {
         document.getElementById('titoloHeaderTrack').textContent = arrayRitorno[0].title
         document.getElementById('artistHeaderTrack').textContent = arrayRitorno[0].artist.name
@@ -37,6 +46,9 @@ document.getElementById("Vincenzos").addEventListener('click', () => {
         document.getElementById('recordType').textContent = arrayRitorno[0].album.type
         document.getElementById('imgHeroTrack').src = arrayRitorno[0].album.cover_medium
         updatePlayBar(arrayRitorno[0])
+
+
+
 
     }).catch(err => {
         console.error(err)
