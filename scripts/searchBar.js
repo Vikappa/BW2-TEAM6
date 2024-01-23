@@ -18,47 +18,55 @@ const ripristino = function () {
 const updateRisultatiRicerca = function () {
     let queryToSearch = document.getElementById('inputRicerca').value
 
-    searchAlbum(queryToSearch)
-        .then(result => {
+    if (queryToSearch.length >= 3) {
+        searchAlbum(queryToSearch)
+            .then(result => {
 
-            if (document.getElementById('ulDropDown')) {
-                document.getElementById('ulDropDown').remove()
-            }
-
-            if (result.length === 0) {
                 if (document.getElementById('ulDropDown')) {
                     document.getElementById('ulDropDown').remove()
                 }
-            } else {
 
-                const ulDropDown = document.createElement('ul')
-                ulDropDown.id = "ulDropDown"
-                ulDropDown.classList.add('dropdown-menu')
-                ulDropDown.classList.add('show')
-                ulDropDown.classList.add('p-0')
-                ulDropDown.classList.add('m-0')
+                if (result.length === 0) {
+                    if (document.getElementById('ulDropDown')) {
+                        document.getElementById('ulDropDown').remove()
+                    }
+                } else {
 
-                for (let index = 0; index < result.length; index++) {
-                    const newLiDropDown = document.createElement('li')
-                    newLiDropDown.classList.add('p-0')
-                    newLiDropDown.classList.add('m-0')
-                    const newPDropDown = document.createElement('p')
-                    newPDropDown.classList.add('p-0')
-                    newPDropDown.classList.add('m-0')
-                    newPDropDown.innerHTML = result[index].title
+                    const ulDropDown = document.createElement('ul')
+                    ulDropDown.id = "ulDropDown"
+                    ulDropDown.classList.add('dropdown-menu')
+                    ulDropDown.classList.add('show')
+                    ulDropDown.classList.add('p-0')
+                    ulDropDown.classList.add('m-0')
 
-                    newLiDropDown.appendChild(newPDropDown)
-                    ulDropDown.appendChild(newLiDropDown)
+                    for (let index = 0; index < result.length; index++) {
+                        const newLiDropDown = document.createElement('li')
+                        newLiDropDown.classList.add('p-0')
+                        newLiDropDown.classList.add('m-0')
+                        const newPDropDown = document.createElement('p')
+                        newPDropDown.classList.add('p-0')
+                        newPDropDown.classList.add('m-0')
+                        newPDropDown.innerHTML = result[index].title
+
+                        newLiDropDown.appendChild(newPDropDown)
+                        ulDropDown.appendChild(newLiDropDown)
+
+                    }
+
+                    document.getElementById('cercaLi').appendChild(ulDropDown)
 
                 }
+            })
+            .catch(error => {
+                console.error('Si è verificato un errore nella casella di ricerca:', error)
+            })
+    } else {
+        if (document.getElementById('ulDropDown')) {
+            document.getElementById('ulDropDown').remove()
+        }
+    }
 
-                document.getElementById('cercaLi').appendChild(ulDropDown)
 
-            }
-        })
-        .catch(error => {
-            console.error('Si è verificato un errore nella casella di ricerca:', error)
-        })
 }
 
 
