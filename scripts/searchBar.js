@@ -78,14 +78,14 @@ const updateRisultatiRicerca = function () {
                         const artista = document.createElement('a')
                         artista.classList.add('p-0')
                         artista.classList.add('m-0')
-                        artista.href = 'album.html?albumId=' + result[index].artist.id
+                        artista.href = 'artist.html?artistId=' + result[index].artist.id
                         artista.style.fontSize = ".8rem"
                         artista.innerHTML = result[index].artist.name
 
                         const album = document.createElement('a')
                         album.classList.add('p-0')
                         album.classList.add('m-0')
-                        album.href = 'artist.html?albumId=' + result[index].album.id
+                        album.href = 'album.html?albumId=' + result[index].album.id
                         album.style.fontSize = ".8rem"
                         album.innerHTML = result[index].album.title
 
