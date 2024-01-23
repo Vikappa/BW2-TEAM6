@@ -14,6 +14,10 @@ const updatePlayBar = function (trackObj) {
     document.getElementById('playBar').appendChild(audioPlayer(trackObj))
 }
 
+const showAmici = function () {
+
+}
+
 const start = function () {
     searchAlbum("Die Antwoord").then(arrayRitorno => {
         document.getElementById('titoloHeaderTrack').textContent = arrayRitorno[0].title
