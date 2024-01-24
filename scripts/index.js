@@ -13,6 +13,8 @@ const updatePlayBar = function (tracklist, trackIndex) {
     document.getElementById('playBar').appendChild(audioPlayer(tracklist, trackIndex))
 }
 
+export { updatePlayBar }
+
 const updateHero = function (tracklist, ntraccia) {
     document.getElementById('titoloHeaderTrack').textContent = tracklist[ntraccia].title
     if (document.getElementById('titoloHeaderTrack').innerHTML.length > 20) {

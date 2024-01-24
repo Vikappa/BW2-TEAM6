@@ -193,7 +193,7 @@ const audioPlayer = function (tracklist, index) {
             currentTrack.volume = this.value / 100
         })
         divControlli.appendChild(volumeControl)
-
+        volumeControl.value = 50
         mainDiv.appendChild(infoDiv)
         mainDiv.appendChild(buttonDiv)
         mainDiv.appendChild(divControlli)
@@ -204,9 +204,12 @@ const audioPlayer = function (tracklist, index) {
         const volumeControl = document.createElement('input')
         volumeControl.type = 'range'
         volumeControl.id = 'volumeControl'
+        volumeControl.value = 50
         volumeControl.addEventListener('input', function () {
             currentTrack.volume = this.value / 100
         })
+
+        currentTrack.volume = volumeControl.value
 
         mainDiv.appendChild(buttonPrevious)
         mainDiv.appendChild(buttonPlay)
