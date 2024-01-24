@@ -87,6 +87,24 @@ const start = function () {
   return mostRecurrentHex;
 };
 
+// FUNZIONE PER IL COLORE DEL TESTO DINAMICO
+
+const hexToRgb = function (hex) {
+  // Remove the hash if it exists
+  hex = hex.replace(/^#/, "");
+
+  // Parse the hex value
+  const bigint = parseInt(hex, 16);
+
+  // Extract the RGB components
+  const r = (bigint >> 16) & 255;
+  const g = (bigint >> 8) & 255;
+  const b = bigint & 255;
+
+  // Return the RGB values as an object
+  return { r: r, g: g, b: b };
+};
+
 // FETCH
 let album;
 catchAlbum(albumId)
@@ -105,23 +123,30 @@ catchAlbum(albumId)
       crossOrigin="anonymous"
     />
   </div>
-  <div class="col-10 d-flex flex-column justify-content-end">
-    <small class="d-none d-md-block text-white mb-2">ALBUM</small>
-    <h1 class="text-white">${album.title}</h1>
+  <div class="col-md-10 col-12 d-flex flex-column justify-content-end text-dinamic">
+    <small class="d-none d-md-block mb-2">ALBUM</small>
+    <h1>${album.title}</h1>
     <div class="text-white d-flex align-items-center">
-        <img
-        src=${album.artist.picture}
-        alt=${album.artist.name}
-        class="d-inline-block rounded-circle me-2"
-        style="width: 40px"
-        />
-      <p class="d-none d-md-inline-block m-0">
-      ${album.artist.name} · ${album.release_date.slice(0, 4)} · ${album.nb_tracks
-      } brani,
+        <a href="./artist.html?artistId=${album.artist.id}"> 
+          <img
+          src=${album.artist.picture}
+          alt=${album.artist.name}
+          class="d-inline-block rounded-circle me-2"
+          style="width: 40px"
+          />
+        </a>
+      <p class="d-none d-md-inline-block m-0 text-dinamic">
+      <a href="./artist.html?artistId=${album.artist.id
+      }" class="text-decoration-none text-dinamic">${album.artist.name
+      }</a> · ${album.release_date.slice(0, 4)} · ${album.nb_tracks} brani,
         <span class="text-secondary">${Math.floor(album.duration / 60)} min ${album.duration % 60
       } sec.</span>
+
       </p>
-      <p class="d-md-none m-0">${album.artist.name}</p>
+      <a href="./artist.html?artistId=${album.artist.id
+      }" class="d-md-none m-0 text-decoration-none text-dinamic">
+        <p class="m-0">${album.artist.name}</p>
+      </a>
     </div>
     <p class="text-secondary mt-2 mb-0 d-md-none">Album · ${album.release_date.slice(
         0,
@@ -200,7 +225,9 @@ catchAlbum(albumId)
           <div class="col-12 d-flex justify-content-between align-items-center mb-3">
               <div>
                   <p class="text-white mb-0">${element.title_short}</p>
-                  <p class="text-secondary mb-0">${element.artist.name}</p>
+                  <a href="./artist.html?artistId=${album.artist.id}" class="text-decoration-none">
+                    <p class="text-secondary mb-0">${element.artist.name}</p>
+                  </a>
               </div>
               <button class="btn btn-black text-secondary fs-3"><i class="bi bi-three-dots-vertical"></i></button>
           </div>`;
@@ -224,8 +251,28 @@ catchAlbum(albumId)
     linearArray.forEach((element) => {
       element.style.background = `linear-gradient(0deg, rgba(0,0,0,1) 0%, ${bgColor} 100%)`;
     });
-  }
-  )
+
+    const rgbValue = hexToRgb(bgColor);
+    console.log(rgbValue);
+
+    const textDinamic = Array.from(
+      document.getElementsByClassName("text-dinamic")
+    );
+
+    const textColorDinamic = function () {
+      if ((rgbValue.r + rgbValue.b + rgbValue.g) / 3 > 128) {
+        textDinamic.forEach((element) => {
+          element.classList.add("text-black");
+        });
+      } else {
+        textDinamic.forEach((element) => {
+          element.classList.add("text-white");
+        });
+      }
+    };
+
+    textColorDinamic();
+  })
 
   .catch((error) => {
     console.error("Si è verificato un errore nella casella di ricerca:", error);
