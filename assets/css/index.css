@@ -7,6 +7,10 @@
     line-height: 1.33;
 }
 
+body {
+    overflow-x: hidden;
+}
+
 .btn-circle {
     width: 30px;
     height: 30px;
@@ -53,8 +57,15 @@
 }
 
 .cardBuonasera {
-    width: 30% !important;
+    width: 47% !important;
 }
+
+@media screen and (min-width: 576px) {
+    .cardBuonasera {
+        width: 30% !important;
+    }
+}
+
 
 .cardBuonasera:hover {
     filter: brightness(150%);

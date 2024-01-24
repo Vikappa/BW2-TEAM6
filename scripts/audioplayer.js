@@ -186,12 +186,14 @@ const audioPlayer = function (tracklist, index) {
         buttonDiv.classList.add("col-4")
         buttonDiv.classList.add("d-flex")
         buttonDiv.classList.add("justify-content-center")
+
         buttonDiv.appendChild(buttonPrevious)
         buttonDiv.appendChild(buttonPlay)
         buttonDiv.appendChild(buttonNext)
 
         const infoDiv = document.createElement('div')
-        infoDiv.classList.add("d-flex")
+        infoDiv.classList.add("d-none")
+        infoDiv.classList.add("d-md-flex")
         infoDiv.classList.add("col-4")
         const infoImg = document.createElement('img')
         infoImg.classList.add('grow-1')
@@ -222,7 +224,8 @@ const audioPlayer = function (tracklist, index) {
 
         const divControlli = document.createElement('div')
         divControlli.classList.add('px-5')
-        divControlli.classList.add('d-flex')
+        divControlli.classList.add('d-none')
+        divControlli.classList.add('d-md-flex')
         divControlli.classList.add('col-4')
         divControlli.classList.add('justify-content-end')
         const volumeControl = document.createElement('input')
