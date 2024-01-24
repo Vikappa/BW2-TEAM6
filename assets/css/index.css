@@ -113,3 +113,43 @@
  
 
 
+#barraDestra {
+    width: 15%;
+}
+
+#barraDestra.closing {
+    animation: close;
+    transition: width 0.5s ease-in-out;
+    display: none;
+    animation: closing 0.5s forwards;
+}
+
+#imgHeroTrack {
+    display: none;
+}
+
+@media screen and (min-height: 576px) {
+    #imgHeroTrack {
+        display: inline;
+        width: 200px;
+        height: 200px;
+    }
+
+    #titoloHeaderTrack {
+        font-size: 2rem !important;
+    }
+}
+
+@media screen and (min-height: 768px) {
+
+    #titoloHeaderTrack {
+        font-size: 3rem !important;
+    }
+}
+
+@media screen and (min-height: 992px) {
+
+    #titoloHeaderTrack {
+        font-size: 4rem !important;
+    }
+}

@@ -1,5 +1,5 @@
 import { searchAlbum } from './searchAlbumQuery.js'
-
+import { updatePlayBar } from './index.js'
 const ripristino = function () {
     document.getElementById('inputRicerca').remove()
     document.getElementById('cercaLi').innerHTML = `<a class="nav-link " href="#" id="cercaAnchor">
@@ -14,6 +14,7 @@ const ripristino = function () {
         document.getElementById('cercaLi').appendChild(searchBar())
     })
 }
+
 
 const updateRisultatiRicerca = function () {
     let queryToSearch = document.getElementById('inputRicerca').value
@@ -69,7 +70,11 @@ const updateRisultatiRicerca = function () {
                         const titolo = document.createElement('a')
                         titolo.classList.add('p-0')
                         titolo.classList.add('m-0')
+                        titolo.href = "#"
                         titolo.style.fontSize = "1rem"
+                        titolo.addEventListener('click', function () {
+                            updatePlayBar(result, index)
+                        })
                         titolo.innerHTML = result[index].title
                         if (titolo.innerHTML.length > 15) {
                             titolo.innerHTML = titolo.innerHTML.substring(0, 12) + '...'
@@ -88,7 +93,6 @@ const updateRisultatiRicerca = function () {
                         album.href = 'album.html?albumId=' + result[index].album.id
                         album.style.fontSize = ".8rem"
                         album.innerHTML = result[index].album.title
-
                         divTitoli.appendChild(artista)
                         divTitoli.appendChild(titolo)
                         divTitoli.appendChild(album)
