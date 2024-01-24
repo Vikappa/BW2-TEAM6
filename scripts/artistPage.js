@@ -9,16 +9,12 @@ const albumId = addressBar.get("artistId")
 let currentArtist = {}
 
 const fillWithArtist = function (artista) {
-    document.getElementById('nomeArtista').innerText = artista.name
-    if (artista.radio === true) {
-        document.getElementById('verificato').innerText = "Artista Verificato"
-    } else {
-        document.getElementById('verificato').innerText = "Artista non verificato"
-    }
-    document.getElementById('artistPicture').src = artista.picture_xl
-    console.log(currentArtist)
-
+    document.getElementById('nomeArtista').innerText = artista.name;
+    document.getElementById('verificato').innerText = artista.radio ? "Artista Verificato" : "Artista non verificato";
+    document.getElementById('imgWrapper').style.backgroundImage = `url('${artista.picture_xl}')`;
+    console.log(currentArtist);
 }
+
 
 catchArtist(albumId)
     .then((data) => {
