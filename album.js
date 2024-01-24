@@ -5,6 +5,7 @@ const albumCover = document.getElementById("albumCover");
 const albumTracks = document.getElementById("albumTracks");
 const addressBar = new URLSearchParams(location.search);
 const albumId = addressBar.get("albumId");
+var bgColor;
 
 // IMAGE AVERAGE COLOR
 
@@ -83,8 +84,38 @@ const start = function () {
   let mostRecurrentHex = pad(mostRecurrent);
 
   // console.log del risultato
-  console.log(mostRecurrentHex);
-  return mostRecurrentHex;
+  bgColor = "#" + mostRecurrentHex;
+
+  const bgArray = Array.from(document.getElementsByClassName("bg-color"));
+  bgArray.forEach((element) => {
+    element.style.backgroundColor = bgColor;
+  });
+
+  const linearArray = Array.from(document.getElementsByClassName("bg-linear"));
+  linearArray.forEach((element) => {
+    element.style.background = `linear-gradient(0deg, rgba(0,0,0,1) 0%, ${bgColor} 100%)`;
+  });
+
+  const rgbValue = hexToRgb(bgColor);
+  console.log(rgbValue);
+
+  const textDinamic = Array.from(
+    document.getElementsByClassName("text-dinamic")
+  );
+
+  const textColorDinamic = function () {
+    if ((rgbValue.r + rgbValue.b + rgbValue.g) / 3 > 128) {
+      textDinamic.forEach((element) => {
+        element.classList.add("text-black");
+      });
+    } else {
+      textDinamic.forEach((element) => {
+        element.classList.add("text-white");
+      });
+    }
+  };
+
+  textColorDinamic();
 };
 
 // FUNZIONE PER IL COLORE DEL TESTO DINAMICO
@@ -109,7 +140,6 @@ const hexToRgb = function (hex) {
 let album;
 catchAlbum(albumId)
   .then((result) => {
-
     album = result;
     const newRow = document.createElement("div");
     newRow.classList.add("row");
@@ -136,30 +166,36 @@ catchAlbum(albumId)
           />
         </a>
       <p class="d-none d-md-inline-block m-0 text-dinamic">
-      <a href="./artist.html?artistId=${album.artist.id
-      }" class="text-decoration-none text-dinamic">${album.artist.name
-      }</a> · ${album.release_date.slice(0, 4)} · ${album.nb_tracks} brani,
-        <span class="text-secondary">${Math.floor(album.duration / 60)} min ${album.duration % 60
-      } sec.</span>
+      <a href="./artist.html?artistId=${
+        album.artist.id
+      }" class="text-decoration-none text-dinamic">${
+      album.artist.name
+    }</a> · ${album.release_date.slice(0, 4)} · ${album.nb_tracks} brani,
+        <span class="text-secondary">${Math.floor(album.duration / 60)} min ${
+      album.duration % 60
+    } sec.</span>
 
       </p>
-      <a href="./artist.html?artistId=${album.artist.id
+      <a href="./artist.html?artistId=${
+        album.artist.id
       }" class="d-md-none m-0 text-decoration-none text-dinamic">
         <p class="m-0">${album.artist.name}</p>
       </a>
     </div>
     <p class="text-secondary mt-2 mb-0 d-md-none">Album · ${album.release_date.slice(
-        0,
-        4
-      )}</p>
+      0,
+      4
+    )}</p>
   </div>`;
     albumCover.appendChild(newRow);
 
     for (let i = 0; i < album.tracks.length; i++) {
       const updateTrack = function (trackN) {
-        document.getElementById('playBar').innerHTML = ``
-        document.getElementById('playBar').appendChild(audioPlayer(album.tracks, trackN))
-      }
+        document.getElementById("playBar").innerHTML = ``;
+        document
+          .getElementById("playBar")
+          .appendChild(audioPlayer(album.tracks, trackN));
+      };
       const element = album.tracks[i];
       // POPOLAMENTO DINAMICO DELLE TRACCE DELL'ALBUM
       const newRowDesktop = document.createElement("div");
@@ -169,7 +205,13 @@ catchAlbum(albumId)
       col7.classList.add("col-7", "d-flex", "mb-3");
 
       const trackNumberP = document.createElement("p");
-      trackNumberP.classList.add("me-4", "mb-0", "text-secondary", "d-flex", "align-items-center");
+      trackNumberP.classList.add(
+        "me-4",
+        "mb-0",
+        "text-secondary",
+        "d-flex",
+        "align-items-center"
+      );
       trackNumberP.textContent = i + 1;
 
       const flexColumnDiv = document.createElement("div");
@@ -177,14 +219,19 @@ catchAlbum(albumId)
 
       const songTitleA = document.createElement("a");
       songTitleA.href = "#";
-      songTitleA.classList.add("text-white", "mb-1", "songtitle");
+      songTitleA.classList.add(
+        "text-white",
+        "mb-1",
+        "songtitle",
+        "text-decoration-none"
+      );
       songTitleA.textContent = element.title;
-      songTitleA.addEventListener('click', function (event) {
+      songTitleA.addEventListener("click", function (event) {
         event.preventDefault();
-        let audioElements = document.querySelector('#audioDin')
+        let audioElements = document.querySelector("#audioDin");
 
         //audioElements.pause()
-        console.log(audioElements)
+        console.log(audioElements);
         updateTrack(i);
       });
 
@@ -201,7 +248,13 @@ catchAlbum(albumId)
 
       // Aggiunta di ulteriori colonne in modo simile
       const col3 = document.createElement("div");
-      col3.classList.add("col-3", "d-flex", "align-items-center", "text-secondary", "mb-3");
+      col3.classList.add(
+        "col-3",
+        "d-flex",
+        "align-items-center",
+        "text-secondary",
+        "mb-3"
+      );
       const rankP = document.createElement("p");
       rankP.classList.add("mb-0");
       rankP.textContent = element.rank;
@@ -209,10 +262,20 @@ catchAlbum(albumId)
       newRowDesktop.appendChild(col3);
 
       const col2 = document.createElement("div");
-      col2.classList.add("col-2", "text-center", "d-flex", "align-items-center", "justify-content-center", "text-secondary", "mb-3");
+      col2.classList.add(
+        "col-2",
+        "text-center",
+        "d-flex",
+        "align-items-center",
+        "justify-content-center",
+        "text-secondary",
+        "mb-3"
+      );
       const durationP = document.createElement("p");
       durationP.classList.add("mb-0");
-      durationP.textContent = `${Math.floor(element.duration / 60)}:${element.duration % 60}`;
+      durationP.textContent = `${Math.floor(element.duration / 60)}:${
+        element.duration % 60
+      }`;
       col2.appendChild(durationP);
       newRowDesktop.appendChild(col2);
 
@@ -234,44 +297,12 @@ catchAlbum(albumId)
       albumTracks.appendChild(newRowMobile);
     }
 
-    document.getElementById('playBar').appendChild(audioPlayer(album.tracks, 0))
+    document
+      .getElementById("playBar")
+      .appendChild(audioPlayer(album.tracks, 0));
 
-
-    const bgColor = "#" + start();
-    console.log(bgColor);
-
-    const bgArray = Array.from(document.getElementsByClassName("bg-color"));
-    bgArray.forEach((element) => {
-      element.style.backgroundColor = bgColor;
-    });
-
-    const linearArray = Array.from(
-      document.getElementsByClassName("bg-linear")
-    );
-    linearArray.forEach((element) => {
-      element.style.background = `linear-gradient(0deg, rgba(0,0,0,1) 0%, ${bgColor} 100%)`;
-    });
-
-    const rgbValue = hexToRgb(bgColor);
-    console.log(rgbValue);
-
-    const textDinamic = Array.from(
-      document.getElementsByClassName("text-dinamic")
-    );
-
-    const textColorDinamic = function () {
-      if ((rgbValue.r + rgbValue.b + rgbValue.g) / 3 > 128) {
-        textDinamic.forEach((element) => {
-          element.classList.add("text-black");
-        });
-      } else {
-        textDinamic.forEach((element) => {
-          element.classList.add("text-white");
-        });
-      }
-    };
-
-    textColorDinamic();
+    const imageBg = document.getElementById("img");
+    imageBg.addEventListener("load", start);
   })
 
   .catch((error) => {
