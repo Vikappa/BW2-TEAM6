@@ -84,7 +84,7 @@ const updateHero = function (tracklist, ntraccia) {
 
     document.getElementById('heroContainer').innerHTML = ``
     document.getElementById('heroContainer').appendChild(heroAlbum)
-
+    document.getElementById('heroContainer').classList.add('w-100')
 }
 
 const isOnSpecificPage = function () {
@@ -117,6 +117,7 @@ const audioPlayer = function (tracklist, index) {
 
         buttonPlay.addEventListener('click', () => {
             if (currentTrack.paused) {
+                console.log("prova")
                 currentTrack.play()
                 buttonPlay.innerHTML = `<i class="bi bi-pause-circle-fill"></i>`
                 document.getElementById('heroPlay').innerHTML = "Pausa"
@@ -150,6 +151,7 @@ const audioPlayer = function (tracklist, index) {
             }
         })
     }
+
 
 
     currentTrack.addEventListener('ended', () => {
@@ -236,24 +238,51 @@ const audioPlayer = function (tracklist, index) {
         mainDiv.appendChild(divControlli)
     }
 
-    if (isOnSpecificPage() === 'album.html') {
-        mainDiv.classList.add("justify-content-center")
-        const volumeControl = document.createElement('input')
-        volumeControl.type = 'range'
-        volumeControl.id = 'volumeControl'
-        volumeControl.value = 50
 
-        volumeControl.addEventListener('input', function () {
-            currentTrack.volume = this.value / 100
-        })
 
-        currentTrack.volume = volumeControl.value
+    if (isOnSpecificPage() === "album.html") {
 
-        mainRow.appendChild(buttonPrevious)
-        mainRow.appendChild(buttonPlay)
-        mainRow.appendChild(buttonNext)
-        mainmainRowDiv.appendChild(volumeControl)
-        mainDiv.appendChild(mainRow)
+        let listaLinkCanzoni = document.querySelectorAll(".songtitle");
+
+        for (let traccia = 0; traccia < listaLinkCanzoni.length; traccia++) {
+            listaLinkCanzoni[traccia].classList.remove("text-primary");
+            listaLinkCanzoni[traccia].classList.add("text-white");
+        }
+        listaLinkCanzoni[index].classList.remove("text-white");
+        listaLinkCanzoni[index].classList.add("text-primary");
+
+        mainDiv.classList.remove("bg-tertiary", "align-items-center");
+        buttonPlay.classList.add(
+            "btn",
+            "btn-primary",
+            "rounded-circle",
+            "fs-3",
+            "mx-4",
+            "text-dinamic"
+        );
+        buttonPlay.innerHTML = `<i class="bi bi-caret-right-fill"></i>`;
+
+        buttonNext.classList.add(
+            "btn",
+            "btn-body",
+            "rounded-circle",
+            "fs-3",
+            "text-dinamic"
+        );
+        buttonNext.innerHTML = `<i class="bi bi-fast-forward-fill"></i>`;
+
+        buttonPrevious.classList.add(
+            "btn",
+            "btn-body",
+            "rounded-circle",
+            "fs-3",
+            "text-dinamic"
+        );
+        buttonPrevious.innerHTML = `<i class="bi bi-rewind-fill"></i>`;
+
+        mainDiv.appendChild(buttonPrevious)
+        mainDiv.appendChild(buttonPlay)
+        mainDiv.appendChild(buttonNext)
     }
 
     return mainDiv

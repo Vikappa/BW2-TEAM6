@@ -97,8 +97,6 @@ const start = function () {
   });
 
   const rgbValue = hexToRgb(bgColor);
-  console.log(rgbValue);
-
   const textDinamic = Array.from(
     document.getElementsByClassName("text-dinamic")
   );
@@ -166,26 +164,22 @@ catchAlbum(albumId)
           />
         </a>
       <p class="d-none d-md-inline-block m-0 text-dinamic">
-      <a href="./artist.html?artistId=${
-        album.artist.id
-      }" class="text-decoration-none text-dinamic">${
-      album.artist.name
-    }</a> · ${album.release_date.slice(0, 4)} · ${album.nb_tracks} brani,
-        <span class="text-secondary">${Math.floor(album.duration / 60)} min ${
-      album.duration % 60
-    } sec.</span>
+      <a href="./artist.html?artistId=${album.artist.id
+      }" class="text-decoration-none text-dinamic">${album.artist.name
+      }</a> · ${album.release_date.slice(0, 4)} · ${album.nb_tracks} brani,
+        <span class="text-secondary">${Math.floor(album.duration / 60)} min ${album.duration % 60
+      } sec.</span>
 
       </p>
-      <a href="./artist.html?artistId=${
-        album.artist.id
+      <a href="./artist.html?artistId=${album.artist.id
       }" class="d-md-none m-0 text-decoration-none text-dinamic">
         <p class="m-0">${album.artist.name}</p>
       </a>
     </div>
     <p class="text-secondary mt-2 mb-0 d-md-none">Album · ${album.release_date.slice(
-      0,
-      4
-    )}</p>
+        0,
+        4
+      )}</p>
   </div>`;
     albumCover.appendChild(newRow);
 
@@ -273,9 +267,8 @@ catchAlbum(albumId)
       );
       const durationP = document.createElement("p");
       durationP.classList.add("mb-0");
-      durationP.textContent = `${Math.floor(element.duration / 60)}:${
-        element.duration % 60
-      }`;
+      durationP.textContent = `${Math.floor(element.duration / 60)}:${element.duration % 60
+        }`;
       col2.appendChild(durationP);
       newRowDesktop.appendChild(col2);
 
