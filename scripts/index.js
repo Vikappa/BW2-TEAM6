@@ -8,14 +8,16 @@ document.getElementById('closeRightBar').addEventListener("click", function () {
     document.getElementById('barraDestra').classList.add("closing")
 })
 
-
 const updatePlayBar = function (tracklist, trackIndex) {
     document.getElementById('playBar').innerHTML = ``
-    document.getElementById('playBar').appendChild(audioPlayer(trackObj))
+    document.getElementById('playBar').appendChild(audioPlayer(tracklist, trackIndex))
 }
 
 const updateHero = function (tracklist, ntraccia) {
     document.getElementById('titoloHeaderTrack').textContent = tracklist[ntraccia].title
+    if (document.getElementById('titoloHeaderTrack').innerHTML.length > 20) {
+        document.getElementById('titoloHeaderTrack').innerHTML = document.getElementById('titoloHeaderTrack').innerHTML.substring(0, 20) + '...';
+    }
     document.getElementById('artistHeaderTrack').textContent = tracklist[ntraccia].artist.name
     document.getElementById('ascolta').textContent = tracklist[ntraccia].artist.name
     document.getElementById('recordType').textContent = tracklist[ntraccia].album.type
@@ -23,9 +25,9 @@ const updateHero = function (tracklist, ntraccia) {
 }
 
 const start = function () {
-    searchAlbum("Die Antwoord").then(arrayRitorno => {
+    searchAlbum("Salmo").then(arrayRitorno => {
         updateHero(arrayRitorno, 0)
-        // updatePlayBar(arrayRitorno[0])
+        updatePlayBar(arrayRitorno, 0)
         document.getElementById("cercaAnchor").addEventListener('click', () => {
             document.getElementById("cercaAnchor").remove()
             document.getElementById('cercaLi').appendChild(searchBar())
