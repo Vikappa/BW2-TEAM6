@@ -17,10 +17,12 @@ const updateHero = function (tracklist, ntraccia) {
   // Creazione del primo div e dell'immagine al suo interno
   let heroAlbum = document.createElement("div");
   heroAlbum.id = "heroAlbum";
+  heroAlbum.classList.add("d-flex");
 
   let imgHeroTrack = document.createElement("img");
   imgHeroTrack.id = "imgHeroTrack";
-  imgHeroTrack.src = tracklist[ntraccia].album.cover_medium;
+  imgHeroTrack.src = tracklist[ntraccia].album.cover_big;
+  imgHeroTrack.classList.add("grow-1");
   heroAlbum.appendChild(imgHeroTrack);
   let secondDiv = document.createElement("div");
   secondDiv.classList.add("d-flex");
@@ -43,7 +45,6 @@ const updateHero = function (tracklist, ntraccia) {
 
   let h1 = document.createElement("h1");
   h1.id = "titoloHeaderTrack";
-  h1.style.fontSize = "4.5rem";
   h1.textContent = tracklist[ntraccia].title;
   secondDiv.appendChild(h1);
 
@@ -111,14 +112,10 @@ const audioPlayer = function (tracklist, index) {
   mainDiv.classList.add("d-flex");
   mainDiv.classList.add("justify-content-center");
 
-  currentTrack.src = tracklist[index].preview;
-  currentTrack.id = "dinAudio";
-  const buttonPrevious = document.createElement("button");
-  buttonPrevious.innerHTML = `<i class="bi bi-rewind-circle-fill"></i>`;
-
-  const buttonPlay = document.createElement("button");
-  buttonPlay.id = "buttonPlay";
-  buttonPlay.innerHTML = `<i class="bi bi-play-circle-fill"></i>`;
+  const mainDiv = document.createElement("div");
+  mainDiv.classList.add("bg-tertiary");
+  mainDiv.classList.add("d-flex");
+  mainDiv.classList.add("align-items-center");
 
   const buttonNext = document.createElement("button");
   buttonNext.innerHTML = `<i class="bi bi-fast-forward-circle-fill"></i>`;
@@ -222,5 +219,52 @@ const audioPlayer = function (tracklist, index) {
 
   return mainDiv;
 };
+
+if (isOnSpecificPage() === "index.html") {
+  mainDiv.classList.add("justify-content-between");
+
+  const buttonDiv = document.createElement("div");
+  buttonDiv.appendChild(buttonPrevious);
+  buttonDiv.appendChild(buttonPlay);
+  buttonDiv.appendChild(buttonNext);
+
+  const infoDiv = document.createElement("div");
+  const infoImg = document.createElement("img");
+  infoImg.src = tracklist[index].album.cover_small;
+  infoDiv.appendChild(infoImg);
+
+  const divControlli = document.createElement("div");
+  const volumeControl = document.createElement("input");
+  volumeControl.type = "range";
+  volumeControl.id = "volumeControl";
+  volumeControl.addEventListener("input", function () {
+    currentTrack.volume = this.value / 100;
+  });
+  divControlli.appendChild(volumeControl);
+  volumeControl.value = 50;
+  mainDiv.appendChild(infoDiv);
+  mainDiv.appendChild(buttonDiv);
+  mainDiv.appendChild(divControlli);
+}
+
+if (isOnSpecificPage() === "album.html") {
+  mainDiv.classList.add("justify-content-center");
+  const volumeControl = document.createElement("input");
+  volumeControl.type = "range";
+  volumeControl.id = "volumeControl";
+  volumeControl.value = 50;
+  volumeControl.addEventListener("input", function () {
+    currentTrack.volume = this.value / 100;
+  });
+
+  currentTrack.volume = volumeControl.value;
+
+  mainDiv.appendChild(buttonPrevious);
+  mainDiv.appendChild(buttonPlay);
+  mainDiv.appendChild(buttonNext);
+  mainDiv.appendChild(volumeControl);
+}
+
+return mainDiv;
 
 export { audioPlayer };
