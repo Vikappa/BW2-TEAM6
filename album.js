@@ -5,6 +5,7 @@ const albumCover = document.getElementById("albumCover");
 const albumTracks = document.getElementById("albumTracks");
 const addressBar = new URLSearchParams(location.search);
 const albumId = addressBar.get("albumId");
+var bgColor;
 
 // IMAGE AVERAGE COLOR
 
@@ -83,8 +84,38 @@ const start = function () {
   let mostRecurrentHex = pad(mostRecurrent);
 
   // console.log del risultato
-  console.log(mostRecurrentHex);
-  return mostRecurrentHex;
+  bgColor = "#" + mostRecurrentHex;
+
+  const bgArray = Array.from(document.getElementsByClassName("bg-color"));
+  bgArray.forEach((element) => {
+    element.style.backgroundColor = bgColor;
+  });
+
+  const linearArray = Array.from(document.getElementsByClassName("bg-linear"));
+  linearArray.forEach((element) => {
+    element.style.background = `linear-gradient(0deg, rgba(0,0,0,1) 0%, ${bgColor} 100%)`;
+  });
+
+  const rgbValue = hexToRgb(bgColor);
+  console.log(rgbValue);
+
+  const textDinamic = Array.from(
+    document.getElementsByClassName("text-dinamic")
+  );
+
+  const textColorDinamic = function () {
+    if ((rgbValue.r + rgbValue.b + rgbValue.g) / 3 > 128) {
+      textDinamic.forEach((element) => {
+        element.classList.add("text-black");
+      });
+    } else {
+      textDinamic.forEach((element) => {
+        element.classList.add("text-white");
+      });
+    }
+  };
+
+  textColorDinamic();
 };
 
 // FUNZIONE PER IL COLORE DEL TESTO DINAMICO
@@ -270,41 +301,8 @@ catchAlbum(albumId)
       .getElementById("playBar")
       .appendChild(audioPlayer(album.tracks, 0));
 
-    const bgColor = "#" + start();
-    console.log(bgColor);
-
-    const bgArray = Array.from(document.getElementsByClassName("bg-color"));
-    bgArray.forEach((element) => {
-      element.style.backgroundColor = bgColor;
-    });
-
-    const linearArray = Array.from(
-      document.getElementsByClassName("bg-linear")
-    );
-    linearArray.forEach((element) => {
-      element.style.background = `linear-gradient(0deg, rgba(0,0,0,1) 0%, ${bgColor} 100%)`;
-    });
-
-    const rgbValue = hexToRgb(bgColor);
-    console.log(rgbValue);
-
-    const textDinamic = Array.from(
-      document.getElementsByClassName("text-dinamic")
-    );
-
-    const textColorDinamic = function () {
-      if ((rgbValue.r + rgbValue.b + rgbValue.g) / 3 > 128) {
-        textDinamic.forEach((element) => {
-          element.classList.add("text-black");
-        });
-      } else {
-        textDinamic.forEach((element) => {
-          element.classList.add("text-white");
-        });
-      }
-    };
-
-    textColorDinamic();
+    const imageBg = document.getElementById("img");
+    imageBg.addEventListener("load", start);
   })
 
   .catch((error) => {
