@@ -91,6 +91,7 @@ const start = function () {
 let album;
 catchAlbum(albumId)
   .then((result) => {
+
     album = result;
     const newRow = document.createElement("div");
     newRow.classList.add("row");
@@ -128,6 +129,7 @@ catchAlbum(albumId)
       )}</p>
   </div>`;
     albumCover.appendChild(newRow);
+
     for (let i = 0; i < album.tracks.length; i++) {
       const updateTrack = function (trackN) {
         document.getElementById('playBar').innerHTML = ``
@@ -152,9 +154,12 @@ catchAlbum(albumId)
       songTitleA.href = "#";
       songTitleA.classList.add("text-white", "mb-1", "songtitle");
       songTitleA.textContent = element.title;
-      // Aggiunta dell'event listener
       songTitleA.addEventListener('click', function (event) {
         event.preventDefault();
+        let audioElements = document.querySelector('#audioDin')
+
+        //audioElements.pause()
+        console.log(audioElements)
         updateTrack(i);
       });
 

@@ -50,8 +50,7 @@ const updateHero = function (tracklist, ntraccia) {
     secondDiv.appendChild(h5_2)
 
     let p = document.createElement("p")
-    console.log(tracklist[ntraccia].artist)
-    p.textContent = "Ascolto il nuovo " + tracklist[ntraccia].album.type + " di " + tracklist[ntraccia].artist.name
+    p.textContent = "Ascolta il nuovo " + tracklist[ntraccia].album.type + " di " + tracklist[ntraccia].artist.name
 
     secondDiv.appendChild(p)
 
@@ -101,7 +100,7 @@ const audioPlayer = function (tracklist, index) {
     mainDiv.classList.add("justify-content-center")
 
     currentTrack = new Audio(tracklist[index].preview)
-
+    currentTrack.id = "dinAudio"
     const buttonPrevious = document.createElement('button')
     buttonPrevious.innerHTML = `<i class="bi bi-rewind-circle-fill"></i>`
 

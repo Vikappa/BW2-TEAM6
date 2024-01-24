@@ -45,8 +45,7 @@ document.getElementById("Vincenzos").addEventListener('click', () => {
 
 
     searchAlbum("Mantra Bring Me The Horizon").then(arrayRitorno => {
-        updateHero(arrayRitorno, 0)
-        // updatePlayBar(arrayRitorno[0])
+        updatePlayBar(arrayRitorno, 0)
     }).catch(err => {
         console.error(err)
     })
@@ -54,8 +53,7 @@ document.getElementById("Vincenzos").addEventListener('click', () => {
 
 document.getElementById("Ermias").addEventListener('click', () => {
     searchAlbum("Kung fu fighting").then(arrayRitorno => {
-        updateHero(arrayRitorno, 0)
-        // updatePlayBar(arrayRitorno[0])
+        updatePlayBar(arrayRitorno, 0)
     }).catch(err => {
         console.error(err)
     })
@@ -63,7 +61,6 @@ document.getElementById("Ermias").addEventListener('click', () => {
 
 document.getElementById("Fabios").addEventListener('click', () => {
     searchAlbum("Californication Red Hot").then(arrayRitorno => {
-        updateHero(arrayRitorno, 0)
     }).catch(err => {
         console.error(err)
     })
@@ -71,8 +68,7 @@ document.getElementById("Fabios").addEventListener('click', () => {
 
 document.getElementById("Giuseppes").addEventListener('click', () => {
     searchAlbum("Highway hell ACDC").then(arrayRitorno => {
-        updateHero(arrayRitorno, 0)
-        // updatePlayBar(arrayRitorno[0])
+        updatePlayBar(arrayRitorno, 0)
     }).catch(err => {
         console.error(err)
     })
@@ -81,8 +77,7 @@ document.getElementById("Giuseppes").addEventListener('click', () => {
 
 document.getElementById("Francescos").addEventListener('click', () => {
     searchAlbum("Body parts Marracash").then(arrayRitorno => {
-        updateHero(arrayRitorno, 0)
-        // updatePlayBar(arrayRitorno[0])
+        updatePlayBar(arrayRitorno, 0)
     }).catch(err => {
         console.error(err)
     })
