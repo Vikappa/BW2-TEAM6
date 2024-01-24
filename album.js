@@ -128,28 +128,65 @@ catchAlbum(albumId)
       )}</p>
   </div>`;
     albumCover.appendChild(newRow);
-    console.log(album);
     for (let i = 0; i < album.tracks.length; i++) {
+      const updateTrack = function (trackN) {
+        document.getElementById('playBar').innerHTML = ``
+        document.getElementById('playBar').appendChild(audioPlayer(album.tracks, trackN))
+      }
       const element = album.tracks[i];
       // POPOLAMENTO DINAMICO DELLE TRACCE DELL'ALBUM
       const newRowDesktop = document.createElement("div");
       newRowDesktop.classList.add("row", "d-none", "d-md-flex");
-      newRowDesktop.innerHTML = `
-          <div class="col-7 d-flex mb-3">
-              <p class="me-4 mb-0 text-secondary d-flex align-items-center">${i + 1
-        }</p>
-              <div class="d-flex flex-column">
-                  <a class="text-white mb-1 songtitle">${element.title}</a>
-                  <p class="m-0 text-secondary">${element.artist.name}</p>
-              </div>
-          </div>
-          <div class="col-3 d-flex align-items-center text-secondary mb-3">
-              <p class="mb-0">${element.rank}</p>
-          </div>
-          <div class="col-2 text-center d-flex align-items-center justify-content-center text-secondary mb-3">
-              <p class="mb-0">${Math.floor(element.duration / 60)}:${element.duration % 60
-        }</p>
-          </div>`;
+
+      const col7 = document.createElement("div");
+      col7.classList.add("col-7", "d-flex", "mb-3");
+
+      const trackNumberP = document.createElement("p");
+      trackNumberP.classList.add("me-4", "mb-0", "text-secondary", "d-flex", "align-items-center");
+      trackNumberP.textContent = i + 1;
+
+      const flexColumnDiv = document.createElement("div");
+      flexColumnDiv.classList.add("d-flex", "flex-column");
+
+      const songTitleA = document.createElement("a");
+      songTitleA.href = "#";
+      songTitleA.classList.add("text-white", "mb-1", "songtitle");
+      songTitleA.textContent = element.title;
+      // Aggiunta dell'event listener
+      songTitleA.addEventListener('click', function (event) {
+        event.preventDefault();
+        updateTrack(i);
+      });
+
+      const artistP = document.createElement("p");
+      artistP.classList.add("m-0", "text-secondary");
+      artistP.textContent = element.artist.name;
+
+      // Costruzione della struttura
+      flexColumnDiv.appendChild(songTitleA);
+      flexColumnDiv.appendChild(artistP);
+      col7.appendChild(trackNumberP);
+      col7.appendChild(flexColumnDiv);
+      newRowDesktop.appendChild(col7);
+
+      // Aggiunta di ulteriori colonne in modo simile
+      const col3 = document.createElement("div");
+      col3.classList.add("col-3", "d-flex", "align-items-center", "text-secondary", "mb-3");
+      const rankP = document.createElement("p");
+      rankP.classList.add("mb-0");
+      rankP.textContent = element.rank;
+      col3.appendChild(rankP);
+      newRowDesktop.appendChild(col3);
+
+      const col2 = document.createElement("div");
+      col2.classList.add("col-2", "text-center", "d-flex", "align-items-center", "justify-content-center", "text-secondary", "mb-3");
+      const durationP = document.createElement("p");
+      durationP.classList.add("mb-0");
+      durationP.textContent = `${Math.floor(element.duration / 60)}:${element.duration % 60}`;
+      col2.appendChild(durationP);
+      newRowDesktop.appendChild(col2);
+
+      // Aggiunta della riga completa al contenitore
       albumTracks.appendChild(newRowDesktop);
 
       const newRowMobile = document.createElement("div");
