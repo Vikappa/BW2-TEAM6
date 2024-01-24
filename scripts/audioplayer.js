@@ -56,24 +56,24 @@ const updateHero = function (tracklist, ntraccia) {
     secondDiv.appendChild(p)
 
     let divButtons = document.createElement("div")
-    divButtons.setAttribute("class", "d-flex align-items-center gap-3 m-0 p-0 mx-5 my-3");
+    divButtons.setAttribute("class", "d-flex align-items-center gap-3 m-0 p-0 mx-5 my-3")
 
-    let heroPlay = document.createElement("button");
-    heroPlay.setAttribute("id", "heroPlay");
-    heroPlay.setAttribute("type", "button");
-    heroPlay.setAttribute("class", "btn rounded-pill fs-5 px-4 py-2 m-0 btn-primary");
-    heroPlay.textContent = "Play";
+    let heroPlay = document.createElement("button")
+    heroPlay.setAttribute("id", "heroPlay")
+    heroPlay.setAttribute("type", "button")
+    heroPlay.setAttribute("class", "btn rounded-pill fs-5 px-4 py-2 m-0 btn-primary")
+    heroPlay.textContent = "Play"
     heroPlay.addEventListener('click', function () {
-        document.getElementById('buttonPlay').click();
+        document.getElementById('buttonPlay').click()
     })
 
     divButtons.appendChild(heroPlay)
 
-    let buttonSave = document.createElement("button");
-    buttonSave.setAttribute("type", "button");
-    buttonSave.setAttribute("class", "btn rounded-pill fs-5 px-4 py-2 m-0 btn-outline-light text-white");
-    buttonSave.textContent = "Salva";
-    divButtons.appendChild(buttonSave);
+    let buttonSave = document.createElement("button")
+    buttonSave.setAttribute("type", "button")
+    buttonSave.setAttribute("class", "btn rounded-pill fs-5 px-4 py-2 m-0 btn-outline-light text-white")
+    buttonSave.textContent = "Salva"
+    divButtons.appendChild(buttonSave)
 
     let icon = document.createElement("i");
     icon.setAttribute("class", "bi bi-three-dots");
@@ -127,7 +127,6 @@ const audioPlayer = function (tracklist, index) {
                 document.getElementById('heroPlay').innerHTML = "Play"
             }
         })
-
     }
 
     if (isOnSpecificPage() === 'album.html') {
@@ -140,6 +139,16 @@ const audioPlayer = function (tracklist, index) {
         }
         listaLinkCanzoni[index].classList.remove('text-white')
         listaLinkCanzoni[index].classList.add('text-primary')
+
+        buttonPlay.addEventListener('click', () => {
+            if (currentTrack.paused) {
+                currentTrack.play()
+                buttonPlay.innerHTML = `<i class="bi bi-pause-circle-fill"></i>`
+            } else {
+                currentTrack.pause()
+                buttonPlay.innerHTML = `<i class="bi bi-play-circle-fill"></i>`
+            }
+        })
     }
 
 
