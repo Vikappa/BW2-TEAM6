@@ -297,10 +297,9 @@ catchAlbum(albumId)
       albumTracks.appendChild(newRowMobile);
     }
 
-    const playBarDiv = Array.from(document.getElementsByClassName("playBar"));
-    playBarDiv.forEach((element) => {
-      element.appendChild(audioPlayer(album.tracks, 0));
-    });
+    document
+      .getElementById("playBar")
+      .appendChild(audioPlayer(album.tracks, 0));
 
     const imageBg = document.getElementById("img");
     imageBg.addEventListener("load", start);
