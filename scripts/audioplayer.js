@@ -15,10 +15,12 @@ const updateHero = function (tracklist, ntraccia) {
     // Creazione del primo div e dell'immagine al suo interno
     let heroAlbum = document.createElement("div")
     heroAlbum.id = "heroAlbum"
+    heroAlbum.classList.add("d-flex")
 
     let imgHeroTrack = document.createElement("img")
     imgHeroTrack.id = "imgHeroTrack"
-    imgHeroTrack.src = tracklist[ntraccia].album.cover_medium
+    imgHeroTrack.src = tracklist[ntraccia].album.cover_big
+    imgHeroTrack.classList.add("grow-1")
     heroAlbum.appendChild(imgHeroTrack)
     let secondDiv = document.createElement("div")
     secondDiv.classList.add("d-flex")
@@ -41,7 +43,6 @@ const updateHero = function (tracklist, ntraccia) {
 
     let h1 = document.createElement("h1")
     h1.id = "titoloHeaderTrack"
-    h1.style.fontSize = "4.5rem"
     h1.textContent = tracklist[ntraccia].title
     secondDiv.appendChild(h1)
 
@@ -93,11 +94,10 @@ const isOnSpecificPage = function () {
 
 const audioPlayer = function (tracklist, index) {
 
-
     const mainDiv = document.createElement('div')
     mainDiv.classList.add("bg-tertiary")
     mainDiv.classList.add("d-flex")
-    mainDiv.classList.add("justify-content-center")
+    mainDiv.classList.add("align-items-center")
 
     currentTrack.src = tracklist[index].preview
     currentTrack.id = "dinAudio"
@@ -170,20 +170,49 @@ const audioPlayer = function (tracklist, index) {
         updatePlayBar(tracklist, index + 1)
     })
 
-    mainDiv.appendChild(buttonPrevious)
-    mainDiv.appendChild(buttonPlay)
-    mainDiv.appendChild(buttonNext)
 
-    const observer = new MutationObserver((mutations) => {
-        mutations.forEach((mutation) => {
-            if (!document.body.contains(mainDiv)) {
-                currentTrack.pause()
-                observer.disconnect()
-            }
+    if (isOnSpecificPage() === 'index.html') {
+        mainDiv.classList.add("justify-content-between")
+
+
+        const buttonDiv = document.createElement('div')
+        buttonDiv.appendChild(buttonPrevious)
+        buttonDiv.appendChild(buttonPlay)
+        buttonDiv.appendChild(buttonNext)
+
+        const infoDiv = document.createElement('div')
+        const infoImg = document.createElement('img')
+        infoImg.src = tracklist[index].album.cover_small
+        infoDiv.appendChild(infoImg)
+
+        const divControlli = document.createElement('div')
+        const volumeControl = document.createElement('input')
+        volumeControl.type = 'range'
+        volumeControl.id = 'volumeControl'
+        volumeControl.addEventListener('input', function () {
+            currentTrack.volume = this.value / 100
         })
-    })
+        divControlli.appendChild(volumeControl)
 
+        mainDiv.appendChild(infoDiv)
+        mainDiv.appendChild(buttonDiv)
+        mainDiv.appendChild(divControlli)
+    }
 
+    if (isOnSpecificPage() === 'album.html') {
+        mainDiv.classList.add("justify-content-center")
+        const volumeControl = document.createElement('input')
+        volumeControl.type = 'range'
+        volumeControl.id = 'volumeControl'
+        volumeControl.addEventListener('input', function () {
+            currentTrack.volume = this.value / 100
+        })
+
+        mainDiv.appendChild(buttonPrevious)
+        mainDiv.appendChild(buttonPlay)
+        mainDiv.appendChild(buttonNext)
+        mainDiv.appendChild(volumeControl)
+    }
 
     return mainDiv
 }
