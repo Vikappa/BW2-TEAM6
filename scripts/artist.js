@@ -15,7 +15,7 @@ artistNames.forEach(artist => {
     let artistId = params.get('id');
 
     // Fetch 
-    fetch(`https://striveschool-api.herokuapp.com/api/deezer/artist/412`)
+    fetch(`https://striveschool-api.herokuapp.com/api/deezer/artist/${artistId}`)
     .then((response) => {
         if (response.ok) {
             console.log(response);
