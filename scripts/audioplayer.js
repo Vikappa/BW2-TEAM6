@@ -136,6 +136,7 @@ const audioPlayer = function (tracklist, index) {
             listaLinkCanzoni[traccia].classList.remove('text-primary')
             listaLinkCanzoni[traccia].classList.add('text-white')
         }
+
         listaLinkCanzoni[index].classList.remove('text-white')
         listaLinkCanzoni[index].classList.add('text-primary')
 
@@ -172,7 +173,7 @@ const audioPlayer = function (tracklist, index) {
 
 
     if (isOnSpecificPage() === 'index.html') {
-        mainDiv.classList.add("justify-content-between")
+        mainDiv.classList.add("p-2")
 
 
         const buttonDiv = document.createElement('div')
@@ -181,11 +182,29 @@ const audioPlayer = function (tracklist, index) {
         buttonDiv.appendChild(buttonNext)
 
         const infoDiv = document.createElement('div')
+        infoDiv.classList.add("d-flex")
         const infoImg = document.createElement('img')
+        infoImg.classList.add('grow-1')
+        const divTitoli = document.createElement('div')
+        divTitoli.classList.add("text-white")
+        divTitoli.classList.add('d-flex')
+        divTitoli.classList.add('flex-column')
+        divTitoli.classList.add('position-relative')
+        const infoArtist = document.createElement('a')
+        infoArtist.innerText = tracklist[index].artist.name
+        const infoTrack = document.createElement('a')
+        infoTrack.innerText = tracklist[index].title
+        const infoAlbum = document.createElement('a')
+        infoAlbum.innerText = tracklist[index].album.title
+        divTitoli.appendChild(infoArtist)
+        divTitoli.appendChild(infoTrack)
+        divTitoli.appendChild(infoAlbum)
         infoImg.src = tracklist[index].album.cover_small
         infoDiv.appendChild(infoImg)
+        infoDiv.appendChild(divTitoli)
 
         const divControlli = document.createElement('div')
+        divControlli.classList.add('px-5')
         const volumeControl = document.createElement('input')
         volumeControl.type = 'range'
         volumeControl.id = 'volumeControl'
@@ -205,6 +224,7 @@ const audioPlayer = function (tracklist, index) {
         volumeControl.type = 'range'
         volumeControl.id = 'volumeControl'
         volumeControl.value = 50
+
         volumeControl.addEventListener('input', function () {
             currentTrack.volume = this.value / 100
         })
