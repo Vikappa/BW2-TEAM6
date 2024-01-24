@@ -1,4 +1,4 @@
-let currentTrack
+let currentTrack = new Audio()
 
 const updatePlayBar = function (tracklist, trackIndex) {
     if (trackIndex < 0) {
@@ -99,7 +99,7 @@ const audioPlayer = function (tracklist, index) {
     mainDiv.classList.add("d-flex")
     mainDiv.classList.add("justify-content-center")
 
-    currentTrack = new Audio(tracklist[index].preview)
+    currentTrack.src = tracklist[index].preview
     currentTrack.id = "dinAudio"
     const buttonPrevious = document.createElement('button')
     buttonPrevious.innerHTML = `<i class="bi bi-rewind-circle-fill"></i>`
