@@ -87,17 +87,46 @@
 }
 
 .smalltext {
-    font-size: 11px !important;
+    font-size: 10px !important;
 }
 
 .smalltitle {
-    font-size: 17px !important;
+    font-size: 14px !important;
 }
 
 .imgSearchBar {
     height: 60px !important;
     width: auto !important;
 }
+
+#pbox p {
+    font-size: 12px;
+   
+    
+}
+
+#pbox {
+    overflow-y: scroll;
+    max-height: 70%;
+}
+/* IMPOSTAZIONI SCROLLBAR */
+
+#pbox::-webkit-scrollbar {
+    width: 12px;
+    
+    
+}
+#pbox::-webkit-scrollbar-track {
+    background-color: #000000;
+    box-shadow: inset 0 0 5px rgb(0, 0, 0);
+    
+}
+#pbox::-webkit-scrollbar-thumb {
+    background-color: #6c6c6c;
+    
+    
+    }
+
 
 #barraDestra {
     width: 15%;
@@ -139,3 +168,4 @@
         font-size: 4rem !important;
     }
 }
+
