@@ -3,8 +3,7 @@ import { Artist } from './artistClass.js'
 import { Genre } from './genreClass.js'
 import { Track } from './tracksClass.js'
 const catchAlbum = function (queryAlbumID) {
-
-    fetch("https://striveschool-api.herokuapp.com/api/deezer/album/" + queryAlbumID, {
+    return fetch("https://striveschool-api.herokuapp.com/api/deezer/album/" + queryAlbumID, {
         headers: {}
     })
         .then((response) => {
@@ -15,8 +14,6 @@ const catchAlbum = function (queryAlbumID) {
             }
         })
         .then((data) => {
-            //console.log(data.contributors.length)
-
             let contributorsArray = []
 
             for (let indexContributors = 0; indexContributors < data.contributors.length; indexContributors++) {
@@ -40,7 +37,6 @@ const catchAlbum = function (queryAlbumID) {
 
             let arrayTracks = []
 
-            console.log(data.tracks.data[0])
 
             for (let indexTracks = 0; indexTracks < data.tracks.data.length; indexTracks++) {
                 let newTrack = new Track(
@@ -92,8 +88,7 @@ const catchAlbum = function (queryAlbumID) {
                 data.tracklist, // Link API Deezer tracklist
                 arrayTracks, // Array Track
                 data.upc // UPC
-            );
-            console.log(heroAlbumObj);
+            )
             return heroAlbumObj
         })
 

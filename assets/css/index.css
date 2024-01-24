@@ -47,8 +47,8 @@
 }
 
 .ridimensiona {
-    height: 70px;
-    width: 70px;
+    height: 35px;
+    width: 35px;
     border-radius: 100%;
 }
 
@@ -58,6 +58,11 @@
 
 .cardBuonasera:hover {
     filter: brightness(150%);
+}
+
+.liRicerca:hover {
+    filter: brightness(150%);
+    background-color: var(--bs-gray-700);
 }
 
 #albumCoverPlayerbar {
@@ -78,5 +83,30 @@
 
 .bi-pause-circle-fill {
     color: var(--bs-primary) !important;
+
+}
+
+.smalltext {
+    font-size: 11px !important;
+}
+
+.smalltitle {
+    font-size: 17px !important;
+}
+
+.imgSearchBar {
+    height: 60px !important;
+    width: auto !important;
+}
+
+#barraDestra {
+    width: 15%;
+}
+
+#barraDestra.closing {
+    animation: close;
+    transition: width 0.5s ease-in-out;
+    display: none;
+    animation: closing 0.5s forwards;
 
 }
