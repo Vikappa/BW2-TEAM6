@@ -87,14 +87,29 @@
 }
 
 .smalltext {
-    font-size: 11px !important;
+    font-size: 10px !important;
 }
 
 .smalltitle {
-    font-size: 17px !important;
+    font-size: 14px !important;
 }
 
 .imgSearchBar {
     height: 60px !important;
     width: auto !important;
 }
+
+#pbox p {
+    font-size: 12px;
+   
+    
+}
+
+#pbox {
+    overflow-y: scroll;
+    max-height: 70%;
+}
+
+ 
+
+
