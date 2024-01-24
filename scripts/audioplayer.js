@@ -30,12 +30,26 @@ const audioPlayer = function (tracklist, index) {
     mainDiv.classList.add("bg-tertiary")
     mainDiv.classList.add("d-flex")
     mainDiv.classList.add("justify-content-center")
+    const audioElement = new Audio(tracklist[index].preview)
 
     if (isOnSpecificPage() === 'index.html') {
         updateHero(tracklist, index)
     }
 
-    const audioElement = new Audio(tracklist[index].preview)
+    if (isOnSpecificPage() === 'album.html') {
+
+        let listaLinkCanzoni = document.querySelectorAll('.songtitle');
+
+        for (let traccia = 0; traccia < listaLinkCanzoni.length; traccia++) {
+            listaLinkCanzoni[traccia].classList.remove('text-primary')
+            listaLinkCanzoni[traccia].classList.add('text-white')
+        }
+
+        listaLinkCanzoni[index].classList.remove('text-white')
+        listaLinkCanzoni[index].classList.add('text-primary')
+
+    }
+
 
 
     const buttonPrevious = document.createElement('button')
@@ -44,6 +58,7 @@ const audioPlayer = function (tracklist, index) {
 
     const buttonPlay = document.createElement('button')
     buttonPlay.innerHTML = `<i class="bi bi-play-circle-fill"></i>`
+
 
     if (isOnSpecificPage() === 'index.html') {
 
@@ -64,11 +79,9 @@ const audioPlayer = function (tracklist, index) {
         if (audioElement.paused) {
             audioElement.play()
             buttonPlay.innerHTML = `<i class="bi bi-pause-circle-fill"></i>`
-            document.getElementById('heroPlay').innerHTML = "Pausa"
         } else {
             audioElement.pause()
             buttonPlay.innerHTML = `<i class="bi bi-play-circle-fill"></i>`
-            document.getElementById('heroPlay').innerHTML = "Play"
         }
     })
 
@@ -83,11 +96,13 @@ const audioPlayer = function (tracklist, index) {
 
     buttonPrevious.addEventListener('click', () => {
         audioElement.pause()
+        audioElement.remove()
         updatePlayBar(tracklist, index - 1)
     })
 
     buttonNext.addEventListener('click', () => {
         audioElement.pause()
+        audioElement.remove()
         updatePlayBar(tracklist, index + 1)
     })
 
@@ -104,7 +119,7 @@ const audioPlayer = function (tracklist, index) {
         })
     })
 
-    observer.observe(document.getElementById('playBar'), { childList: true })
+
 
     return mainDiv
 }

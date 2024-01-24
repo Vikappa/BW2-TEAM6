@@ -1,4 +1,5 @@
 import { catchAlbum } from "./scripts/fetchAlbumObg.js";
+import { audioPlayer } from "./scripts/audioplayer.js";
 
 const albumCover = document.getElementById("albumCover");
 const albumTracks = document.getElementById("albumTracks");
@@ -91,7 +92,6 @@ let album;
 catchAlbum(albumId)
   .then((result) => {
     album = result;
-
     const newRow = document.createElement("div");
     newRow.classList.add("row");
     newRow.innerHTML = `
@@ -139,7 +139,7 @@ catchAlbum(albumId)
               <p class="me-4 mb-0 text-secondary d-flex align-items-center">${i + 1
         }</p>
               <div class="d-flex flex-column">
-                  <p class="text-white mb-1">${element.title}</p>
+                  <a class="text-white mb-1 songtitle">${element.title}</a>
                   <p class="m-0 text-secondary">${element.artist.name}</p>
               </div>
           </div>
@@ -164,6 +164,10 @@ catchAlbum(albumId)
           </div>`;
       albumTracks.appendChild(newRowMobile);
     }
+
+    document.getElementById('playBar').appendChild(audioPlayer(album.tracks, 0))
+
+
     const bgColor = "#" + start();
     console.log(bgColor);
 
@@ -178,7 +182,8 @@ catchAlbum(albumId)
     linearArray.forEach((element) => {
       element.style.background = `linear-gradient(0deg, rgba(0,0,0,1) 0%, ${bgColor} 100%)`;
     });
-  })
+  }
+  )
 
   .catch((error) => {
     console.error("Si è verificato un errore nella casella di ricerca:", error);
