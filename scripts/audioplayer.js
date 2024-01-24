@@ -174,15 +174,23 @@ const audioPlayer = function (tracklist, index) {
 
     if (isOnSpecificPage() === 'index.html') {
         mainDiv.classList.add("p-2")
-
+        mainDiv.classList.add("container-fluid")
+        mainDiv.classList.add("mx-0")
+        mainDiv.classList.add("w-100")
+        const mainRow = document.createElement('div')
+        mainRow.classList.add('row')
 
         const buttonDiv = document.createElement('div')
+        buttonDiv.classList.add("col-4")
+        buttonDiv.classList.add("d-flex")
+        buttonDiv.classList.add("justify-content-center")
         buttonDiv.appendChild(buttonPrevious)
         buttonDiv.appendChild(buttonPlay)
         buttonDiv.appendChild(buttonNext)
 
         const infoDiv = document.createElement('div')
         infoDiv.classList.add("d-flex")
+        infoDiv.classList.add("col-4")
         const infoImg = document.createElement('img')
         infoImg.classList.add('grow-1')
         const divTitoli = document.createElement('div')
@@ -205,6 +213,9 @@ const audioPlayer = function (tracklist, index) {
 
         const divControlli = document.createElement('div')
         divControlli.classList.add('px-5')
+        divControlli.classList.add('d-flex')
+        divControlli.classList.add('col-4')
+        divControlli.classList.add('justify-content-end')
         const volumeControl = document.createElement('input')
         volumeControl.type = 'range'
         volumeControl.id = 'volumeControl'
@@ -231,10 +242,11 @@ const audioPlayer = function (tracklist, index) {
 
         currentTrack.volume = volumeControl.value
 
-        mainDiv.appendChild(buttonPrevious)
-        mainDiv.appendChild(buttonPlay)
-        mainDiv.appendChild(buttonNext)
-        mainDiv.appendChild(volumeControl)
+        mainRow.appendChild(buttonPrevious)
+        mainRow.appendChild(buttonPlay)
+        mainRow.appendChild(buttonNext)
+        mainmainRowDiv.appendChild(volumeControl)
+        mainDiv.appendChild(mainRow)
     }
 
     return mainDiv
