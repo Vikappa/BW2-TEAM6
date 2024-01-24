@@ -1,7 +1,7 @@
 let artistNames = document.querySelectorAll('.artist-name');
 
 artistNames.forEach(artist => {
-    artist.addEventListener('click', function(event) {
+    artist.addEventListener('click', function (event) {
         event.preventDefault();
 
         let artistId = this.dataset.id;
@@ -11,11 +11,11 @@ artistNames.forEach(artist => {
 });
 
 
-    let params = new URLSearchParams(window.location.search);
-    let artistId = params.get('id');
+let params = new URLSearchParams(window.location.search);
+let artistId = params.get('artistId');
 
-    // Fetch 
-    fetch(`https://striveschool-api.herokuapp.com/api/deezer/artist/412`)
+// Fetch 
+fetch(`https://striveschool-api.herokuapp.com/api/deezer/artist/${artistId}`)
     .then((response) => {
         if (response.ok) {
             console.log(response);
