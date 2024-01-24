@@ -193,16 +193,23 @@ const audioPlayer = function (tracklist, index) {
         infoDiv.classList.add("col-4")
         const infoImg = document.createElement('img')
         infoImg.classList.add('grow-1')
+        infoImg.style.objectFit = 'contain'
         const divTitoli = document.createElement('div')
         divTitoli.classList.add("text-white")
         divTitoli.classList.add('d-flex')
         divTitoli.classList.add('flex-column')
         divTitoli.classList.add('position-relative')
+        divTitoli.classList.add('ms-2')
         const infoArtist = document.createElement('a')
+        infoArtist.style.fontSize = ".8rem"
+        infoArtist.href = "./artist.html?artistId=" + tracklist[index].artist.id
         infoArtist.innerText = tracklist[index].artist.name
         const infoTrack = document.createElement('a')
         infoTrack.innerText = tracklist[index].title
+        infoTrack.href = "#"
         const infoAlbum = document.createElement('a')
+        infoAlbum.style.fontSize = ".8rem"
+        infoAlbum.href = "./album.html?albumId=" + tracklist[index].album.id
         infoAlbum.innerText = tracklist[index].album.title
         divTitoli.appendChild(infoArtist)
         divTitoli.appendChild(infoTrack)
