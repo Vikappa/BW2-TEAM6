@@ -13,6 +13,11 @@ const updatePlayBar = function (tracklist, trackIndex) {
     document.getElementById('playBar').appendChild(audioPlayer(tracklist, trackIndex))
 }
 
+const isOnSpecificPage = function () {
+    let pathname = window.location.pathname
+    return pathname.split("/").pop()
+}
+
 export { updatePlayBar }
 
 const updateHero = function (tracklist, ntraccia) {
@@ -27,16 +32,18 @@ const updateHero = function (tracklist, ntraccia) {
 }
 
 const start = function () {
-    searchAlbum("Salmo").then(arrayRitorno => {
-        updateHero(arrayRitorno, 0)
-        updatePlayBar(arrayRitorno, 0)
-        document.getElementById("cercaAnchor").addEventListener('click', () => {
-            document.getElementById("cercaAnchor").remove()
-            document.getElementById('cercaLi').appendChild(searchBar())
+    if (isOnSpecificPage() === "index.html") {
+        searchAlbum("Salmo").then(arrayRitorno => {
+            updateHero(arrayRitorno, 0)
+            updatePlayBar(arrayRitorno, 0)
+            document.getElementById("cercaAnchor").addEventListener('click', () => {
+                document.getElementById("cercaAnchor").remove()
+                document.getElementById('cercaLi').appendChild(searchBar())
+            })
+        }).catch(err => {
+            console.error(err)
         })
-    }).catch(err => {
-        console.error(err)
-    })
+    }
 
 }
 

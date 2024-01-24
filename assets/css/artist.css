@@ -1,4 +1,14 @@
-.background {
-  height: 44vh;
-  background-image: url(/assets/media/imgs/main/image-8.jpg);
+#artistPicture {
+  position: relative !important;
+  left: 0 !important;
+  top: 0 !important;
+  /* Assicura che l'immagine sia allineata in alto */
+  width: 100%;
+  max-width: 100% !important;
+  height: 50% !important;
+  /* Imposta l'altezza desiderata per l'immagine */
+  object-fit: cover !important;
+  object-position: center !important;
+  /* Centra l'immagine */
+  z-index: -1;
 }
