@@ -7,19 +7,26 @@ const albumId = addressBar.get("artistId");
 let currentArtist = {};
 
 const divSong = function (track, ntrack) {
+  console.log(track);
   const maindiv = document.createElement("div");
-  maindiv.classList.add("d-flex");
-  maindiv.classList.add("flex-column", "col");
-  document.getElementById("containerBrani").appendChild(maindiv);
-  let title = document.createElement("a");
-  title.classList.add("songtitle", "text-decoration-none");
-  title.innerText = track.title;
-  let album = document.createElement("a");
-  album.textContent = track.album.title;
-  album.href = "./album.html?albumId=" + track.album.id;
+  maindiv.innerHTML = `
+  <div class="row mb-3 d-flex  align-items-center"> 
+  <div class="col-7 d-flex align-items-center" >
+  <span class="sp-nt">${ntrack + 1}</span>
+  <img class="pe-4" src="${track.album.cover_small}"/>
+  <a class="songtitle text-decoration-none " href="#">${track.title}</a>
+  </div>
+  <div class="col-3">
+  <span class=" text-white">${track.rank}</span>
+  </div>
+  <div class="col-2">
+  <span></span>
+  </div>
 
-  maindiv.appendChild(title);
-  maindiv.appendChild(album);
+   </div>
+  
+  `;
+
   return maindiv;
 };
 
@@ -31,8 +38,6 @@ const fillWithSongs = function (tracklistArtista) {
   for (let index = 0; index < 10; index++) {
     let newDiv = divSong(tracklistArtista[index], index);
     document.getElementById("containerBrani").appendChild(newDiv);
-    console.log(newDiv)
-    console.log(document.getElementById("containerBrani"))
   }
 };
 
