@@ -1,4 +1,5 @@
 import { catchAlbum } from "./scripts/fetchAlbumObg.js";
+import { audioPlayer } from "./scripts/audioplayer.js";
 
 const albumCover = document.getElementById("albumCover");
 const albumTracks = document.getElementById("albumTracks");
@@ -86,12 +87,30 @@ const start = function () {
   return mostRecurrentHex;
 };
 
+// FUNZIONE PER IL COLORE DEL TESTO DINAMICO
+
+const hexToRgb = function (hex) {
+  // Remove the hash if it exists
+  hex = hex.replace(/^#/, "");
+
+  // Parse the hex value
+  const bigint = parseInt(hex, 16);
+
+  // Extract the RGB components
+  const r = (bigint >> 16) & 255;
+  const g = (bigint >> 8) & 255;
+  const b = bigint & 255;
+
+  // Return the RGB values as an object
+  return { r: r, g: g, b: b };
+};
+
 // FETCH
 let album;
 catchAlbum(albumId)
   .then((result) => {
-    album = result;
 
+    album = result;
     const newRow = document.createElement("div");
     newRow.classList.add("row");
     newRow.innerHTML = `
@@ -104,9 +123,9 @@ catchAlbum(albumId)
       crossOrigin="anonymous"
     />
   </div>
-  <div class="col-10 d-flex flex-column justify-content-end">
-    <small class="d-none d-md-block text-white mb-2">ALBUM</small>
-    <h1 class="text-white">${album.title}</h1>
+  <div class="col-md-10 col-12 d-flex flex-column justify-content-end text-dinamic">
+    <small class="d-none d-md-block mb-2">ALBUM</small>
+    <h1>${album.title}</h1>
     <div class="text-white d-flex align-items-center">
         <a href="./artist.html?artistId=${album.artist.id}"> 
           <img
@@ -116,57 +135,87 @@ catchAlbum(albumId)
           style="width: 40px"
           />
         </a>
-      <p class="d-none d-md-inline-block m-0">
-      <a href="./artist.html?artistId=${
-        album.artist.id
-      }" class="text-decoration-none text-white">${
-      album.artist.name
-    }</a> · ${album.release_date.slice(0, 4)} · ${album.nb_tracks} brani,
-        <span class="text-secondary">${Math.floor(album.duration / 60)} min ${
-      album.duration % 60
-    } sec.</span>
+      <p class="d-none d-md-inline-block m-0 text-dinamic">
+      <a href="./artist.html?artistId=${album.artist.id
+      }" class="text-decoration-none text-dinamic">${album.artist.name
+      }</a> · ${album.release_date.slice(0, 4)} · ${album.nb_tracks} brani,
+        <span class="text-secondary">${Math.floor(album.duration / 60)} min ${album.duration % 60
+      } sec.</span>
 
       </p>
-      <a href="./artist.html?artistId=${
-        album.artist.id
-      }" class="d-md-none m-0 text-decoration-none text-white">
+      <a href="./artist.html?artistId=${album.artist.id
+      }" class="d-md-none m-0 text-decoration-none text-dinamic">
         <p class="m-0">${album.artist.name}</p>
       </a>
     </div>
     <p class="text-secondary mt-2 mb-0 d-md-none">Album · ${album.release_date.slice(
-      0,
-      4
-    )}</p>
+        0,
+        4
+      )}</p>
   </div>`;
     albumCover.appendChild(newRow);
-    console.log(album);
+
     for (let i = 0; i < album.tracks.length; i++) {
+      const updateTrack = function (trackN) {
+        document.getElementById('playBar').innerHTML = ``
+        document.getElementById('playBar').appendChild(audioPlayer(album.tracks, trackN))
+      }
       const element = album.tracks[i];
       // POPOLAMENTO DINAMICO DELLE TRACCE DELL'ALBUM
       const newRowDesktop = document.createElement("div");
       newRowDesktop.classList.add("row", "d-none", "d-md-flex");
-      newRowDesktop.innerHTML = `
-          <div class="col-7 d-flex mb-3">
-              <p class="me-4 mb-0 text-secondary d-flex align-items-center">${
-                i + 1
-              }</p>
-              <div class="d-flex flex-column">
-                  <p class="text-white mb-1">${element.title}</p>
-                  <a href="./artist.html?artistId=${
-                    album.artist.id
-                  }" class="text-decoration-none">
-                    <p class="m-0 text-secondary">${element.artist.name}</p>
-                  </a>
-              </div>
-          </div>
-          <div class="col-3 d-flex align-items-center text-secondary mb-3">
-              <p class="mb-0">${element.rank}</p>
-          </div>
-          <div class="col-2 text-center d-flex align-items-center justify-content-center text-secondary mb-3">
-              <p class="mb-0">${Math.floor(element.duration / 60)}:${
-        element.duration % 60
-      }</p>
-          </div>`;
+
+      const col7 = document.createElement("div");
+      col7.classList.add("col-7", "d-flex", "mb-3");
+
+      const trackNumberP = document.createElement("p");
+      trackNumberP.classList.add("me-4", "mb-0", "text-secondary", "d-flex", "align-items-center");
+      trackNumberP.textContent = i + 1;
+
+      const flexColumnDiv = document.createElement("div");
+      flexColumnDiv.classList.add("d-flex", "flex-column");
+
+      const songTitleA = document.createElement("a");
+      songTitleA.href = "#";
+      songTitleA.classList.add("text-white", "mb-1", "songtitle");
+      songTitleA.textContent = element.title;
+      songTitleA.addEventListener('click', function (event) {
+        event.preventDefault();
+        let audioElements = document.querySelector('#audioDin')
+
+        console.log(audioElements)
+        updateTrack(i);
+      });
+
+      const artistP = document.createElement("p");
+      artistP.classList.add("m-0", "text-secondary");
+      artistP.textContent = element.artist.name;
+
+      // Costruzione della struttura
+      flexColumnDiv.appendChild(songTitleA);
+      flexColumnDiv.appendChild(artistP);
+      col7.appendChild(trackNumberP);
+      col7.appendChild(flexColumnDiv);
+      newRowDesktop.appendChild(col7);
+
+      // Aggiunta di ulteriori colonne in modo simile
+      const col3 = document.createElement("div");
+      col3.classList.add("col-3", "d-flex", "align-items-center", "text-secondary", "mb-3");
+      const rankP = document.createElement("p");
+      rankP.classList.add("mb-0");
+      rankP.textContent = element.rank;
+      col3.appendChild(rankP);
+      newRowDesktop.appendChild(col3);
+
+      const col2 = document.createElement("div");
+      col2.classList.add("col-2", "text-center", "d-flex", "align-items-center", "justify-content-center", "text-secondary", "mb-3");
+      const durationP = document.createElement("p");
+      durationP.classList.add("mb-0");
+      durationP.textContent = `${Math.floor(element.duration / 60)}:${element.duration % 60}`;
+      col2.appendChild(durationP);
+      newRowDesktop.appendChild(col2);
+
+      // Aggiunta della riga completa al contenitore
       albumTracks.appendChild(newRowDesktop);
 
       const newRowMobile = document.createElement("div");
@@ -183,6 +232,10 @@ catchAlbum(albumId)
           </div>`;
       albumTracks.appendChild(newRowMobile);
     }
+
+    document.getElementById('playBar').appendChild(audioPlayer(album.tracks, 0))
+
+
     const bgColor = "#" + start();
     console.log(bgColor);
 
@@ -197,6 +250,27 @@ catchAlbum(albumId)
     linearArray.forEach((element) => {
       element.style.background = `linear-gradient(0deg, rgba(0,0,0,1) 0%, ${bgColor} 100%)`;
     });
+
+    const rgbValue = hexToRgb(bgColor);
+    console.log(rgbValue);
+
+    const textDinamic = Array.from(
+      document.getElementsByClassName("text-dinamic")
+    );
+
+    const textColorDinamic = function () {
+      if ((rgbValue.r + rgbValue.b + rgbValue.g) / 3 > 128) {
+        textDinamic.forEach((element) => {
+          element.classList.add("text-black");
+        });
+      } else {
+        textDinamic.forEach((element) => {
+          element.classList.add("text-white");
+        });
+      }
+    };
+
+    textColorDinamic();
   })
 
   .catch((error) => {
