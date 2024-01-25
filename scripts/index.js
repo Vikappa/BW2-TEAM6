@@ -231,6 +231,9 @@ const ifAlreadyLogged = function () {
     Log In
   </li>
 </ul>`;
+    const logoutButton = document.getElementById("logoutButton");
+
+    logoutButton.addEventListener("click", logout);
   }
 };
 
