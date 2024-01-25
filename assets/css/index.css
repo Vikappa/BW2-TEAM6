@@ -26,6 +26,8 @@ body {
 
 }
 
+html {}
+
 .userBar {
     display: flex;
     justify-content: space-between;
@@ -58,9 +60,14 @@ body {
 
 .cardBuonasera {
     width: 47% !important;
+    min-height: 60px;
 }
 
-@media screen and (min-width: 576px) {
+.cardBuonasera img {
+    min-height: 60px;
+}
+
+@media screen and (min-width: 768px) {
     .cardBuonasera {
         width: 30% !important;
     }

@@ -43,7 +43,11 @@ const updateHero = function (tracklist, ntraccia) {
 
     let h1 = document.createElement("h1")
     h1.id = "titoloHeaderTrack"
-    h1.textContent = tracklist[ntraccia].title
+    let titolo = tracklist[ntraccia].title;
+    if (titolo.length > 30) {
+        titolo = titolo.substring(0, 30) + "...";
+    }
+    h1.textContent = titolo
     secondDiv.appendChild(h1)
 
     let h5_2 = document.createElement("h5")
