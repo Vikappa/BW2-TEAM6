@@ -6,6 +6,20 @@ import { artistPlaylistFetch } from "./artistPlaylistFetch.js";
 const addressBar = new URLSearchParams(location.search);
 const albumId = addressBar.get("artistId");
 let currentArtist = {};
+let currentTracklist = [];
+
+const updatePlayBar = function (tracklist, trackIndex) {
+  if (trackIndex < 0) {
+    trackIndex = tracklist.length - 1;
+  } else if (trackIndex >= tracklist.length) {
+    trackIndex = 0;
+  }
+
+  document.getElementById("playBar").innerHTML = ``;
+  document
+    .getElementById("playBar")
+    .appendChild(audioPlayer(tracklist, trackIndex));
+};
 
 const divSong = function (track, ntrack) {
   console.log(track);
@@ -43,6 +57,14 @@ const fillWithSongs = function (tracklistArtista) {
     let newDiv = divSong(tracklistArtista[index], index);
     document.getElementById("containerBrani").appendChild(newDiv);
   }
+  let listaAncore = document.querySelectorAll(".songtitle");
+  for (let x = 0; x < listaAncore.length; x++) {
+    let ancora = listaAncore[x];
+    ancora.addEventListener("click", function (event) {
+      updatePlayBar(currentTracklist, x);
+      event.preventDefault();
+    });
+  }
 };
 
 const fillWithArtist = function (artista) {
@@ -62,8 +84,9 @@ const fillWithArtist = function (artista) {
   console.log(artista.id);
   artistPlaylistFetch(artista.id)
     .then((artist) => {
-      fillWithSongs(artist);
-      let player = audioPlayer(artist, 0);
+      currentTracklist = artist;
+      fillWithSongs(currentTracklist);
+      let player = audioPlayer(currentTracklist, 0);
       document.getElementById("playBar").appendChild(player);
       currentTrack.play();
     })
