@@ -8,36 +8,42 @@ document.getElementById('closeRightBar').addEventListener("click", function () {
     document.getElementById('barraDestra').classList.add("closing")
 })
 
-
-const updatePlayBar = function (trackObj) {
+const updatePlayBar = function (tracklist, trackIndex) {
     document.getElementById('playBar').innerHTML = ``
-    document.getElementById('playBar').appendChild(audioPlayer(trackObj))
+    document.getElementById('playBar').appendChild(audioPlayer(tracklist, trackIndex))
 }
 
-const showAmici = function () {
+const isOnSpecificPage = function () {
+    let pathname = window.location.pathname
+    return pathname.split("/").pop()
+}
 
+export { updatePlayBar }
+
+const updateHero = function (tracklist, ntraccia) {
+    document.getElementById('titoloHeaderTrack').textContent = tracklist[ntraccia].title
+    if (document.getElementById('titoloHeaderTrack').innerHTML.length > 20) {
+        document.getElementById('titoloHeaderTrack').innerHTML = document.getElementById('titoloHeaderTrack').innerHTML.substring(0, 20) + '...';
+    }
+    document.getElementById('artistHeaderTrack').textContent = tracklist[ntraccia].artist.name
+    document.getElementById('ascolta').textContent = tracklist[ntraccia].artist.name
+    document.getElementById('recordType').textContent = tracklist[ntraccia].album.type
+    document.getElementById('imgHeroTrack').src = tracklist[ntraccia].album.cover_medium
 }
 
 const start = function () {
-    searchAlbum("Die Antwoord").then(arrayRitorno => {
-        document.getElementById('titoloHeaderTrack').textContent = arrayRitorno[0].title
-        document.getElementById('artistHeaderTrack').textContent = arrayRitorno[0].artist.name
-        document.getElementById('ascolta').textContent = arrayRitorno[0].artist.name
-        document.getElementById('recordType').textContent = arrayRitorno[0].album.type
-        document.getElementById('imgHeroTrack').src = arrayRitorno[0].album.cover_medium
-        updatePlayBar(arrayRitorno[0])
-
-
-        document.getElementById("cercaAnchor").addEventListener('click', () => {
-            document.getElementById("cercaAnchor").remove()
-            document.getElementById('cercaLi').appendChild(searchBar())
-            console.log()
+    if (isOnSpecificPage() === "index.html") {
+        searchAlbum("Salmo").then(arrayRitorno => {
+            updateHero(arrayRitorno, 0)
+            updatePlayBar(arrayRitorno, 0)
+            document.getElementById("cercaAnchor").addEventListener('click', () => {
+                document.getElementById("cercaAnchor").remove()
+                document.getElementById('cercaLi').appendChild(searchBar())
+            })
+        }).catch(err => {
+            console.error(err)
         })
-
-
-    }).catch(err => {
-        console.error(err)
-    })
+    }
 
 }
 
@@ -48,73 +54,30 @@ document.getElementById("Vincenzos").addEventListener('click', () => {
 
 
     searchAlbum("Mantra Bring Me The Horizon").then(arrayRitorno => {
-        document.getElementById('titoloHeaderTrack').textContent = arrayRitorno[0].title
-        document.getElementById('artistHeaderTrack').textContent = arrayRitorno[0].artist.name
-        document.getElementById('ascolta').textContent = arrayRitorno[0].artist.name
-        document.getElementById('recordType').textContent = arrayRitorno[0].album.type
-        document.getElementById('imgHeroTrack').src = arrayRitorno[0].album.cover_medium
-        updatePlayBar(arrayRitorno[0])
-
-
-
-
+        updatePlayBar(arrayRitorno, 0)
     }).catch(err => {
         console.error(err)
     })
 })
 
 document.getElementById("Ermias").addEventListener('click', () => {
-
-
     searchAlbum("Kung fu fighting").then(arrayRitorno => {
-        document.getElementById('titoloHeaderTrack').textContent = arrayRitorno[0].title
-        document.getElementById('artistHeaderTrack').textContent = arrayRitorno[0].artist.name
-        document.getElementById('ascolta').textContent = arrayRitorno[0].artist.name
-        document.getElementById('recordType').textContent = arrayRitorno[0].album.type
-        document.getElementById('imgHeroTrack').src = arrayRitorno[0].album.cover_medium
-        updatePlayBar(arrayRitorno[0])
-
-
-
-
+        updatePlayBar(arrayRitorno, 0)
     }).catch(err => {
         console.error(err)
     })
 })
 
 document.getElementById("Fabios").addEventListener('click', () => {
-
-
     searchAlbum("Californication Red Hot").then(arrayRitorno => {
-        document.getElementById('titoloHeaderTrack').textContent = arrayRitorno[0].title
-        document.getElementById('artistHeaderTrack').textContent = arrayRitorno[0].artist.name
-        document.getElementById('ascolta').textContent = arrayRitorno[0].artist.name
-        document.getElementById('recordType').textContent = arrayRitorno[0].album.type
-        document.getElementById('imgHeroTrack').src = arrayRitorno[0].album.cover_medium
-        updatePlayBar(arrayRitorno[0])
-
-
-
-
     }).catch(err => {
         console.error(err)
     })
 })
 
 document.getElementById("Giuseppes").addEventListener('click', () => {
-
-
     searchAlbum("Highway hell ACDC").then(arrayRitorno => {
-        document.getElementById('titoloHeaderTrack').textContent = arrayRitorno[0].title
-        document.getElementById('artistHeaderTrack').textContent = arrayRitorno[0].artist.name
-        document.getElementById('ascolta').textContent = arrayRitorno[0].artist.name
-        document.getElementById('recordType').textContent = arrayRitorno[0].album.type
-        document.getElementById('imgHeroTrack').src = arrayRitorno[0].album.cover_medium
-        updatePlayBar(arrayRitorno[0])
-
-
-
-
+        updatePlayBar(arrayRitorno, 0)
     }).catch(err => {
         console.error(err)
     })
@@ -122,19 +85,8 @@ document.getElementById("Giuseppes").addEventListener('click', () => {
 
 
 document.getElementById("Francescos").addEventListener('click', () => {
-
-
     searchAlbum("Body parts Marracash").then(arrayRitorno => {
-        document.getElementById('titoloHeaderTrack').textContent = arrayRitorno[0].title
-        document.getElementById('artistHeaderTrack').textContent = arrayRitorno[0].artist.name
-        document.getElementById('ascolta').textContent = arrayRitorno[0].artist.name
-        document.getElementById('recordType').textContent = arrayRitorno[0].album.type
-        document.getElementById('imgHeroTrack').src = arrayRitorno[0].album.cover_medium
-        updatePlayBar(arrayRitorno[0])
-
-
-
-
+        updatePlayBar(arrayRitorno, 0)
     }).catch(err => {
         console.error(err)
     })

@@ -1,174 +1,133 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="description" content="Breve descrizione della pagina" />
-    <meta name="keywords" content="keyword1, keyword2, keyword3" />
-    <meta name="author" content="Nome dell'autore" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- Open Graph tags per la condivisione sui social media -->
-    <meta property="og:title" content="Titolo della Pagina" />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://www.tuosito.it/pagina" />
-    <meta property="og:image" content="https://www.tuosito.it/immagine.jpg" />
-    <meta property="og:description" content="Breve descrizione della pagina" />
-    <meta property="og:site_name" content="Nome del Sito" />
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="Clone Spotify di Team-6 Build Week 2 Fs0723">
+  <meta name="keywords" content="Esercizio, Epicode, Spotify">
+  <meta name="author"
+    content="Ermias De Angeli, Francesco Sileoni, Giuseppe Riccardo Averna, Fabio Gilardi, Vincenzo Costantini ">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Twitter Card tags -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@nomeutenteTwitter" />
-    <meta name="twitter:title" content="Titolo della Pagina" />
-    <meta name="twitter:description" content="Breve descrizione della pagina" />
-    <meta name="twitter:image" content="https://www.tuosito.it/immagine.jpg" />
+  <!-- Open Graph tags per la condivisione sui social media -->
+  <meta property="og:title" content="Clonify" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://vikappa.github.io/BW2-TEAM6/" />
+  <meta property="og:image" content="https://raw.githubusercontent.com/Vikappa/BW2-TEAM6/main/assets/meta/share.png" />
+  <meta property="og:description" content="Clone Spotify di Team-6 Build Week 2 Fs0723" />
+  <meta property="og:site_name" content="Clonify" />
 
-    <!-- Canonical Link per evitare contenuto duplicato -->
-    <link rel="canonical" href="https://www.tuosito.it/pagina" />
+  <!-- Twitter Card tags -->
+  <meta name="twitter:card" content="https://raw.githubusercontent.com/Vikappa/BW2-TEAM6/main/assets/meta/share.png">
+  <meta name="twitter:site" content="@nomeutenteTwitter">
+  <meta name="twitter:title" content="Clonify">
+  <meta name="twitter:description" content="Clone Spotify di Team-6 Build Week 2 Fs0723">
+  <meta name="twitter:image" content="https://raw.githubusercontent.com/Vikappa/BW2-TEAM6/main/assets/meta/share.png">
 
-    <!-- Controllo della cache (opzionale) -->
-    <meta
-      http-equiv="Cache-Control"
-      content="no-cache, no-store, must-revalidate"
-    />
-    <meta http-equiv="Pragma" content="no-cache" />
-    <meta http-equiv="Expires" content="0" />
+  <!-- Canonical Link per evitare contenuto duplicato -->
+  <link rel="canonical" href="https://vikappa.github.io/BW2-TEAM6/">
 
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-    <link rel="stylesheet" href="./assets/scss/style.css" />
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/meta/favIcon.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="./assets/meta/favIcon.png">
+  <link rel="stylesheet" href="./assets/scss/style.css" />
 
-    <!-- STYLE -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
-    />
-    <link rel="stylesheet" href="./assets/css/index.css" />
+  <!-- STYLE -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <link rel="stylesheet" href="./assets/css/index.css" />
 
-    <!-- FONT -->
-    <link rel="stylesheet" href="./assets/css/circular-font.css" />
-    <title>Album Page</title>
-  </head>
+  <!-- FONT -->
+  <link rel="stylesheet" href="./assets/css/circular-font.css" />
+  <title>Album Page</title>
+</head>
 
-  <body style="font-family: circular">
-    <div class="barra-sinistra"></div>
+<body style="font-family: circular">
+  <div class="barra-sinistra"></div>
 
-    <main class="bg-black">
-      <div class="container pb-2 pb-md-4 pt-md-0">
-        <div class="row">
-          <!--Parte superiore frecce e utente-->
-          <div
-            class="col-md-12 d-none pt-2 pb-4 d-md-flex justify-content-between bg-color"
-          >
-            <div class="d-flex align-items-center">
-              <a
-                class="me-5 bg-dark text-light btn-circle px-2 py-1 d-flex align-items-center border-0"
-                href="./index.html"
-              >
-                <i class="bi bi-chevron-left"></i>
-              </a>
-              <button
-                class="bg-dark text-light btn-circle px-2 py-1 d-flex align-items-center opacity-75 border-0"
-              >
-                <i class="bi bi-chevron-right"></i>
-              </button>
-            </div>
-            <div class="dropdown">
-              <button
-                class="btn btn-dark rounded-pill dropdown-toggle bg-black border-0"
-                type="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                <i class="bi bi-person-circle"></i> User Profile
-              </button>
-              <ul class="dropdown-menu dropdown-menu-dark">
-                <li><a class="dropdown-item" href="#">Action</a></li>
-                <li><a class="dropdown-item" href="#">Another action</a></li>
-                <li>
-                  <a class="dropdown-item" href="#">Something else here</a>
-                </li>
-                <li>
-                  <hr class="dropdown-divider" />
-                </li>
-                <li><a class="dropdown-item" href="#">Separated link</a></li>
-              </ul>
-            </div>
-          </div>
-          <!-- Album e info dell'album -->
-          <div class="col-12 pb-md-0 py-2 bg-color" id="albumCover">
-            <div class="row"></div>
-          </div>
-          <!-- Sezione play e album interaction desktop -->
-          <div
-            class="col-12 d-none d-md-flex align-items-center py-5 bg-linear"
-          >
-            <button
-              class="bg-primary me-5 fs-2 text-black border-0 rounded-circle pt-1 px-2"
-            >
-              <i class="bi bi-caret-right-fill"></i>
+  <main class="bg-black">
+    <div class="container pb-2 pb-md-4 pt-md-0">
+      <div class="row">
+        <!--Parte superiore frecce e utente-->
+        <div class="col-md-12 d-none pt-2 pb-4 d-md-flex justify-content-between bg-color">
+          <div class="d-flex align-items-center">
+            <a class="me-5 bg-dark text-light btn-circle px-2 py-1 d-flex align-items-center border-0"
+              href="./index.html">
+              <i class="bi bi-chevron-left"></i>
+            </a>
+            <button class="bg-dark text-light btn-circle px-2 py-1 d-flex align-items-center opacity-75 border-0">
+              <i class="bi bi-chevron-right"></i>
             </button>
+          </div>
+          <div class="dropdown">
+            <button class="btn btn-dark rounded-pill dropdown-toggle bg-black border-0" type="button"
+              data-bs-toggle="dropdown" aria-expanded="false">
+              <i class="bi bi-person-circle"></i> User Profile
+            </button>
+            <ul class="dropdown-menu dropdown-menu-dark">
+              <li><a class="dropdown-item" href="#">Action</a></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li>
+                <a class="dropdown-item" href="#">Something else here</a>
+              </li>
+              <li>
+                <hr class="dropdown-divider" />
+              </li>
+              <li><a class="dropdown-item" href="#">Separated link</a></li>
+            </ul>
+          </div>
+        </div>
+        <!-- Album e info dell'album -->
+        <div class="col-12 pb-md-0 py-2 bg-color" id="albumCover">
+          <div class="row"></div>
+        </div>
+        <!-- Sezione play e album interaction desktop -->
+        <div class="col-12 d-none d-md-flex align-items-center py-5 bg-linear" id="playBar">
+        </div>
+        <!-- Sezione play e album interaction mobile  -->
+        <div class="col-12 d-md-none d-flex align-items-center justify-content-between py-3 bg-linear">
+          <div>
             <button class="text-white fs-3 btn btn-body border-0">
               <i class="bi bi-heart"></i>
             </button>
-            <button class="text-white fs-3 btn btn-body border-0 mx-4">
+            <button class="text-white fs-3 btn btn-body border-0 mx-3">
               <i class="bi bi-arrow-down-circle"></i>
             </button>
             <button class="text-white fs-3 btn btn-body border-0">
-              <i class="bi bi-three-dots"></i>
+              <i class="bi bi-three-dots-vertical"></i>
             </button>
           </div>
-          <!-- Sezione play e album interaction mobile  -->
-          <div
-            class="col-12 d-md-none d-flex align-items-center justify-content-between py-3 bg-linear"
-          >
-            <div>
-              <button class="text-white fs-3 btn btn-body border-0">
-                <i class="bi bi-heart"></i>
-              </button>
-              <button class="text-white fs-3 btn btn-body border-0 mx-3">
-                <i class="bi bi-arrow-down-circle"></i>
-              </button>
-              <button class="text-white fs-3 btn btn-body border-0">
-                <i class="bi bi-three-dots-vertical"></i>
-              </button>
-            </div>
-            <div>
-              <button class="text-white fs-3 btn btn-body border-0">
-                <i class="bi bi-shuffle"></i>
-              </button>
-              <button
-                class="bg-primary fs-2 text-white ms-3 border-0 rounded-circle pt-1 px-2"
-              >
-                <i class="bi bi-caret-right-fill"></i>
-              </button>
-            </div>
+          <div>
+            <button class="text-white fs-3 btn btn-body border-0">
+              <i class="bi bi-shuffle"></i>
+            </button>
+            <button class="bg-primary fs-2 text-white ms-3 border-0 rounded-circle pt-1 px-2">
+              <i class="bi bi-caret-right-fill"></i>
+            </button>
           </div>
-          <!-- Sezione tracce -->
-          <div class="col-12 pt-0 pt-md-3" id="albumTracks">
-            <div
-              class="row d-none d-md-flex border-bottom border-secondary mb-3"
-            >
-              <div class="col-7" id="trackName">
-                <p class="text-secondary"><span class="me-4">#</span>TITOLO</p>
-              </div>
-              <div class="col-3" id="trackReproductions">
-                <p class="text-secondary">RIPRODUZIONI</p>
-              </div>
-              <div class="col-2 text-center" id="trackDuration">
-                <i class="bi bi-clock text-secondary"></i>
-              </div>
+        </div>
+        <!-- Sezione tracce -->
+        <div class="col-12 pt-0 pt-md-3" id="albumTracks">
+          <div class="row d-none d-md-flex border-bottom border-secondary mb-3">
+            <div class="col-7" id="trackName">
+              <p class="text-secondary"><span class="me-4">#</span>TITOLO</p>
+            </div>
+            <div class="col-3" id="trackReproductions">
+              <p class="text-secondary">RIPRODUZIONI</p>
+            </div>
+            <div class="col-2 text-center" id="trackDuration">
+              <i class="bi bi-clock text-secondary"></i>
             </div>
           </div>
         </div>
       </div>
-    </main>
+    </div>
+  </main>
 
-    <div class="barra-destra"></div>
+  <div class="barra-destra"></div>
 
-    <script src="./scripts/bootstrap/bootstrap.bundle.min.js"></script>
-    <script type="module" src="./album.js"></script>
-    <script type="module" src="./scripts/fetchAlbumObg.js"></script>
-  </body>
+  <script src="./scripts/bootstrap/bootstrap.bundle.min.js"></script>
+  <script type="module" src="./album.js"></script>
+  <script type="module" src="./scripts/fetchAlbumObg.js"></script>
+</body>
+
 </html>
