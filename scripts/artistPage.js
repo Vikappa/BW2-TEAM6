@@ -7,7 +7,6 @@ const albumId = addressBar.get("artistId");
 let currentArtist = {};
 
 const divSong = function (track, ntrack) {
-  document.getElementById("containerBrani").innerHTML = ``;
   const maindiv = document.createElement("div");
   maindiv.classList.add("d-flex");
   maindiv.classList.add("flex-column", "col");
@@ -31,9 +30,9 @@ const fillWithSongs = function (tracklistArtista) {
   document.getElementById("containerBrani").appendChild(popolari);
   for (let index = 0; index < 10; index++) {
     let newDiv = divSong(tracklistArtista[index], index);
-    console.log(newDiv);
     document.getElementById("containerBrani").appendChild(newDiv);
-    console.log("appendo" + divSong(tracklistArtista[index], index));
+    console.log(newDiv)
+    console.log(document.getElementById("containerBrani"))
   }
 };
 
