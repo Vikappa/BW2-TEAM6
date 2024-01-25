@@ -302,6 +302,33 @@ catchAlbum(albumId)
 
     const imageBg = document.getElementById("img");
     imageBg.addEventListener("load", start);
+
+    // UTENTE NAVBAR DINAMICO
+
+    const dinamicUser = document.getElementById("dinamic-user");
+
+    const insertDinamicUser = function () {
+      if (localStorage.getItem("user")) {
+        const userData = JSON.parse(localStorage.getItem("user"));
+        dinamicUser.innerHTML = `
+      <button
+      class="btn btn-dark userButton text-white rounded-pill p-1 d-flex align-items-center gap-1"
+      type="button"
+      data-bs-toggle="dropdown"
+      aria-expanded="false"
+    >
+    <img
+    src=${userData.picToInsert}
+    class="rounded-circle"
+    height="30px"
+    width="30px"
+  />
+      ${userData.nameToInsert}
+    </button>`;
+      }
+    };
+
+    insertDinamicUser();
   })
 
   .catch((error) => {

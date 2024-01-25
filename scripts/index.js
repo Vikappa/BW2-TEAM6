@@ -117,6 +117,8 @@ const login = function (e) {
   console.log(e.target);
   const nameToInsert = e.target.innerText;
   const picToInsert = e.target.getElementsByTagName("img")[0].src;
+  const userObj = { nameToInsert, picToInsert };
+  localStorage.setItem("user", JSON.stringify(userObj));
   dinamicUser.innerHTML = `
   <button
   class="btn btn-dark userButton text-white dropdown-toggle rounded-pill p-1 d-flex align-items-center gap-1"
@@ -161,6 +163,7 @@ const login = function (e) {
 };
 
 const logout = function () {
+  localStorage.removeItem("user");
   dinamicUser.innerHTML = `
     <button
     class="btn btn-dark userButton text-white dropdown-toggle rounded-pill p-1 d-flex align-items-center gap-1"
@@ -187,6 +190,51 @@ const logout = function () {
     </li>
   </ul>`;
 };
+
+const ifAlreadyLogged = function () {
+  if (localStorage.getItem("user")) {
+    const userData = JSON.parse(localStorage.getItem("user"));
+    dinamicUser.innerHTML = `
+  <button
+  class="btn btn-dark userButton text-white dropdown-toggle rounded-pill p-1 d-flex align-items-center gap-1"
+  type="button"
+  data-bs-toggle="dropdown"
+  aria-expanded="false"
+>
+  <img
+    src=${userData.picToInsert}
+    class="rounded-circle"
+    height="30px"
+    width="30px"
+  />
+  ${userData.nameToInsert}
+</button>
+<ul class="dropdown-menu dropdown-menu-dark bg-dark">
+  <li><a class="dropdown-item text-white" href="#">Amici</a></li>
+  <li><a class="dropdown-item text-white" href="#">Playlist</a></li>
+  <li>
+    <a class="dropdown-item text-white" href="#"
+      >Something else here</a
+    >
+  </li>
+  <li
+    class="dropdown-item text-white border border-white rounded-pill w-50 m-auto"
+    id="logoutButton"
+  >
+    Logout
+  </li>
+  <li
+    class="dropdown-item text-white border border-white rounded-pill w-50 m-auto d-none"
+    data-bs-toggle="modal"
+    data-bs-target="#LogInModal"
+  >
+    Log In
+  </li>
+</ul>`;
+  }
+};
+
+ifAlreadyLogged();
 
 loginButtons.forEach((element) => {
   element.addEventListener("click", login);
