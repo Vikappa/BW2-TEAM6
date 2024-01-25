@@ -1,6 +1,7 @@
 import { catchArtist } from "./fetchArtistObg.js";
 import { searchAlbum } from "./searchAlbumQuery.js";
-import { audioPlayer } from "./audioplayer.js";
+import { audioPlayer, currentTrack } from "./audioplayer.js";
+import { artistPlaylistFetch } from "./artistPlaylistFetch.js";
 
 const addressBar = new URLSearchParams(location.search);
 const albumId = addressBar.get("artistId");
@@ -20,7 +21,10 @@ const divSong = function (track, ntrack) {
   <span class=" text-white">${track.rank}</span>
   </div>
   <div class="col-2">
-  <span></span>
+  <span class="text-white"> ${Math.floor(track.duration / 60)} min ${
+    track.duration % 60
+  }
+    </span>
   </div>
 
    </div>
@@ -53,14 +57,15 @@ const fillWithArtist = function (artista) {
   newImg.classList.add("rounded-circle");
   newImg.src = artista.picture_small;
   document.getElementById("imgSmall").appendChild(newImg);
-  document.getElementById("imgSmall");
-  console.log(artista);
+
   document.getElementById("artistImgSmall");
-  searchAlbum(artista.name)
+  console.log(artista.id);
+  artistPlaylistFetch(artista.id)
     .then((artist) => {
       fillWithSongs(artist);
       let player = audioPlayer(artist, 0);
       document.getElementById("playBar").appendChild(player);
+      currentTrack.play();
     })
     .catch((err) => {
       console.log(err);
