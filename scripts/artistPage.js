@@ -1,7 +1,3 @@
-import { Album } from './albumClass.js'
-import { Artist } from './artistClass.js'
-import { Genre } from './genreClass.js'
-import { Track } from './tracksClass.js'
 import { catchArtist } from './fetchArtistObg.js'
 import { searchAlbum } from './searchAlbumQuery.js'
 import { audioPlayer } from './audioplayer.js'
@@ -28,6 +24,9 @@ const divSong = function (track, ntrack) {
 
 const fillWithSongs = function (tracklistArtista) {
     document.getElementById('containerBrani').innerHTML = ``
+    const popolari = document.createElement('h2')
+    popolari.innerText = "Popolari:"
+    document.getElementById('containerBrani').appendChild(popolari)
     for (let index = 0; index < 10; index++) {
         document.getElementById('containerBrani').appendChild(divSong(tracklistArtista[index], index))
     }
@@ -37,6 +36,13 @@ const fillWithArtist = function (artista) {
     document.getElementById('nomeArtista').innerText = artista.name
     document.getElementById('verificato').innerText = artista.radio ? "Artista Verificato" : "Artista non verificato"
     document.getElementById('imgWrapper').style.backgroundImage = `url('${artista.picture_xl}')`
+    let newImg = document.createElement('img')
+    newImg.classList.add('rounded-circle')
+    newImg.src = artista.picture_small
+    document.getElementById('imgSmall').appendChild(newImg)
+    document.getElementById('imgSmall')
+    console.log(artista)
+    document.getElementById('artistImgSmall')
     searchAlbum(artista.name)
         .then((artist) => {
             fillWithSongs(artist)
