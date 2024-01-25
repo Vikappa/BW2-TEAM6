@@ -164,22 +164,26 @@ catchAlbum(albumId)
           />
         </a>
       <p class="d-none d-md-inline-block m-0 text-dinamic">
-      <a href="./artist.html?artistId=${album.artist.id
-      }" class="text-decoration-none text-dinamic">${album.artist.name
-      }</a> · ${album.release_date.slice(0, 4)} · ${album.nb_tracks} brani,
-        <span class="text-secondary">${Math.floor(album.duration / 60)} min ${album.duration % 60
-      } sec.</span>
+      <a href="./artist.html?artistId=${
+        album.artist.id
+      }" class="text-decoration-none text-dinamic">${
+      album.artist.name
+    }</a> · ${album.release_date.slice(0, 4)} · ${album.nb_tracks} brani,
+        <span class="text-secondary">${Math.floor(album.duration / 60)} min ${
+      album.duration % 60
+    } sec.</span>
 
       </p>
-      <a href="./artist.html?artistId=${album.artist.id
+      <a href="./artist.html?artistId=${
+        album.artist.id
       }" class="d-md-none m-0 text-decoration-none text-dinamic">
         <p class="m-0">${album.artist.name}</p>
       </a>
     </div>
     <p class="text-secondary mt-2 mb-0 d-md-none">Album · ${album.release_date.slice(
-        0,
-        4
-      )}</p>
+      0,
+      4
+    )}</p>
   </div>`;
     albumCover.appendChild(newRow);
 
@@ -267,8 +271,9 @@ catchAlbum(albumId)
       );
       const durationP = document.createElement("p");
       durationP.classList.add("mb-0");
-      durationP.textContent = `${Math.floor(element.duration / 60)}:${element.duration % 60
-        }`;
+      durationP.textContent = `${Math.floor(element.duration / 60)}:${
+        element.duration % 60
+      }`;
       col2.appendChild(durationP);
       newRowDesktop.appendChild(col2);
 
@@ -280,7 +285,7 @@ catchAlbum(albumId)
       newRowMobile.innerHTML = `
           <div class="col-12 d-flex justify-content-between align-items-center mb-3">
               <div>
-                  <p class="text-white mb-0">${element.title_short}</p>
+                  <p class="text-white mb-0 mobile-title">${element.title_short}</p>
                   <a href="./artist.html?artistId=${album.artist.id}" class="text-decoration-none">
                     <p class="text-secondary mb-0">${element.artist.name}</p>
                   </a>
@@ -290,12 +295,40 @@ catchAlbum(albumId)
       albumTracks.appendChild(newRowMobile);
     }
 
-    document
-      .getElementById("playBar")
-      .appendChild(audioPlayer(album.tracks, 0));
+    const playBarDivs = Array.from(document.getElementsByClassName("playBar"));
+    playBarDivs.forEach((element) => {
+      element.appendChild(audioPlayer(album.tracks, 0));
+    });
 
     const imageBg = document.getElementById("img");
     imageBg.addEventListener("load", start);
+
+    // UTENTE NAVBAR DINAMICO
+
+    const dinamicUser = document.getElementById("dinamic-user");
+
+    const insertDinamicUser = function () {
+      if (localStorage.getItem("user")) {
+        const userData = JSON.parse(localStorage.getItem("user"));
+        dinamicUser.innerHTML = `
+      <button
+      class="btn btn-dark userButton text-white rounded-pill p-1 d-flex align-items-center gap-1"
+      type="button"
+      data-bs-toggle="dropdown"
+      aria-expanded="false"
+    >
+    <img
+    src=${userData.picToInsert}
+    class="rounded-circle"
+    height="30px"
+    width="30px"
+  />
+      ${userData.nameToInsert}
+    </button>`;
+      }
+    };
+
+    insertDinamicUser();
   })
 
   .catch((error) => {

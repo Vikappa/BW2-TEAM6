@@ -156,10 +156,10 @@ const audioPlayer = function (tracklist, index) {
     buttonPlay.addEventListener("click", () => {
       if (currentTrack.paused) {
         currentTrack.play();
-        buttonPlay.innerHTML = `<i class="bi bi-pause-circle-fill"></i>`;
+        buttonPlay.innerHTML = `<i class="bi bi-pause-fill"></i>`;
       } else {
         currentTrack.pause();
-        buttonPlay.innerHTML = `<i class="bi bi-play-circle-fill"></i>`;
+        buttonPlay.innerHTML = `<i class="bi bi-caret-right-fill"></i>`;
       }
     });
   }
