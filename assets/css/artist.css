@@ -2,6 +2,7 @@
   width: 100%;
   max-width: 100% !important;
   max-width: 100% !important;
+  min-height: 400px !important;
   height: 40% !important;
   z-index: -1;
   background-repeat: no-repeat;
@@ -9,9 +10,22 @@
   background-position: center;
 }
 
+@media screen and (min-width: 576px) {
+  #imgWrapper {
+    width: 100%;
+    max-width: 100% !important;
+    max-width: 100% !important;
+    min-height: 40%;
+    height: 40% !important;
+    z-index: -1;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+}
+
 #artistPicture {
   position: relative !important;
   left: 0 !important;
   top: 0 !important;
-
 }
