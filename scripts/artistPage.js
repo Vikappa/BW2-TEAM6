@@ -10,9 +10,26 @@ const addressBar = new URLSearchParams(location.search)
 const albumId = addressBar.get("artistId")
 let currentArtist = {}
 
-const fillWithSongs = function (tracklistArtista) {
-    for (let index = 0; index < 10; index++) {
+const divSong = function (track, ntrack) {
+    const maindiv = document.createElement('div')
+    maindiv.classList.add('d-flex')
+    maindiv.classList.add('flex-column')
+    let title = document.createElement('a')
+    title.classList.add('songtitle')
+    title.innerText = track.title
+    let album = document.createElement('a')
+    album.textContent = track.album.title
+    album.href = "./album.html?albumId=" + track.album.id
 
+    maindiv.appendChild(title)
+    maindiv.appendChild(album)
+    return maindiv
+}
+
+const fillWithSongs = function (tracklistArtista) {
+    document.getElementById('containerBrani').innerHTML = ``
+    for (let index = 0; index < 10; index++) {
+        document.getElementById('containerBrani').appendChild(divSong(tracklistArtista[index], index))
     }
 }
 
@@ -22,11 +39,9 @@ const fillWithArtist = function (artista) {
     document.getElementById('imgWrapper').style.backgroundImage = `url('${artista.picture_xl}')`
     searchAlbum(artista.name)
         .then((artist) => {
-            console.log(artist)
             fillWithSongs(artist)
             let player = audioPlayer(artist, 0)
-            document.getElementById('containerPlayer').appendChild(player)
-            console.log(player)
+            document.getElementById('playBar').appendChild(player)
         })
         .catch((err) => {
             console.log(err)
