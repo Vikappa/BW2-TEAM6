@@ -243,4 +243,3 @@ loginButtons.forEach((element) => {
   element.addEventListener("click", login);
 });
 
-//// CARICO PLAYLIST DA FILE JSON 
