@@ -78,7 +78,6 @@ const fillBuonasera = function (arrayPlayList) {
     }
 }
 
-
 const fillAltro = function (arrayPlayList) {
     const shuffledPlaylistArray = shuffleArray([...arrayPlayList])
     for (let index = 0; index < shuffledPlaylistArray.length; index++) {

@@ -12,15 +12,17 @@ document.getElementById("closeRightBar").addEventListener("click", function () {
 });
 
 const updateUtente = function (userToSet) {
-  //sessionStorage.setItem("user", e.target.innerText.nameToInsert)
-  console.log(userToSet)
+  if (userToSet) {
+    console.log(userToSet)
+    sessionStorage.setItem("user", JSON.stringify(userToSet))
+  }
+  console.log(JSON.parse(sessionStorage.getItem('user')))
 }
 
 function showErrorModal(title, message) {
-  // Assicurati che il modale sia presente nel tuo HTML con gli ID specificati
   document.getElementById('errorModalTitle').textContent = title;
   document.getElementById('errorModalBody').textContent = message;
-  var errorModal = new bootstrap.Modal(document.getElementById('errorModal'));
+  let errorModal = new bootstrap.Modal(document.getElementById('errorModal'));
   errorModal.show();
 }
 
@@ -61,11 +63,14 @@ const addAccount = function () {
       for (let iUtente = 0; iUtente < listaBottoniUtenti.length; iUtente++) {
         const element = listaBottoniUtenti[iUtente]
         element.addEventListener('click', function (e) {
-          const nameToInsert = e.target.innerText;
+          let nameToInsert = e.target.innerText;
           updateUtente(nameToInsert)
-          const picToInsert = e.target.getElementsByTagName("img")[0].src
+          let picToInsert
+          if (e.target.getElementsByTagName("img")[0].src) {
+            picToInsert = e.target.getElementsByTagName("img")[0].src
+          }
           const userObj = { nameToInsert, picToInsert };
-          sessionStorage.setItem("user", JSON.stringify(userObj));
+          updateUtente()
           dinamicUser.innerHTML = `<button
           class="btn btn-dark userButton text-white dropdown-toggle rounded-pill p-1 d-flex align-items-center gap-1"
           type="button"
@@ -101,7 +106,7 @@ const addAccount = function () {
           >
             Log In
           </li>
-        </ul>`;
+        </ul>`
         })
       }
 
@@ -323,8 +328,8 @@ const ifAlreadyLogged = function () {
       const nameToInsert = e.target.innerText;
       updateUtente(nameToInsert)
       const picToInsert = e.target.getElementsByTagName("img")[0].src
-      const userObj = { nameToInsert, picToInsert };
-      sessionStorage.setItem("user", JSON.stringify(userObj));
+      const userObj = { nameToInsert, picToInsert }
+      updateUtente()
       dinamicUser.innerHTML = `<button
       class="btn btn-dark userButton text-white dropdown-toggle rounded-pill p-1 d-flex align-items-center gap-1"
       type="button"
