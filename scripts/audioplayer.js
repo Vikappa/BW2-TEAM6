@@ -169,7 +169,6 @@ const audioPlayer = function (tracklist, index) {
   }
 
   currentTrack.addEventListener("ended", () => {
-    console.log("end");
     buttonPlay.innerHTML = `<i class="bi bi-play-circle-fill"></i>`;
     if (isOnSpecificPage() === "index.html") {
       document.getElementById("heroPlay").innerHTML = "Play";
