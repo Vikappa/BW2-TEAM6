@@ -30,11 +30,11 @@ const divSong = function (track, ntrack) {
   <img class="pe-5  pe-md-4" src="${track.album.cover_small}"/>
   <a class="songtitle text-decoration-none " href="#">${track.title}</a>
   </div>
-  <div class="col-3 d-none d-md-block">
-  <span class=" text-white">${track.rank}</span>
+  <div class="col-3">
+  <span class=" text-secondary">${track.rank}</span>
   </div>
-  <div class="col-2 d-none d-md-block">
-  <span class="text-white"> ${Math.floor(track.duration / 60)} min ${
+  <div class="col-2">
+  <span class="text-secondary"> ${Math.floor(track.duration / 60)} min ${
     track.duration % 60
   }
     </span>
