@@ -31,10 +31,10 @@ const divSong = function (track, ntrack) {
   <a class="songtitle text-decoration-none " href="#">${track.title}</a>
   </div>
   <div class="col-3">
-  <span class=" text-white">${track.rank}</span>
+  <span class=" text-secondary">${track.rank}</span>
   </div>
   <div class="col-2">
-  <span class="text-white"> ${Math.floor(track.duration / 60)} min ${
+  <span class="text-secondary"> ${Math.floor(track.duration / 60)} min ${
     track.duration % 60
   }
     </span>
