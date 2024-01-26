@@ -21,6 +21,87 @@ const isOnSpecificPage = function () {
 };
 
 export { updatePlayBar };
+// LISTA UTENTI DIINAMICA
+
+const htmlListaUtentiDinamico = function () {
+  let stringaIniziale = `
+<button
+class="btn btn-dark userButton text-white rounded-pill p-1 d-flex align-items-center gap-1 loginButton"
+type="button" aria-expanded="false" data-bs-dismiss="modal">
+<img src="./assets/media/imgs/placeholder/IMG-Fabio.jpg" class="rounded-circle" height="30px"
+  width="30px" />
+Fabio Gilardi
+</button>
+<button
+class="btn btn-dark userButton text-white rounded-pill p-1 d-flex align-items-center gap-1 loginButton"
+type="button" aria-expanded="false" data-bs-dismiss="modal">
+<img src="./assets/media/imgs/placeholder/foto Giuseppe.jpg" class="rounded-circle" height="30px"
+  width="30px" />
+Giuseppe Averna
+</button>
+<button
+class="btn btn-dark userButton text-white rounded-pill p-1 d-flex align-items-center gap-1 loginButton"
+type="button" aria-expanded="false" data-bs-dismiss="modal">
+<img src="./assets/media/imgs/placeholder/img-francesco.jpeg" class="rounded-circle" height="30px"
+  width="30px" />
+Francesco Sileoni
+</button>
+<button
+class="btn btn-dark userButton text-white rounded-pill p-1 d-flex align-items-center gap-1 loginButton"
+type="button" aria-expanded="false" data-bs-dismiss="modal">
+<img src="./assets/media/imgs/placeholder/img-ermias.jpeg" class="rounded-circle" height="30px"
+  width="30px" />
+Ermias De Angeli
+</button>
+</div>`
+
+
+  let arrayUtenti = localStorage.getItem("_fs0723cfUserName_");
+
+  // Inizializza una variabile per memorizzare l'oggetto parsato
+  let parsedValue;
+
+  if (arrayUtenti) {
+    try {
+      // Prova a parsare il valore come JSON
+      parsedValue = JSON.parse(arrayUtenti)
+    } catch (e) {
+      // Gestisci eventuali errori di parsing
+      console.error("Errore nel parsing del JSON: ", key)
+    }
+  } else {
+    console.log("Chiave utenti non trovata")
+  }
+
+  //   <button
+  // class="btn btn-dark userButton text-white rounded-pill p-1 d-flex align-items-center gap-1 loginButton"
+  // type="button" aria-expanded="false" data-bs-dismiss="modal">
+  // <img src="./assets/media/imgs/placeholder/currentuser.jpg" class="rounded-circle" height="30px"
+  //   width="30px" />
+  // Vincenzo Costantini
+  // </button >
+
+  // Mostra l'oggetto parsato
+  console.log(parsedValue);
+
+  let stringaUtenteGettato = `<button
+class="btn btn-dark userButton text-white rounded-pill p-1 d-flex align-items-center gap-1 loginButton"
+type="button" aria-expanded="false" data-bs-dismiss="modal">
+<img src="./assets/media/imgs/placeholder/img-ermias.jpeg" class="rounded-circle" height="30px"
+  width="30px" />
+Ermias De Angeli
+</button>`
+
+  let stringaButtonAdd = `<button
+  class="btn btn-dark userButton text-white rounded-pill p-1 d-flex align-items-center gap-1 loginButton"
+  type="button" aria-expanded="false" data-bs-dismiss="modal">
+  <i class="bi bi-sign-intersection"></i>
+  Crea Utente
+</button>
+  </button>`
+
+  return stringaIniziale + stringaButtonAdd
+}
 
 const updateHero = function (tracklist, ntraccia) {
   document.getElementById("titoloHeaderTrack").textContent =
@@ -114,6 +195,7 @@ const dinamicUser = document.getElementById("dinamic-user");
 const loginButtons = Array.from(document.getElementsByClassName("loginButton"));
 
 const login = function (e) {
+  console.log(logi)
   console.log(e.target);
   const nameToInsert = e.target.innerText;
   const picToInsert = e.target.getElementsByTagName("img")[0].src;
@@ -157,8 +239,8 @@ const login = function (e) {
   </li>
 </ul>`;
 
-  const logoutButton = document.getElementById("logoutButton");
 
+  const logoutButton = document.getElementById("logoutButton");
   logoutButton.addEventListener("click", logout);
 };
 
@@ -172,7 +254,7 @@ const logout = function () {
     aria-expanded="false"
   >
   <i class="bi bi-person-circle"></i>
-    User Account
+    Accedi
   </button>
   <ul class="dropdown-menu dropdown-menu-dark bg-dark">
     <li
@@ -192,6 +274,8 @@ const logout = function () {
 };
 
 const ifAlreadyLogged = function () {
+  document.getElementById('wrapperUtentiModale').innerHTML = htmlListaUtentiDinamico()
+
   if (localStorage.getItem("user")) {
     const userData = JSON.parse(localStorage.getItem("user"));
     dinamicUser.innerHTML = `
