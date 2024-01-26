@@ -11,14 +11,18 @@ document.getElementById("closeRightBar").addEventListener("click", function () {
 
 });
 
-let loadedAccounts = JSON.parse(localStorage.getItem("_fs0723cfUserName_")) || [];
-if (!loadedAccounts) {
-  console.log("inizializzo array vuoto")
-  loadedAccounts = []
+function showErrorModal(title, message) {
+  // Assicurati che il modale sia presente nel tuo HTML con gli ID specificati
+  document.getElementById('errorModalTitle').textContent = title;
+  document.getElementById('errorModalBody').textContent = message;
+  var errorModal = new bootstrap.Modal(document.getElementById('errorModal'));
+  errorModal.show();
 }
-console.log(loadedAccounts)
 
-//ACCOUNTS 
+let loadedAccounts = JSON.parse(localStorage.getItem("_fs0723cfUserName_")) || [];
+
+//ACCOUNTS
+
 const addAccount = function () {
   let modaleRegistrazione = new bootstrap.Modal(document.getElementById('registerModal'));
   modaleRegistrazione.show()
@@ -32,8 +36,8 @@ const addAccount = function () {
     let esisteUtente = false
 
     for (let i = 0; i < loadedAccounts.length; i++) {
-      if (loadedAccounts[i].username === username) {
-        esisteUtente = true;
+      if (loadedAccounts[i].nome === username) {
+        esisteUtente = true
         break
       }
     }
