@@ -62,7 +62,6 @@ const divCardBuonasera = function (playlistItem) {
     wrapper.appendChild(innerDiv1)
     wrapper.appendChild(innerDiv2)
     wrapper.addEventListener('click', function () {
-        console.log(playlistItem)
         updatePlayBar(playlistItem.trackarray, 0)
     })
     return wrapper
