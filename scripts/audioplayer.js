@@ -120,14 +120,35 @@ const audioPlayer = function (tracklist, index) {
   currentTrack.src = tracklist[index].preview;
   currentTrack.id = "dinAudio";
   const buttonPrevious = document.createElement("button");
-  buttonPrevious.innerHTML = `<i class="bi bi-rewind-circle-fill"></i>`;
+  buttonPrevious.classList.add(
+    "btn",
+    "btn-body",
+    "rounded-circle",
+    "fs-6",
+    "text-white"
+  );
+  buttonPrevious.innerHTML = `<i class="bi bi-rewind-fill"></i>`;
 
   const buttonPlay = document.createElement("button");
-  buttonPlay.id = "buttonPlay";
-  buttonPlay.innerHTML = `<i class="bi bi-play-circle-fill"></i>`;
+  buttonPlay.classList.add(
+    "btn",
+    "btn-primary",
+    "rounded-circle",
+    "fs-6",
+    "mx-2",
+    "text-black"
+  );
+  buttonPlay.innerHTML = `<i class="bi bi-caret-right-fill"></i>`;
 
   const buttonNext = document.createElement("button");
-  buttonNext.innerHTML = `<i class="bi bi-fast-forward-circle-fill"></i>`;
+  buttonNext.classList.add(
+    "btn",
+    "btn-body",
+    "rounded-circle",
+    "fs-6",
+    "text-white"
+  );
+  buttonNext.innerHTML = `<i class="bi bi-fast-forward-fill"></i>`;
 
   if (isOnSpecificPage() === "index.html") {
     updateHero(tracklist, index);
@@ -136,11 +157,11 @@ const audioPlayer = function (tracklist, index) {
       if (currentTrack.paused) {
         console.log("prova");
         currentTrack.play();
-        buttonPlay.innerHTML = `<i class="bi bi-pause-circle-fill"></i>`;
+        buttonPlay.innerHTML = `<i class="bi bi-pause-fill"></i>`;
         document.getElementById("heroPlay").innerHTML = "Pausa";
       } else {
         currentTrack.pause();
-        buttonPlay.innerHTML = `<i class="bi bi-play-circle-fill"></i>`;
+        buttonPlay.innerHTML = `<i class="bi bi-caret-right-fill"></i>`;
         document.getElementById("heroPlay").innerHTML = "Play";
       }
     });
