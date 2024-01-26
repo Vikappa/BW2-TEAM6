@@ -11,6 +11,11 @@ document.getElementById("closeRightBar").addEventListener("click", function () {
 
 });
 
+const updateUtente = function (userToSet) {
+  //sessionStorage.setItem("user", e.target.innerText.nameToInsert)
+  console.log(userToSet)
+}
+
 function showErrorModal(title, message) {
   // Assicurati che il modale sia presente nel tuo HTML con gli ID specificati
   document.getElementById('errorModalTitle').textContent = title;
@@ -44,10 +49,8 @@ const addAccount = function () {
 
     if (!esisteUtente) {
       let nuovoUtente = new User(username, imgSrc);
-      console.log(loadedAccounts)
-      console.log(nuovoUtente)
+
       loadedAccounts.push(nuovoUtente);
-      console.log(loadedAccounts)
 
       localStorage.setItem("_fs0723cfUserName_", JSON.stringify(loadedAccounts))
       modaleRegistrazione.hide();
@@ -58,8 +61,8 @@ const addAccount = function () {
       for (let iUtente = 0; iUtente < listaBottoniUtenti.length; iUtente++) {
         const element = listaBottoniUtenti[iUtente]
         element.addEventListener('click', function (e) {
-
           const nameToInsert = e.target.innerText;
+          updateUtente(nameToInsert)
           const picToInsert = e.target.getElementsByTagName("img")[0].src
           const userObj = { nameToInsert, picToInsert };
           sessionStorage.setItem("user", JSON.stringify(userObj));
@@ -109,8 +112,6 @@ const addAccount = function () {
 
   })
 }
-
-
 
 
 const updatePlayBar = function (tracklist, trackIndex) {
@@ -319,8 +320,8 @@ const ifAlreadyLogged = function () {
   for (let iUtente = 0; iUtente < listaBottoniUtenti.length; iUtente++) {
     const element = listaBottoniUtenti[iUtente]
     element.addEventListener('click', function (e) {
-
       const nameToInsert = e.target.innerText;
+      updateUtente(nameToInsert)
       const picToInsert = e.target.getElementsByTagName("img")[0].src
       const userObj = { nameToInsert, picToInsert };
       sessionStorage.setItem("user", JSON.stringify(userObj));
