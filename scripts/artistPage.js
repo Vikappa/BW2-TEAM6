@@ -68,6 +68,7 @@ const fillWithSongs = function (tracklistArtista) {
 };
 
 const fillWithArtist = function (artista) {
+  document.getElementById("ascoltatoriMensili").innerText= artista.nb_fan + " ascoltatori mensili"
   document.getElementById("nomeArtista").innerText = artista.name;
   document.getElementById("verificato").innerHTML = artista.radio
     ? ` <i class="bi bi-patch-check-fill text-info"></i> Artista Verificato`
