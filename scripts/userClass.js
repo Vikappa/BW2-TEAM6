@@ -1,5 +1,5 @@
 class User {
-    constructor(nome, img, arrayArtisti = [], arrayPiaciute = [], arrayUltimeRicerche = [], arrayUltimiAlbum = []) {
+    constructor(nome, img, arrayArtisti = [], arrayPiaciute = [], arrayUltimeRicerche = [], arrayUltimiAlbum = [], arrayPlaylist = []) {
         this.nome = nome
         this.img = img
         if (!img) {
@@ -9,6 +9,7 @@ class User {
         this.arrayPiaciute = arrayPiaciute
         this.arrayUltimeRicerche = arrayUltimeRicerche
         this.arrayUltimiAlbum = arrayUltimiAlbum
+        this.arrayPiaciute = arrayPiaciute
     }
 }
 
