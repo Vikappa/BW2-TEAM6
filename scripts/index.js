@@ -12,15 +12,18 @@ document.getElementById("closeRightBar").addEventListener("click", function () {
 });
 
 const updateUtente = function (userToSet) {
-  //sessionStorage.setItem("user", e.target.innerText.nameToInsert)
-  console.log(userToSet)
-}
+  if (userToSet) {
+    sessionStorage.setItem("user", JSON.stringify(userToSet))
+  }
+
+
+
+}//
 
 function showErrorModal(title, message) {
-  // Assicurati che il modale sia presente nel tuo HTML con gli ID specificati
   document.getElementById('errorModalTitle').textContent = title;
   document.getElementById('errorModalBody').textContent = message;
-  var errorModal = new bootstrap.Modal(document.getElementById('errorModal'));
+  let errorModal = new bootstrap.Modal(document.getElementById('errorModal'));
   errorModal.show();
 }
 
@@ -31,6 +34,10 @@ let loadedAccounts = JSON.parse(localStorage.getItem("_fs0723cfUserName_")) || [
 const addAccount = function () {
   let modaleRegistrazione = new bootstrap.Modal(document.getElementById('registerModal'));
   modaleRegistrazione.show()
+
+
+  let logoutButton = document.getElementById("logoutButton");
+  logoutButton.addEventListener("click", logout);
 
   document.getElementById('addUserForm').addEventListener('submit', function (event) {
     event.preventDefault()
@@ -61,11 +68,13 @@ const addAccount = function () {
       for (let iUtente = 0; iUtente < listaBottoniUtenti.length; iUtente++) {
         const element = listaBottoniUtenti[iUtente]
         element.addEventListener('click', function (e) {
-          const nameToInsert = e.target.innerText;
+          let nameToInsert = e.target.innerText;
           updateUtente(nameToInsert)
-          const picToInsert = e.target.getElementsByTagName("img")[0].src
+          let picToInsert
+          if (e.target.getElementsByTagName("img")[0].src) {
+            picToInsert = e.target.getElementsByTagName("img")[0].src
+          }
           const userObj = { nameToInsert, picToInsert };
-          sessionStorage.setItem("user", JSON.stringify(userObj));
           dinamicUser.innerHTML = `<button
           class="btn btn-dark userButton text-white dropdown-toggle rounded-pill p-1 d-flex align-items-center gap-1"
           type="button"
@@ -101,13 +110,20 @@ const addAccount = function () {
           >
             Log In
           </li>
-        </ul>`;
-        })
+        </ul>`
+        }
+
+        )
+
+
+        let logoutButton = document.getElementById("logoutButton");
+
+
+        logoutButton.addEventListener("click", logout);
       }
 
     } else {
       showErrorModal("Errore", "Un utente con questo nome esiste già.")
-
     }
 
   })
@@ -128,9 +144,11 @@ const isOnSpecificPage = function () {
 };
 
 
-// LISTA UTENTI DIINAMICA
-
+// LISTA UTENTI DINAMICA
+sessionStorage.clear()
 const htmlListaUtentiDinamico = function () {
+
+
   let stringaIniziale = `
 <button
 class="btn btn-dark userButton text-white rounded-pill p-1 d-flex align-items-center gap-1 loginButton"
@@ -179,8 +197,6 @@ Ermias De Angeli
     }
   }
 
-
-
   let stringaButtonAdd = `<button id = "addAccount" onclick="addAccount"
   class="btn btn-dark text-white rounded-pill p-1 d-flex align-items-center gap-1 loginButton"
   type="button" aria-expanded="false" data-bs-dismiss="modal">
@@ -189,6 +205,12 @@ Ermias De Angeli
 </button>
   </button>`
 
+  let logout = function () {
+
+  }
+
+  let logoutButton = document.getElementById("logoutButton");
+  logoutButton.addEventListener("click", logout);
   return stringaIniziale + stringaUtenteGettato + stringaButtonAdd
 }
 
@@ -311,6 +333,8 @@ const logout = function () {
       Log In
     </li>
   </ul>`;
+  let logoutButton = document.getElementById("logoutButton");
+  logoutButton.addEventListener("click", logout);
 };
 
 const ifAlreadyLogged = function () {
@@ -323,8 +347,7 @@ const ifAlreadyLogged = function () {
       const nameToInsert = e.target.innerText;
       updateUtente(nameToInsert)
       const picToInsert = e.target.getElementsByTagName("img")[0].src
-      const userObj = { nameToInsert, picToInsert };
-      sessionStorage.setItem("user", JSON.stringify(userObj));
+      const userObj = { nameToInsert, picToInsert }
       dinamicUser.innerHTML = `<button
       class="btn btn-dark userButton text-white dropdown-toggle rounded-pill p-1 d-flex align-items-center gap-1"
       type="button"
@@ -363,9 +386,7 @@ const ifAlreadyLogged = function () {
     </ul>`;
 
 
-      const logoutButton = document.getElementById("logoutButton");
-
-
+      let logoutButton = document.getElementById("logoutButton");
       logoutButton.addEventListener("click", logout);
     })
 
@@ -402,7 +423,7 @@ const ifAlreadyLogged = function () {
     id="logoutButton"
   >
     Logout
-  </li>
+</li>
   <li
     class="dropdown-item text-white border border-white rounded-pill w-50 m-auto d-none"
     data-bs-toggle="modal"
@@ -411,7 +432,7 @@ const ifAlreadyLogged = function () {
     Log In
   </li>
 </ul>`;
-    const logoutButton = document.getElementById("logoutButton");
+    let logoutButton = document.getElementById("logoutButton");
 
     logoutButton.addEventListener("click", logout);
   }
