@@ -2,11 +2,119 @@
 import { audioPlayer } from "./audioplayer.js";
 import { searchAlbum } from "./searchAlbumQuery.js";
 import { searchBar } from "./searchBar.js";
+import { User } from './userClass.js'
+
 
 // UTILITY
 document.getElementById("closeRightBar").addEventListener("click", function () {
   document.getElementById("barraDestra").classList.add("closing");
+
 });
+
+let loadedAccounts = JSON.parse(localStorage.getItem("_fs0723cfUserName_")) || [];
+if (!loadedAccounts) {
+  console.log("inizializzo array vuoto")
+  loadedAccounts = []
+}
+console.log(loadedAccounts)
+
+//ACCOUNTS 
+const addAccount = function () {
+  let modaleRegistrazione = new bootstrap.Modal(document.getElementById('registerModal'));
+  modaleRegistrazione.show()
+
+  document.getElementById('addUserForm').addEventListener('submit', function (event) {
+    event.preventDefault()
+
+    let username = document.getElementById('newUsername').value
+    let imgSrc = document.getElementById('newUserImg').value
+
+    let esisteUtente = false
+
+    for (let i = 0; i < loadedAccounts.length; i++) {
+      if (loadedAccounts[i].username === username) {
+        esisteUtente = true;
+        break
+      }
+    }
+
+    if (!esisteUtente) {
+      let nuovoUtente = new User(username, imgSrc);
+      console.log(loadedAccounts)
+      console.log(nuovoUtente)
+      loadedAccounts.push(nuovoUtente);
+      console.log(loadedAccounts)
+
+      localStorage.setItem("_fs0723cfUserName_", JSON.stringify(loadedAccounts))
+      modaleRegistrazione.hide();
+      document.getElementById('wrapperUtentiModale').innerHTML = ''
+      document.getElementById('wrapperUtentiModale').innerHTML = htmlListaUtentiDinamico()
+      document.getElementById('addAccount').addEventListener('click', addAccount)
+      let listaBottoniUtenti = document.querySelectorAll('.userButton')
+      for (let iUtente = 0; iUtente < listaBottoniUtenti.length; iUtente++) {
+        const element = listaBottoniUtenti[iUtente]
+        element.addEventListener('click', function (e) {
+
+          const nameToInsert = e.target.innerText;
+          const picToInsert = e.target.getElementsByTagName("img")[0].src
+          const userObj = { nameToInsert, picToInsert };
+          sessionStorage.setItem("user", JSON.stringify(userObj));
+          dinamicUser.innerHTML = `<button
+          class="btn btn-dark userButton text-white dropdown-toggle rounded-pill p-1 d-flex align-items-center gap-1"
+          type="button"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+        >
+          <img
+            src=${picToInsert}
+            class="rounded-circle"
+            height="30px"
+            width="30px"
+          />
+          ${nameToInsert}
+        </button>
+        <ul class="dropdown-menu dropdown-menu-dark bg-dark">
+          <li><a class="dropdown-item text-white" href="#">Amici</a></li>
+          <li><a class="dropdown-item text-white" href="#">Playlist</a></li>
+          <li>
+            <a class="dropdown-item text-white" href="#"
+              >Something else here</a
+            >
+          </li>
+          <li
+            class="dropdown-item text-white border border-white rounded-pill w-50 m-auto"
+            id="logoutButton"
+          >
+            Logout
+          </li>
+          <li
+            class="dropdown-item text-white border border-white rounded-pill w-50 m-auto d-none"
+            data-bs-toggle="modal"
+            data-bs-target="#LogInModal"
+          >
+            Log In
+          </li>
+        </ul>`;
+
+
+          const logoutButton = document.getElementById("logoutButton");
+
+
+          logoutButton.addEventListener("click", logout);
+
+        })
+      }
+
+    } else {
+      showErrorModal("Errore", "Un utente con questo nome esiste già.")
+
+    }
+
+  })
+}
+
+
+
 
 const updatePlayBar = function (tracklist, trackIndex) {
   document.getElementById("playBar").innerHTML = ``;
@@ -14,13 +122,14 @@ const updatePlayBar = function (tracklist, trackIndex) {
     .getElementById("playBar")
     .appendChild(audioPlayer(tracklist, trackIndex));
 };
+export { updatePlayBar }
 
 const isOnSpecificPage = function () {
   let pathname = window.location.pathname;
   return pathname.split("/").pop();
 };
 
-export { updatePlayBar };
+
 // LISTA UTENTI DIINAMICA
 
 const htmlListaUtentiDinamico = function () {
@@ -56,51 +165,33 @@ Ermias De Angeli
 </div>`
 
 
-  let arrayUtenti = localStorage.getItem("_fs0723cfUserName_");
+  let stringaUtenteGettato = ``
 
-  // Inizializza una variabile per memorizzare l'oggetto parsato
-  let parsedValue;
-
-  if (arrayUtenti) {
-    try {
-      // Prova a parsare il valore come JSON
-      parsedValue = JSON.parse(arrayUtenti)
-    } catch (e) {
-      // Gestisci eventuali errori di parsing
-      console.error("Errore nel parsing del JSON: ", key)
+  let usersArray = JSON.parse(localStorage.getItem("_fs0723cfUserName_"))
+  if (usersArray) {
+    for (let ggg = 0; ggg < usersArray.length; ggg++) {
+      stringaUtenteGettato = stringaUtenteGettato +
+        `<button "
+  class="btn btn-dark userButton text-white rounded-pill p-1 d-flex align-items-center gap-1 loginButton"
+  type="button" aria-expanded="false" data-bs-dismiss="modal">
+  <img src="${usersArray[ggg].img}" class="rounded-circle" height="30px"
+    width="30px" />
+  ${usersArray[ggg].nome}
+  </button>`
     }
-  } else {
-    console.log("Chiave utenti non trovata")
   }
 
-  //   <button
-  // class="btn btn-dark userButton text-white rounded-pill p-1 d-flex align-items-center gap-1 loginButton"
-  // type="button" aria-expanded="false" data-bs-dismiss="modal">
-  // <img src="./assets/media/imgs/placeholder/currentuser.jpg" class="rounded-circle" height="30px"
-  //   width="30px" />
-  // Vincenzo Costantini
-  // </button >
 
-  // Mostra l'oggetto parsato
-  console.log(parsedValue);
 
-  let stringaUtenteGettato = `<button
-class="btn btn-dark userButton text-white rounded-pill p-1 d-flex align-items-center gap-1 loginButton"
-type="button" aria-expanded="false" data-bs-dismiss="modal">
-<img src="./assets/media/imgs/placeholder/img-ermias.jpeg" class="rounded-circle" height="30px"
-  width="30px" />
-Ermias De Angeli
-</button>`
-
-  let stringaButtonAdd = `<button
-  class="btn btn-dark userButton text-white rounded-pill p-1 d-flex align-items-center gap-1 loginButton"
+  let stringaButtonAdd = `<button id = "addAccount" onclick="addAccount"
+  class="btn btn-dark text-white rounded-pill p-1 d-flex align-items-center gap-1 loginButton"
   type="button" aria-expanded="false" data-bs-dismiss="modal">
   <i class="bi bi-sign-intersection"></i>
   Crea Utente
 </button>
   </button>`
 
-  return stringaIniziale + stringaButtonAdd
+  return stringaIniziale + stringaUtenteGettato + stringaButtonAdd
 }
 
 const updateHero = function (tracklist, ntraccia) {
@@ -194,58 +285,9 @@ document.getElementById("Francescos").addEventListener("click", () => {
 const dinamicUser = document.getElementById("dinamic-user");
 const loginButtons = Array.from(document.getElementsByClassName("loginButton"));
 
-const login = function (e) {
-  console.log(logi)
-  console.log(e.target);
-  const nameToInsert = e.target.innerText;
-  const picToInsert = e.target.getElementsByTagName("img")[0].src;
-  const userObj = { nameToInsert, picToInsert };
-  localStorage.setItem("user", JSON.stringify(userObj));
-  dinamicUser.innerHTML = `
-  <button
-  class="btn btn-dark userButton text-white dropdown-toggle rounded-pill p-1 d-flex align-items-center gap-1"
-  type="button"
-  data-bs-toggle="dropdown"
-  aria-expanded="false"
->
-  <img
-    src=${picToInsert}
-    class="rounded-circle"
-    height="30px"
-    width="30px"
-  />
-  ${nameToInsert}
-</button>
-<ul class="dropdown-menu dropdown-menu-dark bg-dark">
-  <li><a class="dropdown-item text-white" href="#">Amici</a></li>
-  <li><a class="dropdown-item text-white" href="#">Playlist</a></li>
-  <li>
-    <a class="dropdown-item text-white" href="#"
-      >Something else here</a
-    >
-  </li>
-  <li
-    class="dropdown-item text-white border border-white rounded-pill w-50 m-auto"
-    id="logoutButton"
-  >
-    Logout
-  </li>
-  <li
-    class="dropdown-item text-white border border-white rounded-pill w-50 m-auto d-none"
-    data-bs-toggle="modal"
-    data-bs-target="#LogInModal"
-  >
-    Log In
-  </li>
-</ul>`;
-
-
-  const logoutButton = document.getElementById("logoutButton");
-  logoutButton.addEventListener("click", logout);
-};
 
 const logout = function () {
-  localStorage.removeItem("user");
+  sessionStorage.removeItem("user");
   dinamicUser.innerHTML = `
     <button
     class="btn btn-dark userButton text-white dropdown-toggle rounded-pill p-1 d-flex align-items-center gap-1"
@@ -275,9 +317,65 @@ const logout = function () {
 
 const ifAlreadyLogged = function () {
   document.getElementById('wrapperUtentiModale').innerHTML = htmlListaUtentiDinamico()
+  document.getElementById('addAccount').addEventListener('click', addAccount)
+  let listaBottoniUtenti = document.querySelectorAll('.userButton')
+  for (let iUtente = 0; iUtente < listaBottoniUtenti.length; iUtente++) {
+    const element = listaBottoniUtenti[iUtente]
+    element.addEventListener('click', function (e) {
 
-  if (localStorage.getItem("user")) {
-    const userData = JSON.parse(localStorage.getItem("user"));
+      const nameToInsert = e.target.innerText;
+      const picToInsert = e.target.getElementsByTagName("img")[0].src
+      const userObj = { nameToInsert, picToInsert };
+      sessionStorage.setItem("user", JSON.stringify(userObj));
+      dinamicUser.innerHTML = `<button
+      class="btn btn-dark userButton text-white dropdown-toggle rounded-pill p-1 d-flex align-items-center gap-1"
+      type="button"
+      data-bs-toggle="dropdown"
+      aria-expanded="false"
+    >
+      <img
+        src=${picToInsert}
+        class="rounded-circle"
+        height="30px"
+        width="30px"
+      />
+      ${nameToInsert}
+    </button>
+    <ul class="dropdown-menu dropdown-menu-dark bg-dark">
+      <li><a class="dropdown-item text-white" href="#">Amici</a></li>
+      <li><a class="dropdown-item text-white" href="#">Playlist</a></li>
+      <li>
+        <a class="dropdown-item text-white" href="#"
+          >Something else here</a
+        >
+      </li>
+      <li
+        class="dropdown-item text-white border border-white rounded-pill w-50 m-auto"
+        id="logoutButton"
+      >
+        Logout
+      </li>
+      <li
+        class="dropdown-item text-white border border-white rounded-pill w-50 m-auto d-none"
+        data-bs-toggle="modal"
+        data-bs-target="#LogInModal"
+      >
+        Log In
+      </li>
+    </ul>`;
+
+
+      const logoutButton = document.getElementById("logoutButton");
+
+
+      logoutButton.addEventListener("click", logout);
+    })
+
+  }
+
+
+  if (sessionStorage.getItem("user")) {
+    const userData = JSON.parse(sessionStorage.getItem("user"));
     dinamicUser.innerHTML = `
   <button
   class="btn btn-dark userButton text-white dropdown-toggle rounded-pill p-1 d-flex align-items-center gap-1"
@@ -321,9 +419,8 @@ const ifAlreadyLogged = function () {
   }
 };
 
-ifAlreadyLogged();
+ifAlreadyLogged()
 
 loginButtons.forEach((element) => {
   element.addEventListener("click", login);
-});
-
+})

@@ -146,7 +146,7 @@
       <div class="">
         <div class="dropdown d-flex align-items-center gap-2" id="dinamic-user">
           <button
-            class="btn btn-dark userButton text-white dropdown-toggle rounded-pill p-1 d-flex align-items-center gap-1"
+            class="btn btn-outline-light text-white dropdown-toggle rounded-pill p-1 d-flex align-items-center gap-1"
             type="button" data-bs-toggle="dropdown" aria-expanded="false">
             <i class="bi bi-person-circle"></i>
             Accedi
@@ -311,6 +311,45 @@
       </div>
     </div>
   </div>
+
+  <!-- MODAL REGISTRAZIONE -->
+  <div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalLabelRegistrazione">Registrazione</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form id="addUserForm" type="submit">
+            <div class="form-group">
+              <label for="newUsername">Nome utente</label>
+              <input type="text" class="form-control" id="newUsername" placeholder="Inserisci nome utente">
+              <label for="newUserImg">Immagine del profilo (facoltativo)</label>
+              <input type="text" class="form-control" id="newUserImg" placeholder="Inserisci nome utente">
+            </div>
+            <div class="modal-footer">
+              <button type="submit" class="btn btn-primary">Registrati</button>
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annulla</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal" id="errorModal" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="errorModalTitle"></h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body" id="errorModalBody"></div>
+      </div>
+    </div>
+  </div>
+
 
   <script src="./scripts/bootstrap/bootstrap.bundle.min.js"></script>
   <script type="module" src="./scripts/fetchAlbumObg.js"></script>
