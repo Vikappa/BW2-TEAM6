@@ -1,7 +1,7 @@
 {
     "arrayPlayListPreconfezionate": [
         {
-            "nome": "",
+            "nome": "Avenged Sevenfold",
             "arrayTrack": [
                 {
                     "id": 70078208,
@@ -921,7 +921,7 @@
             ]
         },
         {
-            "nome": "",
+            "nome": "Marracash",
             "arrayTrack": [
                 {
                     "id": 2617648202,
@@ -1688,7 +1688,7 @@
             ]
         },
         {
-            "nome": "",
+            "nome": "AC/DC",
             "arrayTrack": [
                 {
                     "id": 92719900,
@@ -2305,7 +2305,7 @@
             ]
         },
         {
-            "nome": "",
+            "nome": "Red Hot Chili Peppers",
             "arrayTrack": [
                 {
                     "id": 725971,
@@ -3738,7 +3738,7 @@
             ]
         },
         {
-            "nome": "",
+            "nome": "Carl Douglas",
             "arrayTrack": [
                 {
                     "id": 131285694,
@@ -4150,7 +4150,7 @@
             ]
         },
         {
-            "nome": "",
+            "nome": "Infected Mushrooms",
             "arrayTrack": [
                 {
                     "id": 602403072,
@@ -5103,7 +5103,7 @@
             ]
         },
         {
-            "nome": "",
+            "nome": "Rammstein",
             "arrayTrack": [
                 {
                     "id": 14381638,
@@ -6223,6 +6223,749 @@
                         "cover_xl": "https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/4886636be143303aa0df47cd6d93983e\/1000x1000-000000-80-0-0.jpg",
                         "md5_image": "4886636be143303aa0df47cd6d93983e",
                         "tracklist": "https:\/\/api.deezer.com\/album\/96636772\/tracks",
+                        "type": "album"
+                    },
+                    "type": "track"
+                }
+            ]
+        },
+        {
+            "nome": "Infant Annihilator",
+            "arrayTrack": [
+                {
+                    "id": 712404702,
+                    "readable": true,
+                    "title": "The Kingdom Sitteth Lonely Beneath Thine Hollowed Heavens",
+                    "title_short": "The Kingdom Sitteth Lonely Beneath Thine Hollowed Heavens",
+                    "title_version": "",
+                    "link": "https:\/\/www.deezer.com\/track\/712404702",
+                    "duration": 426,
+                    "rank": 259419,
+                    "explicit_lyrics": true,
+                    "explicit_content_lyrics": 1,
+                    "explicit_content_cover": 2,
+                    "preview": "https:\/\/cdns-preview-a.dzcdn.net\/stream\/c-a11a197382b2ab46e0fa2477deb8be18-3.mp3",
+                    "contributors": [
+                        {
+                            "id": 4935542,
+                            "name": "Infant Annihilator",
+                            "link": "https:\/\/www.deezer.com\/artist\/4935542",
+                            "share": "https:\/\/www.deezer.com\/artist\/4935542?utm_source=deezer&utm_content=artist-4935542&utm_term=0_1706227389&utm_medium=web",
+                            "picture": "https:\/\/api.deezer.com\/artist\/4935542\/image",
+                            "picture_small": "https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/940596570cb03e443a74e16637826919\/56x56-000000-80-0-0.jpg",
+                            "picture_medium": "https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/940596570cb03e443a74e16637826919\/250x250-000000-80-0-0.jpg",
+                            "picture_big": "https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/940596570cb03e443a74e16637826919\/500x500-000000-80-0-0.jpg",
+                            "picture_xl": "https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/940596570cb03e443a74e16637826919\/1000x1000-000000-80-0-0.jpg",
+                            "radio": true,
+                            "tracklist": "https:\/\/api.deezer.com\/artist\/4935542\/top?limit=50",
+                            "type": "artist",
+                            "role": "Main"
+                        },
+                        {
+                            "id": 5884439,
+                            "name": "Trevor Strnad",
+                            "link": "https:\/\/www.deezer.com\/artist\/5884439",
+                            "share": "https:\/\/www.deezer.com\/artist\/5884439?utm_source=deezer&utm_content=artist-5884439&utm_term=0_1706227389&utm_medium=web",
+                            "picture": "https:\/\/api.deezer.com\/artist\/5884439\/image",
+                            "picture_small": "https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/3eca630e125595911ef8780ffe2697cb\/56x56-000000-80-0-0.jpg",
+                            "picture_medium": "https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/3eca630e125595911ef8780ffe2697cb\/250x250-000000-80-0-0.jpg",
+                            "picture_big": "https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/3eca630e125595911ef8780ffe2697cb\/500x500-000000-80-0-0.jpg",
+                            "picture_xl": "https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/3eca630e125595911ef8780ffe2697cb\/1000x1000-000000-80-0-0.jpg",
+                            "radio": true,
+                            "tracklist": "https:\/\/api.deezer.com\/artist\/5884439\/top?limit=50",
+                            "type": "artist",
+                            "role": "Featured"
+                        }
+                    ],
+                    "md5_image": "fa3fdb6a72db236b65ba760e2c91a85e",
+                    "artist": {
+                        "id": 4935542,
+                        "name": "Infant Annihilator",
+                        "tracklist": "https:\/\/api.deezer.com\/artist\/4935542\/top?limit=50",
+                        "type": "artist"
+                    },
+                    "album": {
+                        "id": 103673422,
+                        "title": "The Battle of Yaldabaoth",
+                        "cover": "https:\/\/api.deezer.com\/album\/103673422\/image",
+                        "cover_small": "https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/fa3fdb6a72db236b65ba760e2c91a85e\/56x56-000000-80-0-0.jpg",
+                        "cover_medium": "https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/fa3fdb6a72db236b65ba760e2c91a85e\/250x250-000000-80-0-0.jpg",
+                        "cover_big": "https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/fa3fdb6a72db236b65ba760e2c91a85e\/500x500-000000-80-0-0.jpg",
+                        "cover_xl": "https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/fa3fdb6a72db236b65ba760e2c91a85e\/1000x1000-000000-80-0-0.jpg",
+                        "md5_image": "fa3fdb6a72db236b65ba760e2c91a85e",
+                        "tracklist": "https:\/\/api.deezer.com\/album\/103673422\/tracks",
+                        "type": "album"
+                    },
+                    "type": "track"
+                },
+                {
+                    "id": 712404682,
+                    "readable": true,
+                    "title": "Childchewer",
+                    "title_short": "Childchewer",
+                    "title_version": "",
+                    "link": "https:\/\/www.deezer.com\/track\/712404682",
+                    "duration": 166,
+                    "rank": 285318,
+                    "explicit_lyrics": false,
+                    "explicit_content_lyrics": 0,
+                    "explicit_content_cover": 2,
+                    "preview": "https:\/\/cdns-preview-c.dzcdn.net\/stream\/c-c5dbc11b0e56829144a6bd366a358ef9-3.mp3",
+                    "contributors": [
+                        {
+                            "id": 4935542,
+                            "name": "Infant Annihilator",
+                            "link": "https:\/\/www.deezer.com\/artist\/4935542",
+                            "share": "https:\/\/www.deezer.com\/artist\/4935542?utm_source=deezer&utm_content=artist-4935542&utm_term=0_1706227389&utm_medium=web",
+                            "picture": "https:\/\/api.deezer.com\/artist\/4935542\/image",
+                            "picture_small": "https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/940596570cb03e443a74e16637826919\/56x56-000000-80-0-0.jpg",
+                            "picture_medium": "https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/940596570cb03e443a74e16637826919\/250x250-000000-80-0-0.jpg",
+                            "picture_big": "https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/940596570cb03e443a74e16637826919\/500x500-000000-80-0-0.jpg",
+                            "picture_xl": "https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/940596570cb03e443a74e16637826919\/1000x1000-000000-80-0-0.jpg",
+                            "radio": true,
+                            "tracklist": "https:\/\/api.deezer.com\/artist\/4935542\/top?limit=50",
+                            "type": "artist",
+                            "role": "Main"
+                        }
+                    ],
+                    "md5_image": "fa3fdb6a72db236b65ba760e2c91a85e",
+                    "artist": {
+                        "id": 4935542,
+                        "name": "Infant Annihilator",
+                        "tracklist": "https:\/\/api.deezer.com\/artist\/4935542\/top?limit=50",
+                        "type": "artist"
+                    },
+                    "album": {
+                        "id": 103673422,
+                        "title": "The Battle of Yaldabaoth",
+                        "cover": "https:\/\/api.deezer.com\/album\/103673422\/image",
+                        "cover_small": "https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/fa3fdb6a72db236b65ba760e2c91a85e\/56x56-000000-80-0-0.jpg",
+                        "cover_medium": "https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/fa3fdb6a72db236b65ba760e2c91a85e\/250x250-000000-80-0-0.jpg",
+                        "cover_big": "https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/fa3fdb6a72db236b65ba760e2c91a85e\/500x500-000000-80-0-0.jpg",
+                        "cover_xl": "https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/fa3fdb6a72db236b65ba760e2c91a85e\/1000x1000-000000-80-0-0.jpg",
+                        "md5_image": "fa3fdb6a72db236b65ba760e2c91a85e",
+                        "tracklist": "https:\/\/api.deezer.com\/album\/103673422\/tracks",
+                        "type": "album"
+                    },
+                    "type": "track"
+                },
+                {
+                    "id": 127270719,
+                    "readable": true,
+                    "title": "Blasphemian",
+                    "title_short": "Blasphemian",
+                    "link": "https:\/\/www.deezer.com\/track\/127270719",
+                    "duration": 444,
+                    "rank": 300747,
+                    "explicit_lyrics": true,
+                    "explicit_content_lyrics": 1,
+                    "explicit_content_cover": 2,
+                    "preview": "https:\/\/cdns-preview-e.dzcdn.net\/stream\/c-efac031e9f32e1bcea9271b525f1a1e2-3.mp3",
+                    "contributors": [
+                        {
+                            "id": 4935542,
+                            "name": "Infant Annihilator",
+                            "link": "https:\/\/www.deezer.com\/artist\/4935542",
+                            "share": "https:\/\/www.deezer.com\/artist\/4935542?utm_source=deezer&utm_content=artist-4935542&utm_term=0_1706227389&utm_medium=web",
+                            "picture": "https:\/\/api.deezer.com\/artist\/4935542\/image",
+                            "picture_small": "https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/940596570cb03e443a74e16637826919\/56x56-000000-80-0-0.jpg",
+                            "picture_medium": "https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/940596570cb03e443a74e16637826919\/250x250-000000-80-0-0.jpg",
+                            "picture_big": "https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/940596570cb03e443a74e16637826919\/500x500-000000-80-0-0.jpg",
+                            "picture_xl": "https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/940596570cb03e443a74e16637826919\/1000x1000-000000-80-0-0.jpg",
+                            "radio": true,
+                            "tracklist": "https:\/\/api.deezer.com\/artist\/4935542\/top?limit=50",
+                            "type": "artist",
+                            "role": "Main"
+                        }
+                    ],
+                    "md5_image": "478b2ae5d6e655527a974e567bd3ee5d",
+                    "artist": {
+                        "id": 4935542,
+                        "name": "Infant Annihilator",
+                        "tracklist": "https:\/\/api.deezer.com\/artist\/4935542\/top?limit=50",
+                        "type": "artist"
+                    },
+                    "album": {
+                        "id": 13422889,
+                        "title": "The Elysian Grandeval Gal\u00e8riarch",
+                        "cover": "https:\/\/api.deezer.com\/album\/13422889\/image",
+                        "cover_small": "https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/478b2ae5d6e655527a974e567bd3ee5d\/56x56-000000-80-0-0.jpg",
+                        "cover_medium": "https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/478b2ae5d6e655527a974e567bd3ee5d\/250x250-000000-80-0-0.jpg",
+                        "cover_big": "https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/478b2ae5d6e655527a974e567bd3ee5d\/500x500-000000-80-0-0.jpg",
+                        "cover_xl": "https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/478b2ae5d6e655527a974e567bd3ee5d\/1000x1000-000000-80-0-0.jpg",
+                        "md5_image": "478b2ae5d6e655527a974e567bd3ee5d",
+                        "tracklist": "https:\/\/api.deezer.com\/album\/13422889\/tracks",
+                        "type": "album"
+                    },
+                    "type": "track"
+                },
+                {
+                    "id": 712404732,
+                    "readable": true,
+                    "title": "Plaguebearer",
+                    "title_short": "Plaguebearer",
+                    "title_version": "",
+                    "link": "https:\/\/www.deezer.com\/track\/712404732",
+                    "duration": 302,
+                    "rank": 251218,
+                    "explicit_lyrics": true,
+                    "explicit_content_lyrics": 1,
+                    "explicit_content_cover": 2,
+                    "preview": "https:\/\/cdns-preview-1.dzcdn.net\/stream\/c-132a376835cbc59dd2809482901e1265-3.mp3",
+                    "contributors": [
+                        {
+                            "id": 4935542,
+                            "name": "Infant Annihilator",
+                            "link": "https:\/\/www.deezer.com\/artist\/4935542",
+                            "share": "https:\/\/www.deezer.com\/artist\/4935542?utm_source=deezer&utm_content=artist-4935542&utm_term=0_1706227389&utm_medium=web",
+                            "picture": "https:\/\/api.deezer.com\/artist\/4935542\/image",
+                            "picture_small": "https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/940596570cb03e443a74e16637826919\/56x56-000000-80-0-0.jpg",
+                            "picture_medium": "https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/940596570cb03e443a74e16637826919\/250x250-000000-80-0-0.jpg",
+                            "picture_big": "https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/940596570cb03e443a74e16637826919\/500x500-000000-80-0-0.jpg",
+                            "picture_xl": "https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/940596570cb03e443a74e16637826919\/1000x1000-000000-80-0-0.jpg",
+                            "radio": true,
+                            "tracklist": "https:\/\/api.deezer.com\/artist\/4935542\/top?limit=50",
+                            "type": "artist",
+                            "role": "Main"
+                        }
+                    ],
+                    "md5_image": "fa3fdb6a72db236b65ba760e2c91a85e",
+                    "artist": {
+                        "id": 4935542,
+                        "name": "Infant Annihilator",
+                        "tracklist": "https:\/\/api.deezer.com\/artist\/4935542\/top?limit=50",
+                        "type": "artist"
+                    },
+                    "album": {
+                        "id": 103673422,
+                        "title": "The Battle of Yaldabaoth",
+                        "cover": "https:\/\/api.deezer.com\/album\/103673422\/image",
+                        "cover_small": "https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/fa3fdb6a72db236b65ba760e2c91a85e\/56x56-000000-80-0-0.jpg",
+                        "cover_medium": "https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/fa3fdb6a72db236b65ba760e2c91a85e\/250x250-000000-80-0-0.jpg",
+                        "cover_big": "https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/fa3fdb6a72db236b65ba760e2c91a85e\/500x500-000000-80-0-0.jpg",
+                        "cover_xl": "https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/fa3fdb6a72db236b65ba760e2c91a85e\/1000x1000-000000-80-0-0.jpg",
+                        "md5_image": "fa3fdb6a72db236b65ba760e2c91a85e",
+                        "tracklist": "https:\/\/api.deezer.com\/album\/103673422\/tracks",
+                        "type": "album"
+                    },
+                    "type": "track"
+                },
+                {
+                    "id": 129658548,
+                    "readable": true,
+                    "title": "Decapitation Fornication",
+                    "title_short": "Decapitation Fornication",
+                    "link": "https:\/\/www.deezer.com\/track\/129658548",
+                    "duration": 207,
+                    "rank": 261178,
+                    "explicit_lyrics": true,
+                    "explicit_content_lyrics": 1,
+                    "explicit_content_cover": 2,
+                    "preview": "https:\/\/cdns-preview-e.dzcdn.net\/stream\/c-e97aeb5b01fb5058ab425304466245e4-4.mp3",
+                    "contributors": [
+                        {
+                            "id": 4935542,
+                            "name": "Infant Annihilator",
+                            "link": "https:\/\/www.deezer.com\/artist\/4935542",
+                            "share": "https:\/\/www.deezer.com\/artist\/4935542?utm_source=deezer&utm_content=artist-4935542&utm_term=0_1706227389&utm_medium=web",
+                            "picture": "https:\/\/api.deezer.com\/artist\/4935542\/image",
+                            "picture_small": "https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/940596570cb03e443a74e16637826919\/56x56-000000-80-0-0.jpg",
+                            "picture_medium": "https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/940596570cb03e443a74e16637826919\/250x250-000000-80-0-0.jpg",
+                            "picture_big": "https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/940596570cb03e443a74e16637826919\/500x500-000000-80-0-0.jpg",
+                            "picture_xl": "https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/940596570cb03e443a74e16637826919\/1000x1000-000000-80-0-0.jpg",
+                            "radio": true,
+                            "tracklist": "https:\/\/api.deezer.com\/artist\/4935542\/top?limit=50",
+                            "type": "artist",
+                            "role": "Main"
+                        }
+                    ],
+                    "md5_image": "2636859da93a5fc6ebac96b692ad83f7",
+                    "artist": {
+                        "id": 4935542,
+                        "name": "Infant Annihilator",
+                        "tracklist": "https:\/\/api.deezer.com\/artist\/4935542\/top?limit=50",
+                        "type": "artist"
+                    },
+                    "album": {
+                        "id": 13729912,
+                        "title": "The Palpable Leprosy of Pollution",
+                        "cover": "https:\/\/api.deezer.com\/album\/13729912\/image",
+                        "cover_small": "https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/2636859da93a5fc6ebac96b692ad83f7\/56x56-000000-80-0-0.jpg",
+                        "cover_medium": "https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/2636859da93a5fc6ebac96b692ad83f7\/250x250-000000-80-0-0.jpg",
+                        "cover_big": "https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/2636859da93a5fc6ebac96b692ad83f7\/500x500-000000-80-0-0.jpg",
+                        "cover_xl": "https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/2636859da93a5fc6ebac96b692ad83f7\/1000x1000-000000-80-0-0.jpg",
+                        "md5_image": "2636859da93a5fc6ebac96b692ad83f7",
+                        "tracklist": "https:\/\/api.deezer.com\/album\/13729912\/tracks",
+                        "type": "album"
+                    },
+                    "type": "track"
+                },
+                {
+                    "id": 712404692,
+                    "readable": true,
+                    "title": "Three Bastards",
+                    "title_short": "Three Bastards",
+                    "title_version": "",
+                    "link": "https:\/\/www.deezer.com\/track\/712404692",
+                    "duration": 257,
+                    "rank": 252550,
+                    "explicit_lyrics": true,
+                    "explicit_content_lyrics": 1,
+                    "explicit_content_cover": 2,
+                    "preview": "https:\/\/cdns-preview-b.dzcdn.net\/stream\/c-bb3c459edab06fbac605b08959c694eb-3.mp3",
+                    "contributors": [
+                        {
+                            "id": 4935542,
+                            "name": "Infant Annihilator",
+                            "link": "https:\/\/www.deezer.com\/artist\/4935542",
+                            "share": "https:\/\/www.deezer.com\/artist\/4935542?utm_source=deezer&utm_content=artist-4935542&utm_term=0_1706227389&utm_medium=web",
+                            "picture": "https:\/\/api.deezer.com\/artist\/4935542\/image",
+                            "picture_small": "https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/940596570cb03e443a74e16637826919\/56x56-000000-80-0-0.jpg",
+                            "picture_medium": "https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/940596570cb03e443a74e16637826919\/250x250-000000-80-0-0.jpg",
+                            "picture_big": "https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/940596570cb03e443a74e16637826919\/500x500-000000-80-0-0.jpg",
+                            "picture_xl": "https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/940596570cb03e443a74e16637826919\/1000x1000-000000-80-0-0.jpg",
+                            "radio": true,
+                            "tracklist": "https:\/\/api.deezer.com\/artist\/4935542\/top?limit=50",
+                            "type": "artist",
+                            "role": "Main"
+                        }
+                    ],
+                    "md5_image": "fa3fdb6a72db236b65ba760e2c91a85e",
+                    "artist": {
+                        "id": 4935542,
+                        "name": "Infant Annihilator",
+                        "tracklist": "https:\/\/api.deezer.com\/artist\/4935542\/top?limit=50",
+                        "type": "artist"
+                    },
+                    "album": {
+                        "id": 103673422,
+                        "title": "The Battle of Yaldabaoth",
+                        "cover": "https:\/\/api.deezer.com\/album\/103673422\/image",
+                        "cover_small": "https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/fa3fdb6a72db236b65ba760e2c91a85e\/56x56-000000-80-0-0.jpg",
+                        "cover_medium": "https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/fa3fdb6a72db236b65ba760e2c91a85e\/250x250-000000-80-0-0.jpg",
+                        "cover_big": "https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/fa3fdb6a72db236b65ba760e2c91a85e\/500x500-000000-80-0-0.jpg",
+                        "cover_xl": "https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/fa3fdb6a72db236b65ba760e2c91a85e\/1000x1000-000000-80-0-0.jpg",
+                        "md5_image": "fa3fdb6a72db236b65ba760e2c91a85e",
+                        "tracklist": "https:\/\/api.deezer.com\/album\/103673422\/tracks",
+                        "type": "album"
+                    },
+                    "type": "track"
+                },
+                {
+                    "id": 129658538,
+                    "readable": true,
+                    "title": "Cuntcrusher",
+                    "title_short": "Cuntcrusher",
+                    "link": "https:\/\/www.deezer.com\/track\/129658538",
+                    "duration": 298,
+                    "rank": 316862,
+                    "explicit_lyrics": true,
+                    "explicit_content_lyrics": 1,
+                    "explicit_content_cover": 2,
+                    "preview": "https:\/\/cdns-preview-a.dzcdn.net\/stream\/c-ab3134126c9d69652f27507462dedf03-3.mp3",
+                    "contributors": [
+                        {
+                            "id": 4935542,
+                            "name": "Infant Annihilator",
+                            "link": "https:\/\/www.deezer.com\/artist\/4935542",
+                            "share": "https:\/\/www.deezer.com\/artist\/4935542?utm_source=deezer&utm_content=artist-4935542&utm_term=0_1706227389&utm_medium=web",
+                            "picture": "https:\/\/api.deezer.com\/artist\/4935542\/image",
+                            "picture_small": "https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/940596570cb03e443a74e16637826919\/56x56-000000-80-0-0.jpg",
+                            "picture_medium": "https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/940596570cb03e443a74e16637826919\/250x250-000000-80-0-0.jpg",
+                            "picture_big": "https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/940596570cb03e443a74e16637826919\/500x500-000000-80-0-0.jpg",
+                            "picture_xl": "https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/940596570cb03e443a74e16637826919\/1000x1000-000000-80-0-0.jpg",
+                            "radio": true,
+                            "tracklist": "https:\/\/api.deezer.com\/artist\/4935542\/top?limit=50",
+                            "type": "artist",
+                            "role": "Main"
+                        }
+                    ],
+                    "md5_image": "2636859da93a5fc6ebac96b692ad83f7",
+                    "artist": {
+                        "id": 4935542,
+                        "name": "Infant Annihilator",
+                        "tracklist": "https:\/\/api.deezer.com\/artist\/4935542\/top?limit=50",
+                        "type": "artist"
+                    },
+                    "album": {
+                        "id": 13729912,
+                        "title": "The Palpable Leprosy of Pollution",
+                        "cover": "https:\/\/api.deezer.com\/album\/13729912\/image",
+                        "cover_small": "https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/2636859da93a5fc6ebac96b692ad83f7\/56x56-000000-80-0-0.jpg",
+                        "cover_medium": "https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/2636859da93a5fc6ebac96b692ad83f7\/250x250-000000-80-0-0.jpg",
+                        "cover_big": "https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/2636859da93a5fc6ebac96b692ad83f7\/500x500-000000-80-0-0.jpg",
+                        "cover_xl": "https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/2636859da93a5fc6ebac96b692ad83f7\/1000x1000-000000-80-0-0.jpg",
+                        "md5_image": "2636859da93a5fc6ebac96b692ad83f7",
+                        "tracklist": "https:\/\/api.deezer.com\/album\/13729912\/tracks",
+                        "type": "album"
+                    },
+                    "type": "track"
+                },
+                {
+                    "id": 712404742,
+                    "readable": true,
+                    "title": "Swinaecologist",
+                    "title_short": "Swinaecologist",
+                    "title_version": "",
+                    "link": "https:\/\/www.deezer.com\/track\/712404742",
+                    "duration": 217,
+                    "rank": 191645,
+                    "explicit_lyrics": true,
+                    "explicit_content_lyrics": 1,
+                    "explicit_content_cover": 2,
+                    "preview": "https:\/\/cdns-preview-f.dzcdn.net\/stream\/c-fa5045a24a225e29872e8eb85176e2e4-3.mp3",
+                    "contributors": [
+                        {
+                            "id": 4935542,
+                            "name": "Infant Annihilator",
+                            "link": "https:\/\/www.deezer.com\/artist\/4935542",
+                            "share": "https:\/\/www.deezer.com\/artist\/4935542?utm_source=deezer&utm_content=artist-4935542&utm_term=0_1706227389&utm_medium=web",
+                            "picture": "https:\/\/api.deezer.com\/artist\/4935542\/image",
+                            "picture_small": "https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/940596570cb03e443a74e16637826919\/56x56-000000-80-0-0.jpg",
+                            "picture_medium": "https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/940596570cb03e443a74e16637826919\/250x250-000000-80-0-0.jpg",
+                            "picture_big": "https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/940596570cb03e443a74e16637826919\/500x500-000000-80-0-0.jpg",
+                            "picture_xl": "https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/940596570cb03e443a74e16637826919\/1000x1000-000000-80-0-0.jpg",
+                            "radio": true,
+                            "tracklist": "https:\/\/api.deezer.com\/artist\/4935542\/top?limit=50",
+                            "type": "artist",
+                            "role": "Main"
+                        }
+                    ],
+                    "md5_image": "fa3fdb6a72db236b65ba760e2c91a85e",
+                    "artist": {
+                        "id": 4935542,
+                        "name": "Infant Annihilator",
+                        "tracklist": "https:\/\/api.deezer.com\/artist\/4935542\/top?limit=50",
+                        "type": "artist"
+                    },
+                    "album": {
+                        "id": 103673422,
+                        "title": "The Battle of Yaldabaoth",
+                        "cover": "https:\/\/api.deezer.com\/album\/103673422\/image",
+                        "cover_small": "https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/fa3fdb6a72db236b65ba760e2c91a85e\/56x56-000000-80-0-0.jpg",
+                        "cover_medium": "https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/fa3fdb6a72db236b65ba760e2c91a85e\/250x250-000000-80-0-0.jpg",
+                        "cover_big": "https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/fa3fdb6a72db236b65ba760e2c91a85e\/500x500-000000-80-0-0.jpg",
+                        "cover_xl": "https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/fa3fdb6a72db236b65ba760e2c91a85e\/1000x1000-000000-80-0-0.jpg",
+                        "md5_image": "fa3fdb6a72db236b65ba760e2c91a85e",
+                        "tracklist": "https:\/\/api.deezer.com\/album\/103673422\/tracks",
+                        "type": "album"
+                    },
+                    "type": "track"
+                },
+                {
+                    "id": 712404782,
+                    "readable": true,
+                    "title": "Thy Faith, Thy Oblivion",
+                    "title_short": "Thy Faith, Thy Oblivion",
+                    "title_version": "",
+                    "link": "https:\/\/www.deezer.com\/track\/712404782",
+                    "duration": 210,
+                    "rank": 206635,
+                    "explicit_lyrics": true,
+                    "explicit_content_lyrics": 1,
+                    "explicit_content_cover": 2,
+                    "preview": "https:\/\/cdns-preview-a.dzcdn.net\/stream\/c-a155bf138c7d22ff2e6fbbf70975dd75-2.mp3",
+                    "contributors": [
+                        {
+                            "id": 4935542,
+                            "name": "Infant Annihilator",
+                            "link": "https:\/\/www.deezer.com\/artist\/4935542",
+                            "share": "https:\/\/www.deezer.com\/artist\/4935542?utm_source=deezer&utm_content=artist-4935542&utm_term=0_1706227389&utm_medium=web",
+                            "picture": "https:\/\/api.deezer.com\/artist\/4935542\/image",
+                            "picture_small": "https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/940596570cb03e443a74e16637826919\/56x56-000000-80-0-0.jpg",
+                            "picture_medium": "https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/940596570cb03e443a74e16637826919\/250x250-000000-80-0-0.jpg",
+                            "picture_big": "https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/940596570cb03e443a74e16637826919\/500x500-000000-80-0-0.jpg",
+                            "picture_xl": "https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/940596570cb03e443a74e16637826919\/1000x1000-000000-80-0-0.jpg",
+                            "radio": true,
+                            "tracklist": "https:\/\/api.deezer.com\/artist\/4935542\/top?limit=50",
+                            "type": "artist",
+                            "role": "Main"
+                        }
+                    ],
+                    "md5_image": "fa3fdb6a72db236b65ba760e2c91a85e",
+                    "artist": {
+                        "id": 4935542,
+                        "name": "Infant Annihilator",
+                        "tracklist": "https:\/\/api.deezer.com\/artist\/4935542\/top?limit=50",
+                        "type": "artist"
+                    },
+                    "album": {
+                        "id": 103673422,
+                        "title": "The Battle of Yaldabaoth",
+                        "cover": "https:\/\/api.deezer.com\/album\/103673422\/image",
+                        "cover_small": "https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/fa3fdb6a72db236b65ba760e2c91a85e\/56x56-000000-80-0-0.jpg",
+                        "cover_medium": "https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/fa3fdb6a72db236b65ba760e2c91a85e\/250x250-000000-80-0-0.jpg",
+                        "cover_big": "https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/fa3fdb6a72db236b65ba760e2c91a85e\/500x500-000000-80-0-0.jpg",
+                        "cover_xl": "https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/fa3fdb6a72db236b65ba760e2c91a85e\/1000x1000-000000-80-0-0.jpg",
+                        "md5_image": "fa3fdb6a72db236b65ba760e2c91a85e",
+                        "tracklist": "https:\/\/api.deezer.com\/album\/103673422\/tracks",
+                        "type": "album"
+                    },
+                    "type": "track"
+                },
+                {
+                    "id": 127270701,
+                    "readable": true,
+                    "title": "Unholy Gravebirth",
+                    "title_short": "Unholy Gravebirth",
+                    "link": "https:\/\/www.deezer.com\/track\/127270701",
+                    "duration": 288,
+                    "rank": 316514,
+                    "explicit_lyrics": true,
+                    "explicit_content_lyrics": 1,
+                    "explicit_content_cover": 2,
+                    "preview": "https:\/\/cdns-preview-0.dzcdn.net\/stream\/c-02081149fe9e606c396eb7f9807c4016-4.mp3",
+                    "contributors": [
+                        {
+                            "id": 4935542,
+                            "name": "Infant Annihilator",
+                            "link": "https:\/\/www.deezer.com\/artist\/4935542",
+                            "share": "https:\/\/www.deezer.com\/artist\/4935542?utm_source=deezer&utm_content=artist-4935542&utm_term=0_1706227389&utm_medium=web",
+                            "picture": "https:\/\/api.deezer.com\/artist\/4935542\/image",
+                            "picture_small": "https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/940596570cb03e443a74e16637826919\/56x56-000000-80-0-0.jpg",
+                            "picture_medium": "https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/940596570cb03e443a74e16637826919\/250x250-000000-80-0-0.jpg",
+                            "picture_big": "https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/940596570cb03e443a74e16637826919\/500x500-000000-80-0-0.jpg",
+                            "picture_xl": "https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/940596570cb03e443a74e16637826919\/1000x1000-000000-80-0-0.jpg",
+                            "radio": true,
+                            "tracklist": "https:\/\/api.deezer.com\/artist\/4935542\/top?limit=50",
+                            "type": "artist",
+                            "role": "Main"
+                        }
+                    ],
+                    "md5_image": "478b2ae5d6e655527a974e567bd3ee5d",
+                    "artist": {
+                        "id": 4935542,
+                        "name": "Infant Annihilator",
+                        "tracklist": "https:\/\/api.deezer.com\/artist\/4935542\/top?limit=50",
+                        "type": "artist"
+                    },
+                    "album": {
+                        "id": 13422889,
+                        "title": "The Elysian Grandeval Gal\u00e8riarch",
+                        "cover": "https:\/\/api.deezer.com\/album\/13422889\/image",
+                        "cover_small": "https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/478b2ae5d6e655527a974e567bd3ee5d\/56x56-000000-80-0-0.jpg",
+                        "cover_medium": "https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/478b2ae5d6e655527a974e567bd3ee5d\/250x250-000000-80-0-0.jpg",
+                        "cover_big": "https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/478b2ae5d6e655527a974e567bd3ee5d\/500x500-000000-80-0-0.jpg",
+                        "cover_xl": "https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/478b2ae5d6e655527a974e567bd3ee5d\/1000x1000-000000-80-0-0.jpg",
+                        "md5_image": "478b2ae5d6e655527a974e567bd3ee5d",
+                        "tracklist": "https:\/\/api.deezer.com\/album\/13422889\/tracks",
+                        "type": "album"
+                    },
+                    "type": "track"
+                },
+                {
+                    "id": 712404722,
+                    "readable": true,
+                    "title": "Feast Ov Goreglutton",
+                    "title_short": "Feast Ov Goreglutton",
+                    "title_version": "",
+                    "link": "https:\/\/www.deezer.com\/track\/712404722",
+                    "duration": 143,
+                    "rank": 233045,
+                    "explicit_lyrics": true,
+                    "explicit_content_lyrics": 1,
+                    "explicit_content_cover": 2,
+                    "preview": "https:\/\/cdns-preview-2.dzcdn.net\/stream\/c-255fd31a15989067fe7aa3ac4566bac9-2.mp3",
+                    "contributors": [
+                        {
+                            "id": 4935542,
+                            "name": "Infant Annihilator",
+                            "link": "https:\/\/www.deezer.com\/artist\/4935542",
+                            "share": "https:\/\/www.deezer.com\/artist\/4935542?utm_source=deezer&utm_content=artist-4935542&utm_term=0_1706227389&utm_medium=web",
+                            "picture": "https:\/\/api.deezer.com\/artist\/4935542\/image",
+                            "picture_small": "https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/940596570cb03e443a74e16637826919\/56x56-000000-80-0-0.jpg",
+                            "picture_medium": "https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/940596570cb03e443a74e16637826919\/250x250-000000-80-0-0.jpg",
+                            "picture_big": "https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/940596570cb03e443a74e16637826919\/500x500-000000-80-0-0.jpg",
+                            "picture_xl": "https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/940596570cb03e443a74e16637826919\/1000x1000-000000-80-0-0.jpg",
+                            "radio": true,
+                            "tracklist": "https:\/\/api.deezer.com\/artist\/4935542\/top?limit=50",
+                            "type": "artist",
+                            "role": "Main"
+                        }
+                    ],
+                    "md5_image": "fa3fdb6a72db236b65ba760e2c91a85e",
+                    "artist": {
+                        "id": 4935542,
+                        "name": "Infant Annihilator",
+                        "tracklist": "https:\/\/api.deezer.com\/artist\/4935542\/top?limit=50",
+                        "type": "artist"
+                    },
+                    "album": {
+                        "id": 103673422,
+                        "title": "The Battle of Yaldabaoth",
+                        "cover": "https:\/\/api.deezer.com\/album\/103673422\/image",
+                        "cover_small": "https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/fa3fdb6a72db236b65ba760e2c91a85e\/56x56-000000-80-0-0.jpg",
+                        "cover_medium": "https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/fa3fdb6a72db236b65ba760e2c91a85e\/250x250-000000-80-0-0.jpg",
+                        "cover_big": "https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/fa3fdb6a72db236b65ba760e2c91a85e\/500x500-000000-80-0-0.jpg",
+                        "cover_xl": "https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/fa3fdb6a72db236b65ba760e2c91a85e\/1000x1000-000000-80-0-0.jpg",
+                        "md5_image": "fa3fdb6a72db236b65ba760e2c91a85e",
+                        "tracklist": "https:\/\/api.deezer.com\/album\/103673422\/tracks",
+                        "type": "album"
+                    },
+                    "type": "track"
+                },
+                {
+                    "id": 712404792,
+                    "readable": true,
+                    "title": "The Battle of Yaldabaoth",
+                    "title_short": "The Battle of Yaldabaoth",
+                    "title_version": "",
+                    "link": "https:\/\/www.deezer.com\/track\/712404792",
+                    "duration": 365,
+                    "rank": 189785,
+                    "explicit_lyrics": true,
+                    "explicit_content_lyrics": 1,
+                    "explicit_content_cover": 2,
+                    "preview": "https:\/\/cdns-preview-3.dzcdn.net\/stream\/c-3422d5f379c40c20e8be357e31ae7ff5-2.mp3",
+                    "contributors": [
+                        {
+                            "id": 4935542,
+                            "name": "Infant Annihilator",
+                            "link": "https:\/\/www.deezer.com\/artist\/4935542",
+                            "share": "https:\/\/www.deezer.com\/artist\/4935542?utm_source=deezer&utm_content=artist-4935542&utm_term=0_1706227389&utm_medium=web",
+                            "picture": "https:\/\/api.deezer.com\/artist\/4935542\/image",
+                            "picture_small": "https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/940596570cb03e443a74e16637826919\/56x56-000000-80-0-0.jpg",
+                            "picture_medium": "https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/940596570cb03e443a74e16637826919\/250x250-000000-80-0-0.jpg",
+                            "picture_big": "https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/940596570cb03e443a74e16637826919\/500x500-000000-80-0-0.jpg",
+                            "picture_xl": "https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/940596570cb03e443a74e16637826919\/1000x1000-000000-80-0-0.jpg",
+                            "radio": true,
+                            "tracklist": "https:\/\/api.deezer.com\/artist\/4935542\/top?limit=50",
+                            "type": "artist",
+                            "role": "Main"
+                        },
+                        {
+                            "id": 8731188,
+                            "name": "Alex Teyen",
+                            "link": "https:\/\/www.deezer.com\/artist\/8731188",
+                            "share": "https:\/\/www.deezer.com\/artist\/8731188?utm_source=deezer&utm_content=artist-8731188&utm_term=0_1706227389&utm_medium=web",
+                            "picture": "https:\/\/api.deezer.com\/artist\/8731188\/image",
+                            "picture_small": "https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/\/56x56-000000-80-0-0.jpg",
+                            "picture_medium": "https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/\/250x250-000000-80-0-0.jpg",
+                            "picture_big": "https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/\/500x500-000000-80-0-0.jpg",
+                            "picture_xl": "https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/\/1000x1000-000000-80-0-0.jpg",
+                            "radio": true,
+                            "tracklist": "https:\/\/api.deezer.com\/artist\/8731188\/top?limit=50",
+                            "type": "artist",
+                            "role": "Featured"
+                        }
+                    ],
+                    "md5_image": "fa3fdb6a72db236b65ba760e2c91a85e",
+                    "artist": {
+                        "id": 4935542,
+                        "name": "Infant Annihilator",
+                        "tracklist": "https:\/\/api.deezer.com\/artist\/4935542\/top?limit=50",
+                        "type": "artist"
+                    },
+                    "album": {
+                        "id": 103673422,
+                        "title": "The Battle of Yaldabaoth",
+                        "cover": "https:\/\/api.deezer.com\/album\/103673422\/image",
+                        "cover_small": "https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/fa3fdb6a72db236b65ba760e2c91a85e\/56x56-000000-80-0-0.jpg",
+                        "cover_medium": "https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/fa3fdb6a72db236b65ba760e2c91a85e\/250x250-000000-80-0-0.jpg",
+                        "cover_big": "https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/fa3fdb6a72db236b65ba760e2c91a85e\/500x500-000000-80-0-0.jpg",
+                        "cover_xl": "https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/fa3fdb6a72db236b65ba760e2c91a85e\/1000x1000-000000-80-0-0.jpg",
+                        "md5_image": "fa3fdb6a72db236b65ba760e2c91a85e",
+                        "tracklist": "https:\/\/api.deezer.com\/album\/103673422\/tracks",
+                        "type": "album"
+                    },
+                    "type": "track"
+                },
+                {
+                    "id": 127270711,
+                    "readable": true,
+                    "title": "Soil the Stillborn",
+                    "title_short": "Soil the Stillborn",
+                    "link": "https:\/\/www.deezer.com\/track\/127270711",
+                    "duration": 239,
+                    "rank": 301476,
+                    "explicit_lyrics": true,
+                    "explicit_content_lyrics": 1,
+                    "explicit_content_cover": 2,
+                    "preview": "https:\/\/cdns-preview-1.dzcdn.net\/stream\/c-1e43fd9c824da13d07c878fd9e6ce3ba-4.mp3",
+                    "contributors": [
+                        {
+                            "id": 4935542,
+                            "name": "Infant Annihilator",
+                            "link": "https:\/\/www.deezer.com\/artist\/4935542",
+                            "share": "https:\/\/www.deezer.com\/artist\/4935542?utm_source=deezer&utm_content=artist-4935542&utm_term=0_1706227389&utm_medium=web",
+                            "picture": "https:\/\/api.deezer.com\/artist\/4935542\/image",
+                            "picture_small": "https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/940596570cb03e443a74e16637826919\/56x56-000000-80-0-0.jpg",
+                            "picture_medium": "https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/940596570cb03e443a74e16637826919\/250x250-000000-80-0-0.jpg",
+                            "picture_big": "https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/940596570cb03e443a74e16637826919\/500x500-000000-80-0-0.jpg",
+                            "picture_xl": "https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/940596570cb03e443a74e16637826919\/1000x1000-000000-80-0-0.jpg",
+                            "radio": true,
+                            "tracklist": "https:\/\/api.deezer.com\/artist\/4935542\/top?limit=50",
+                            "type": "artist",
+                            "role": "Main"
+                        }
+                    ],
+                    "md5_image": "478b2ae5d6e655527a974e567bd3ee5d",
+                    "artist": {
+                        "id": 4935542,
+                        "name": "Infant Annihilator",
+                        "tracklist": "https:\/\/api.deezer.com\/artist\/4935542\/top?limit=50",
+                        "type": "artist"
+                    },
+                    "album": {
+                        "id": 13422889,
+                        "title": "The Elysian Grandeval Gal\u00e8riarch",
+                        "cover": "https:\/\/api.deezer.com\/album\/13422889\/image",
+                        "cover_small": "https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/478b2ae5d6e655527a974e567bd3ee5d\/56x56-000000-80-0-0.jpg",
+                        "cover_medium": "https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/478b2ae5d6e655527a974e567bd3ee5d\/250x250-000000-80-0-0.jpg",
+                        "cover_big": "https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/478b2ae5d6e655527a974e567bd3ee5d\/500x500-000000-80-0-0.jpg",
+                        "cover_xl": "https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/478b2ae5d6e655527a974e567bd3ee5d\/1000x1000-000000-80-0-0.jpg",
+                        "md5_image": "478b2ae5d6e655527a974e567bd3ee5d",
+                        "tracklist": "https:\/\/api.deezer.com\/album\/13422889\/tracks",
+                        "type": "album"
+                    },
+                    "type": "track"
+                },
+                {
+                    "id": 127270707,
+                    "readable": true,
+                    "title": "Baptised, Bastardised, Sodomised.",
+                    "title_short": "Baptised, Bastardised, Sodomised.",
+                    "link": "https:\/\/www.deezer.com\/track\/127270707",
+                    "duration": 263,
+                    "rank": 238430,
+                    "explicit_lyrics": true,
+                    "explicit_content_lyrics": 1,
+                    "explicit_content_cover": 2,
+                    "preview": "https:\/\/cdns-preview-e.dzcdn.net\/stream\/c-e6ba7ec8b0eec382469eb4a04f1e621b-4.mp3",
+                    "contributors": [
+                        {
+                            "id": 4935542,
+                            "name": "Infant Annihilator",
+                            "link": "https:\/\/www.deezer.com\/artist\/4935542",
+                            "share": "https:\/\/www.deezer.com\/artist\/4935542?utm_source=deezer&utm_content=artist-4935542&utm_term=0_1706227389&utm_medium=web",
+                            "picture": "https:\/\/api.deezer.com\/artist\/4935542\/image",
+                            "picture_small": "https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/940596570cb03e443a74e16637826919\/56x56-000000-80-0-0.jpg",
+                            "picture_medium": "https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/940596570cb03e443a74e16637826919\/250x250-000000-80-0-0.jpg",
+                            "picture_big": "https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/940596570cb03e443a74e16637826919\/500x500-000000-80-0-0.jpg",
+                            "picture_xl": "https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/940596570cb03e443a74e16637826919\/1000x1000-000000-80-0-0.jpg",
+                            "radio": true,
+                            "tracklist": "https:\/\/api.deezer.com\/artist\/4935542\/top?limit=50",
+                            "type": "artist",
+                            "role": "Main"
+                        }
+                    ],
+                    "md5_image": "478b2ae5d6e655527a974e567bd3ee5d",
+                    "artist": {
+                        "id": 4935542,
+                        "name": "Infant Annihilator",
+                        "tracklist": "https:\/\/api.deezer.com\/artist\/4935542\/top?limit=50",
+                        "type": "artist"
+                    },
+                    "album": {
+                        "id": 13422889,
+                        "title": "The Elysian Grandeval Gal\u00e8riarch",
+                        "cover": "https:\/\/api.deezer.com\/album\/13422889\/image",
+                        "cover_small": "https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/478b2ae5d6e655527a974e567bd3ee5d\/56x56-000000-80-0-0.jpg",
+                        "cover_medium": "https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/478b2ae5d6e655527a974e567bd3ee5d\/250x250-000000-80-0-0.jpg",
+                        "cover_big": "https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/478b2ae5d6e655527a974e567bd3ee5d\/500x500-000000-80-0-0.jpg",
+                        "cover_xl": "https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/478b2ae5d6e655527a974e567bd3ee5d\/1000x1000-000000-80-0-0.jpg",
+                        "md5_image": "478b2ae5d6e655527a974e567bd3ee5d",
+                        "tracklist": "https:\/\/api.deezer.com\/album\/13422889\/tracks",
                         "type": "album"
                     },
                     "type": "track"

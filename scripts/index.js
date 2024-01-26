@@ -82,7 +82,7 @@ document.getElementById("Ermias").addEventListener("click", () => {
 
 document.getElementById("Fabios").addEventListener("click", () => {
   searchAlbum("Californication Red Hot")
-    .then((arrayRitorno) => {})
+    .then((arrayRitorno) => { })
     .catch((err) => {
       console.error(err);
     });
@@ -242,3 +242,5 @@ ifAlreadyLogged();
 loginButtons.forEach((element) => {
   element.addEventListener("click", login);
 });
+
+//// CARICO PLAYLIST DA FILE JSON 
