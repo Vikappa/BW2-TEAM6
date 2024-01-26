@@ -9,6 +9,7 @@ document.getElementById("closeRightBar").addEventListener("click", function () {
 });
 
 const updatePlayBar = function (tracklist, trackIndex) {
+  console.log(tracklist[trackIndex])
   document.getElementById("playBar").innerHTML = ``;
   document
     .getElementById("playBar")

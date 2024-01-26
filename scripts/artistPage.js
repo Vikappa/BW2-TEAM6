@@ -22,7 +22,6 @@ const updatePlayBar = function (tracklist, trackIndex) {
 };
 
 const divSong = function (track, ntrack) {
-  console.log(track);
   const maindiv = document.createElement("div");
   maindiv.innerHTML = `
   <div class="row mb-3 d-flex  align-items-center"> 
@@ -35,9 +34,8 @@ const divSong = function (track, ntrack) {
   <span class=" text-white">${track.rank}</span>
   </div>
   <div class="col-2">
-  <span class="text-white"> ${Math.floor(track.duration / 60)} min ${
-    track.duration % 60
-  }
+  <span class="text-white"> ${Math.floor(track.duration / 60)} min ${track.duration % 60
+    }
     </span>
   </div>
 

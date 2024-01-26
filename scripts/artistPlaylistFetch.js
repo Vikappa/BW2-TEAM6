@@ -12,7 +12,6 @@ const artistPlaylistFetch = function (artistId) {
         })
         .then((data) => {
             let arrayTracks = []
-            console.log(data.data)
 
             for (let indexTracks = 0; indexTracks < data.data.length; indexTracks++) {
                 let newTrack = new Track(

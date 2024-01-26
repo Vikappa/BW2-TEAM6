@@ -1,0 +1,228 @@
+{
+    "arrayPlayListPremade": [
+        {
+            "nome": "Cosa ascolta Vikappa mentre scrive codice alle 3 nel buio della sua caverna",
+            "arrayTrack": [
+                {
+                    "id": 1122999552,
+                    "readable": true,
+                    "title": "Kingslayer (feat. BABYMETAL)",
+                    "title_short": "Kingslayer (feat. BABYMETAL)",
+                    "title_version": "",
+                    "link": "https:\/\/www.deezer.com\/track\/1122999552",
+                    "duration": 220,
+                    "rank": 711687,
+                    "explicit_lyrics": true,
+                    "explicit_content_lyrics": 1,
+                    "explicit_content_cover": 2,
+                    "preview": "https:\/\/cdns-preview-9.dzcdn.net\/stream\/c-97fd890897b50c9c6a2f971f6307c4bc-3.mp3",
+                    "contributors": [
+                        {
+                            "id": 12874,
+                            "name": "Bring Me The Horizon",
+                            "link": "https:\/\/www.deezer.com\/artist\/12874",
+                            "share": "https:\/\/www.deezer.com\/artist\/12874?utm_source=deezer&utm_content=artist-12874&utm_term=0_1706230926&utm_medium=web",
+                            "picture": "https:\/\/api.deezer.com\/artist\/12874\/image",
+                            "picture_small": "https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/527dc7541af4eba73fbe2b26133f3e09\/56x56-000000-80-0-0.jpg",
+                            "picture_medium": "https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/527dc7541af4eba73fbe2b26133f3e09\/250x250-000000-80-0-0.jpg",
+                            "picture_big": "https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/527dc7541af4eba73fbe2b26133f3e09\/500x500-000000-80-0-0.jpg",
+                            "picture_xl": "https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/527dc7541af4eba73fbe2b26133f3e09\/1000x1000-000000-80-0-0.jpg",
+                            "radio": true,
+                            "tracklist": "https:\/\/api.deezer.com\/artist\/12874\/top?limit=50",
+                            "type": "artist",
+                            "role": "Main"
+                        },
+                        {
+                            "id": 7805012,
+                            "name": "BABYMETAL",
+                            "link": "https:\/\/www.deezer.com\/artist\/7805012",
+                            "share": "https:\/\/www.deezer.com\/artist\/7805012?utm_source=deezer&utm_content=artist-7805012&utm_term=0_1706230926&utm_medium=web",
+                            "picture": "https:\/\/api.deezer.com\/artist\/7805012\/image",
+                            "picture_small": "https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/2df86b455e87992af899a45c79f973f3\/56x56-000000-80-0-0.jpg",
+                            "picture_medium": "https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/2df86b455e87992af899a45c79f973f3\/250x250-000000-80-0-0.jpg",
+                            "picture_big": "https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/2df86b455e87992af899a45c79f973f3\/500x500-000000-80-0-0.jpg",
+                            "picture_xl": "https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/2df86b455e87992af899a45c79f973f3\/1000x1000-000000-80-0-0.jpg",
+                            "radio": true,
+                            "tracklist": "https:\/\/api.deezer.com\/artist\/7805012\/top?limit=50",
+                            "type": "artist",
+                            "role": "Featured"
+                        }
+                    ],
+                    "md5_image": "1e55355d3418513d0577950b484af017",
+                    "artist": {
+                        "id": 12874,
+                        "name": "Bring Me The Horizon",
+                        "tracklist": "https:\/\/api.deezer.com\/artist\/12874\/top?limit=50",
+                        "type": "artist"
+                    },
+                    "album": {
+                        "id": 182475962,
+                        "title": "POST HUMAN: SURVIVAL HORROR",
+                        "cover": "https:\/\/api.deezer.com\/album\/182475962\/image",
+                        "cover_small": "https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/1e55355d3418513d0577950b484af017\/56x56-000000-80-0-0.jpg",
+                        "cover_medium": "https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/1e55355d3418513d0577950b484af017\/250x250-000000-80-0-0.jpg",
+                        "cover_big": "https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/1e55355d3418513d0577950b484af017\/500x500-000000-80-0-0.jpg",
+                        "cover_xl": "https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/1e55355d3418513d0577950b484af017\/1000x1000-000000-80-0-0.jpg",
+                        "md5_image": "1e55355d3418513d0577950b484af017",
+                        "tracklist": "https:\/\/api.deezer.com\/album\/182475962\/tracks",
+                        "type": "album"
+                    },
+                    "type": "track"
+                },
+                {
+                    "id": 1643321,
+                    "readable": true,
+                    "title": "Becoming Insane",
+                    "title_short": "Becoming Insane",
+                    "title_version": "",
+                    "link": "https:\/\/www.deezer.com\/track\/1643321",
+                    "duration": 440,
+                    "rank": 484004,
+                    "explicit_lyrics": false,
+                    "explicit_content_lyrics": 2,
+                    "explicit_content_cover": 2,
+                    "preview": "https:\/\/cdns-preview-b.dzcdn.net\/stream\/c-bec707f4c8ae4d8dbfe5c14102898c73-4.mp3",
+                    "contributors": [
+                        {
+                            "id": 1956,
+                            "name": "Infected Mushroom",
+                            "link": "https:\/\/www.deezer.com\/artist\/1956",
+                            "share": "https:\/\/www.deezer.com\/artist\/1956?utm_source=deezer&utm_content=artist-1956&utm_term=0_1706230344&utm_medium=web",
+                            "picture": "https:\/\/api.deezer.com\/artist\/1956\/image",
+                            "picture_small": "https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/b54a55bee5d01296495bf48103e83504\/56x56-000000-80-0-0.jpg",
+                            "picture_medium": "https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/b54a55bee5d01296495bf48103e83504\/250x250-000000-80-0-0.jpg",
+                            "picture_big": "https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/b54a55bee5d01296495bf48103e83504\/500x500-000000-80-0-0.jpg",
+                            "picture_xl": "https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/b54a55bee5d01296495bf48103e83504\/1000x1000-000000-80-0-0.jpg",
+                            "radio": true,
+                            "tracklist": "https:\/\/api.deezer.com\/artist\/1956\/top?limit=50",
+                            "type": "artist",
+                            "role": "Main"
+                        }
+                    ],
+                    "md5_image": "68a9e642a5845bcdbaf0595a27a1e7af",
+                    "artist": {
+                        "id": 1956,
+                        "name": "Infected Mushroom",
+                        "tracklist": "https:\/\/api.deezer.com\/artist\/1956\/top?limit=50",
+                        "type": "artist"
+                    },
+                    "album": {
+                        "id": 168551,
+                        "title": "Vicious Delicious",
+                        "cover": "https:\/\/api.deezer.com\/album\/168551\/image",
+                        "cover_small": "https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/68a9e642a5845bcdbaf0595a27a1e7af\/56x56-000000-80-0-0.jpg",
+                        "cover_medium": "https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/68a9e642a5845bcdbaf0595a27a1e7af\/250x250-000000-80-0-0.jpg",
+                        "cover_big": "https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/68a9e642a5845bcdbaf0595a27a1e7af\/500x500-000000-80-0-0.jpg",
+                        "cover_xl": "https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/68a9e642a5845bcdbaf0595a27a1e7af\/1000x1000-000000-80-0-0.jpg",
+                        "md5_image": "68a9e642a5845bcdbaf0595a27a1e7af",
+                        "tracklist": "https:\/\/api.deezer.com\/album\/168551\/tracks",
+                        "type": "album"
+                    },
+                    "type": "track"
+                },
+                {
+                    "id": 630595142,
+                    "readable": true,
+                    "title": "Du hast",
+                    "title_short": "Du hast",
+                    "title_version": "",
+                    "link": "https:\/\/www.deezer.com\/track\/630595142",
+                    "duration": 234,
+                    "rank": 855153,
+                    "explicit_lyrics": false,
+                    "explicit_content_lyrics": 0,
+                    "explicit_content_cover": 2,
+                    "preview": "https:\/\/cdns-preview-3.dzcdn.net\/stream\/c-3e18e931f287fb23714e21a2b94bb85d-6.mp3",
+                    "contributors": [
+                        {
+                            "id": 464,
+                            "name": "Rammstein",
+                            "link": "https:\/\/www.deezer.com\/artist\/464",
+                            "share": "https:\/\/www.deezer.com\/artist\/464?utm_source=deezer&utm_content=artist-464&utm_term=0_1706230552&utm_medium=web",
+                            "picture": "https:\/\/api.deezer.com\/artist\/464\/image",
+                            "picture_small": "https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/f22cac6a41e838f54d2c7b4ea47b5f94\/56x56-000000-80-0-0.jpg",
+                            "picture_medium": "https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/f22cac6a41e838f54d2c7b4ea47b5f94\/250x250-000000-80-0-0.jpg",
+                            "picture_big": "https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/f22cac6a41e838f54d2c7b4ea47b5f94\/500x500-000000-80-0-0.jpg",
+                            "picture_xl": "https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/f22cac6a41e838f54d2c7b4ea47b5f94\/1000x1000-000000-80-0-0.jpg",
+                            "radio": true,
+                            "tracklist": "https:\/\/api.deezer.com\/artist\/464\/top?limit=50",
+                            "type": "artist",
+                            "role": "Main"
+                        }
+                    ],
+                    "md5_image": "e24ae59ad933185bd6689d388eb0f256",
+                    "artist": {
+                        "id": 464,
+                        "name": "Rammstein",
+                        "tracklist": "https:\/\/api.deezer.com\/artist\/464\/top?limit=50",
+                        "type": "artist"
+                    },
+                    "album": {
+                        "id": 86933302,
+                        "title": "Sehnsucht",
+                        "cover": "https:\/\/api.deezer.com\/album\/86933302\/image",
+                        "cover_small": "https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/e24ae59ad933185bd6689d388eb0f256\/56x56-000000-80-0-0.jpg",
+                        "cover_medium": "https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/e24ae59ad933185bd6689d388eb0f256\/250x250-000000-80-0-0.jpg",
+                        "cover_big": "https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/e24ae59ad933185bd6689d388eb0f256\/500x500-000000-80-0-0.jpg",
+                        "cover_xl": "https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/e24ae59ad933185bd6689d388eb0f256\/1000x1000-000000-80-0-0.jpg",
+                        "md5_image": "e24ae59ad933185bd6689d388eb0f256",
+                        "tracklist": "https:\/\/api.deezer.com\/album\/86933302\/tracks",
+                        "type": "album"
+                    },
+                    "type": "track"
+                },
+                {
+                    "id": 1122999512,
+                    "readable": true,
+                    "title": "Parasite Eve",
+                    "title_short": "Parasite Eve",
+                    "title_version": "",
+                    "link": "https:\/\/www.deezer.com\/track\/1122999512",
+                    "duration": 291,
+                    "rank": 693352,
+                    "explicit_lyrics": true,
+                    "explicit_content_lyrics": 1,
+                    "explicit_content_cover": 2,
+                    "preview": "https:\/\/cdns-preview-c.dzcdn.net\/stream\/c-c78968329ac8ee4563bd5c86b46a4666-3.mp3",
+                    "contributors": [
+                        {
+                            "id": 12874,
+                            "name": "Bring Me The Horizon",
+                            "link": "https:\/\/www.deezer.com\/artist\/12874",
+                            "share": "https:\/\/www.deezer.com\/artist\/12874?utm_source=deezer&utm_content=artist-12874&utm_term=0_1706230926&utm_medium=web",
+                            "picture": "https:\/\/api.deezer.com\/artist\/12874\/image",
+                            "picture_small": "https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/527dc7541af4eba73fbe2b26133f3e09\/56x56-000000-80-0-0.jpg",
+                            "picture_medium": "https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/527dc7541af4eba73fbe2b26133f3e09\/250x250-000000-80-0-0.jpg",
+                            "picture_big": "https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/527dc7541af4eba73fbe2b26133f3e09\/500x500-000000-80-0-0.jpg",
+                            "picture_xl": "https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/527dc7541af4eba73fbe2b26133f3e09\/1000x1000-000000-80-0-0.jpg",
+                            "radio": true,
+                            "tracklist": "https:\/\/api.deezer.com\/artist\/12874\/top?limit=50",
+                            "type": "artist",
+                            "role": "Main"
+                        }
+                    ],
+                    "md5_image": "1e55355d3418513d0577950b484af017",
+                    "artist": {
+                        "id": 12874,
+                        "name": "Bring Me The Horizon",
+                        "tracklist": "https:\/\/api.deezer.com\/artist\/12874\/top?limit=50",
+                        "type": "artist"
+                    },
+                    "album": {
+                        "id": 182475962,
+                        "title": "POST HUMAN: SURVIVAL HORROR",
+                        "cover": "https:\/\/api.deezer.com\/album\/182475962\/image",
+                        "cover_small": "https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/1e55355d3418513d0577950b484af017\/56x56-000000-80-0-0.jpg",
+                        "cover_medium": "https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/1e55355d3418513d0577950b484af017\/250x250-000000-80-0-0.jpg",
+                        "cover_big": "https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/1e55355d3418513d0577950b484af017\/500x500-000000-80-0-0.jpg",
+                        "cover_xl": "https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/1e55355d3418513d0577950b484af017\/1000x1000-000000-80-0-0.jpg",
+                        "md5_image": "1e55355d3418513d0577950b484af017",
+                        "tracklist": "https:\/\/api.deezer.com\/album\/182475962\/tracks",
+                        "type": "album"
+                    },
+                    "type": "track"
+                }
+            ]
+        }
+    ]
+}
