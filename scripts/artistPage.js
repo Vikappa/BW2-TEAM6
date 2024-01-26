@@ -25,9 +25,9 @@ const divSong = function (track, ntrack) {
   const maindiv = document.createElement("div");
   maindiv.innerHTML = `
   <div class="row mb-3 d-flex  align-items-center"> 
-  <div class="col-7 d-flex align-items-center" >
+  <div class=" col-12 col-md-7 d-flex align-items-center" >
   <span class="sp-nt">${ntrack + 1}</span>
-  <img class="pe-4" src="${track.album.cover_small}"/>
+  <img class="pe-5  pe-md-4" src="${track.album.cover_small}"/>
   <a class="songtitle text-decoration-none " href="#">${track.title}</a>
   </div>
   <div class="col-3">
@@ -50,7 +50,7 @@ const divSong = function (track, ntrack) {
 const fillWithSongs = function (tracklistArtista) {
   document.getElementById("containerBrani").innerHTML = ``;
   const popolari = document.createElement("h2");
-  popolari.classList.add("text-white", "mb-3");
+  popolari.classList.add("text-white", "mt-3", "mb-4");
   popolari.innerText = "Popolari:";
   document.getElementById("containerBrani").appendChild(popolari);
   for (let index = 0; index < 10; index++) {
@@ -69,8 +69,8 @@ const fillWithSongs = function (tracklistArtista) {
 
 const fillWithArtist = function (artista) {
   document.getElementById("nomeArtista").innerText = artista.name;
-  document.getElementById("verificato").innerText = artista.radio
-    ? "Artista Verificato"
+  document.getElementById("verificato").innerHTML = artista.radio
+    ? ` <i class="bi bi-patch-check-fill text-info"></i> Artista Verificato`
     : "Artista non verificato";
   document.getElementById(
     "imgWrapper"
