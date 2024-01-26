@@ -34,8 +34,9 @@ const divSong = function (track, ntrack) {
   <span class=" text-white">${track.rank}</span>
   </div>
   <div class="col-2">
-  <span class="text-white"> ${Math.floor(track.duration / 60)} min ${track.duration % 60
-    }
+  <span class="text-white"> ${Math.floor(track.duration / 60)} min ${
+    track.duration % 60
+  }
     </span>
   </div>
 
@@ -49,6 +50,7 @@ const divSong = function (track, ntrack) {
 const fillWithSongs = function (tracklistArtista) {
   document.getElementById("containerBrani").innerHTML = ``;
   const popolari = document.createElement("h2");
+  popolari.classList.add("text-white", "mb-3");
   popolari.innerText = "Popolari:";
   document.getElementById("containerBrani").appendChild(popolari);
   for (let index = 0; index < 10; index++) {
@@ -101,3 +103,28 @@ catchArtist(albumId)
   .catch((err) => {
     console.log(err);
   });
+
+const dinamicUser = document.getElementById("dinamic-user");
+
+const insertDinamicUser = function () {
+  if (localStorage.getItem("user")) {
+    const userData = JSON.parse(localStorage.getItem("user"));
+    dinamicUser.innerHTML = `
+      <button
+      class="btn btn-dark userButton text-white rounded-pill p-1 d-flex align-items-center gap-1"
+      type="button"
+      data-bs-toggle="dropdown"
+      aria-expanded="false"
+    >
+    <img
+    src=${userData.picToInsert}
+    class="rounded-circle"
+    height="30px"
+    width="30px"
+  />
+      ${userData.nameToInsert}
+    </button>`;
+  }
+};
+
+insertDinamicUser();

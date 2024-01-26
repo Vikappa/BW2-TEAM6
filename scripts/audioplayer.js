@@ -43,14 +43,14 @@ const updateHero = function (tracklist, ntraccia) {
   innerDiv.appendChild(h6);
   secondDiv.appendChild(innerDiv);
 
-  let h1 = document.createElement("h1")
-  h1.id = "titoloHeaderTrack"
+  let h1 = document.createElement("h1");
+  h1.id = "titoloHeaderTrack";
   let titolo = tracklist[ntraccia].title;
   if (titolo.length > 30) {
     titolo = titolo.substring(0, 30) + "...";
   }
-  h1.textContent = titolo
-  secondDiv.appendChild(h1)
+  h1.textContent = titolo;
+  secondDiv.appendChild(h1);
 
   let h5_2 = document.createElement("h5");
   h5_2.id = "artistHeaderTrack";
@@ -314,7 +314,7 @@ const audioPlayer = function (tracklist, index) {
       "rounded-circle",
       "fs-3",
       "mx-4",
-      "text-dinamic"
+      "text-black"
     );
     buttonPlay.innerHTML = `<i class="bi bi-caret-right-fill"></i>`;
     buttonPlay.addEventListener("click", () => {
@@ -332,7 +332,7 @@ const audioPlayer = function (tracklist, index) {
       "btn-body",
       "rounded-circle",
       "fs-3",
-      "text-dinamic"
+      "text-white"
     );
     buttonNext.innerHTML = `<i class="bi bi-fast-forward-fill"></i>`;
 
@@ -341,7 +341,7 @@ const audioPlayer = function (tracklist, index) {
       "btn-body",
       "rounded-circle",
       "fs-3",
-      "text-dinamic"
+      "text-white"
     );
     buttonPrevious.innerHTML = `<i class="bi bi-rewind-fill"></i>`;
 
