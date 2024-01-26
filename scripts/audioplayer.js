@@ -371,7 +371,7 @@ const audioPlayer = function (tracklist, index) {
     mainDiv.appendChild(buttonNext);
   }
   currentTrack.play();
-  currentTrack.volume = 0;
+  currentTrack.volume = 0.2;
   return mainDiv;
 };
 

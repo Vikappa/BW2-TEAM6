@@ -30,10 +30,10 @@ const divSong = function (track, ntrack) {
   <img class="pe-5  pe-md-4" src="${track.album.cover_small}"/>
   <a class="songtitle text-decoration-none " href="#">${track.title}</a>
   </div>
-  <div class="col-3">
+  <div class="col-3 d-none d-md-block">
   <span class=" text-secondary">${track.rank}</span>
   </div>
-  <div class="col-2">
+  <div class="col-2 d-none d-md-block">
   <span class="text-secondary"> ${Math.floor(track.duration / 60)} min ${
     track.duration % 60
   }
@@ -50,7 +50,7 @@ const divSong = function (track, ntrack) {
 const fillWithSongs = function (tracklistArtista) {
   document.getElementById("containerBrani").innerHTML = ``;
   const popolari = document.createElement("h2");
-  popolari.classList.add("text-white", "mt-3", "mb-4");
+  popolari.classList.add("text-white", "mt-4", "mb-4");
   popolari.innerText = "Popolari:";
   document.getElementById("containerBrani").appendChild(popolari);
   for (let index = 0; index < 10; index++) {
