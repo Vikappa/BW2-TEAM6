@@ -47,13 +47,43 @@ const divSong = function (track, ntrack) {
   return maindiv;
 };
 
+const visualButton = document.getElementById("visualButton")
+const anotherContainerBrani = document.getElementById("anotherContainerBrani")
+const showMore = function(e, track ,ntrack){
+  const maindiv2 = document.createElement("div");
+  maindiv.innerHTML = `
+  <div class="row mb-3 d-flex  align-items-center"> 
+  <div class=" col-12 col-md-7 d-flex align-items-center" >
+  <span class="sp-nt">${ntrack + 5}</span>
+  <img class="pe-5  pe-md-4" src="${track.album.cover_small}"/>
+  <a class="songtitle text-decoration-none " href="#">${track.title}</a>
+  </div>
+  <div class="col-3 d-none d-md-block">
+  <span class=" text-secondary">${track.rank}</span>
+  </div>
+  <div class="col-2 d-none d-md-block">
+  <span class="text-secondary"> ${Math.floor(track.duration / 60)} min ${
+    track.duration % 60
+  }
+    </span>
+  </div>
+
+   </div>
+  
+  `;
+
+  return maindiv2;
+  
+}
+
+
 const fillWithSongs = function (tracklistArtista) {
   document.getElementById("containerBrani").innerHTML = ``;
   const popolari = document.createElement("h2");
   popolari.classList.add("text-white", "mt-4", "mb-4");
   popolari.innerText = "Popolari:";
   document.getElementById("containerBrani").appendChild(popolari);
-  for (let index = 0; index < 10; index++) {
+  for (let index = 0; index < 5; index++) {
     let newDiv = divSong(tracklistArtista[index], index);
     document.getElementById("containerBrani").appendChild(newDiv);
   }
