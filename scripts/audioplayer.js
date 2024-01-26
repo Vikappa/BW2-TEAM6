@@ -354,4 +354,4 @@ const audioPlayer = function (tracklist, index) {
   return mainDiv;
 };
 
-export { audioPlayer, currentTrack };
+export { audioPlayer, currentTrack, updatePlayBar };
