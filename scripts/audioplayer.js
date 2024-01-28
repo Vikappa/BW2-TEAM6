@@ -1,5 +1,5 @@
 let currentTrack = new Audio();
-
+console.log("Inizio audioplayer")
 const updatePlayBar = function (tracklist, trackIndex) {
   if (trackIndex < 0) {
     trackIndex = tracklist.length - 1;
