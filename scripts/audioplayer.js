@@ -1,5 +1,4 @@
 let currentTrack = new Audio();
-console.log("Inizio audioplayer")
 const updatePlayBar = function (tracklist, trackIndex) {
   if (trackIndex < 0) {
     trackIndex = tracklist.length - 1;
@@ -151,6 +150,7 @@ const audioPlayer = function (tracklist, index) {
   buttonNext.innerHTML = `<i class="bi bi-fast-forward-fill"></i>`;
 
   if (isOnSpecificPage() ==! "album.html" && isOnSpecificPage() ==! "artist.html") {
+    console.log("Update hero")
     updateHero(tracklist, index);
 
     buttonPlay.addEventListener("click", () => {
@@ -207,6 +207,7 @@ const audioPlayer = function (tracklist, index) {
   });
 
   if (isOnSpecificPage() ==! "album.html" && isOnSpecificPage() ==! "artist.html") {
+    console.log("sono in home")
     mainDiv.classList.add("p-2");
     mainDiv.classList.add("container-fluid");
     mainDiv.classList.add("mx-0");
