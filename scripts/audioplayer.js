@@ -107,9 +107,7 @@ const updateHero = function (tracklist, ntraccia) {
 };
 
 const isOnSpecificPage = function () {
-  let pathname = window.location.pathname;
-  console.log(window.location.pathname)
-  
+  let pathname = window.location.pathname;  
   return pathname.split("/").pop();
 };
 
@@ -152,7 +150,7 @@ const audioPlayer = function (tracklist, index) {
   );
   buttonNext.innerHTML = `<i class="bi bi-fast-forward-fill"></i>`;
 
-  if (isOnSpecificPage() === "index.html" || isOnSpecificPage() === "/") {
+  if (isOnSpecificPage() ==! "album.html" && isOnSpecificPage() ==! "artist.html") {
     updateHero(tracklist, index);
 
     buttonPlay.addEventListener("click", () => {
@@ -193,7 +191,7 @@ const audioPlayer = function (tracklist, index) {
 
   currentTrack.addEventListener("ended", () => {
     buttonPlay.innerHTML = `<i class="bi bi-play-circle-fill"></i>`;
-    if (isOnSpecificPage() === "index.html" === isOnSpecificPage() === "/") {
+    if (isOnSpecificPage() ==! "album.html" && isOnSpecificPage() ==! "artist.html") {
       document.getElementById("heroPlay").innerHTML = "Play";
     }
   });
@@ -208,7 +206,7 @@ const audioPlayer = function (tracklist, index) {
     updatePlayBar(tracklist, index + 1);
   });
 
-  if (isOnSpecificPage() === "index.html" || isOnSpecificPage() === "/") {
+  if (isOnSpecificPage() ==! "album.html" && isOnSpecificPage() ==! "artist.html") {
     mainDiv.classList.add("p-2");
     mainDiv.classList.add("container-fluid");
     mainDiv.classList.add("mx-0");
