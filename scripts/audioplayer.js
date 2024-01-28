@@ -13,7 +13,9 @@ const updatePlayBar = function (tracklist, trackIndex) {
 };
 
 const updateHero = function (tracklist, ntraccia) {
+  console.log("update Hero")
   // Creazione del primo div e dell'immagine al suo interno
+
   let heroAlbum = document.createElement("div");
   heroAlbum.id = "heroAlbum";
   heroAlbum.classList.add("d-flex");
@@ -150,7 +152,6 @@ const audioPlayer = function (tracklist, index) {
   buttonNext.innerHTML = `<i class="bi bi-fast-forward-fill"></i>`;
 
   if (isOnSpecificPage() ==! "album.html" && isOnSpecificPage() ==! "artist.html") {
-    console.log("Update hero")
     updateHero(tracklist, index);
 
     buttonPlay.addEventListener("click", () => {
