@@ -1,6 +1,7 @@
 body{
-    background: linear-gradient(to bottom left, var(--bs-secondary), var(--bs-tertiary));
-background-size: cover;
+    background: rgb(108,117,125);
+    background: linear-gradient(201deg, rgba(108,117,125,1) 0%, rgba(63,71,79,1) 42%, rgba(33,37,41,1) 100%);
+        background-size: cover;
 }
 
 a{

@@ -3,8 +3,20 @@
 
 // VARIABILI UNICHE DELLA CLASSE
 let currentUser = "User"
-
+let loadedUsers = []
 // METODI LISTENER 
+
+const settaDirezioneDropDown = function () { // Imposta la direzione del dropdown in base alla dimensione dello schermo
+    const dropdownDiv = document.getElementById('navDropLogin')
+    if (window.innerWidth >= 768) {
+        dropdownDiv.classList.add('dropstart')
+        dropdownDiv.classList.remove('dropdown')
+    } else {
+        dropdownDiv.classList.add('dropdown')
+        dropdownDiv.classList.remove('dropstart')
+    }
+}
+
 
 
 // UTILITY
@@ -18,48 +30,91 @@ function isValidUser(userValue) {
 
 // DOM MANIPULATION
 
-const setLoginForm = function() {
-    const containerFluid = document.createElement('div')
-    const divP1 = document.createElement('div')
-    const button = document.createElement('button')
+const setLoginForm = function() { //Imposta la navBar col form per l'iscrizione e gli utenti esistenti
+    const outerDiv = document.createElement('div')
+    outerDiv.className = 'container-fluid p-0 p-md-2 m-0'
+
+    const buttonDiv = document.createElement('div')
+    buttonDiv.className = 'd-none d-md-inline m-1'
+
+    // Funzione per creare un bottone con icona
+    const createButton = (iconClass) => {
+        const button = document.createElement('button')
+        button.setAttribute('type', 'button')
+        button.className = 'btn btn-outline-secondary p-1 rounded-circle'
+
+        const icon = document.createElement('i')
+        icon.className = iconClass
+        button.appendChild(icon)
+        return button
+    }
+const prevButton = document.createElement('button')
+prevButton.setAttribute('type', 'button')
+prevButton.className = 'btn btn-outline-secondary p-1 rounded-circle mx-3 '
+const nextButton = document.createElement('button')
+nextButton.setAttribute('type', 'button')
+nextButton.className = 'btn btn-outline-secondary p-1 rounded-circle mx-3 '
+const innerPrev = document.createElement('i')
+const innerNext = document.createElement('i')
+innerPrev.innerHTML = `<i class="bi bi-chevron-left p-1 m-0 "></i>`
+innerNext.innerHTML = `<i class="bi bi-chevron-right p-1 m-0 "></i>`
+prevButton.appendChild(innerPrev)
+nextButton.appendChild(innerNext)
+
+    buttonDiv.appendChild(prevButton)
+    buttonDiv.appendChild(nextButton)
+
+    outerDiv.appendChild(buttonDiv)
+
+    const dropdownDiv = document.createElement('div')
+    dropdownDiv.className = 'p-1 d-flex align-items-center justify-content-center dropstart'
+dropdownDiv.id = 'navDropLogin'
+    const dropdownButton = document.createElement('button')
+    dropdownButton.setAttribute('type', 'button')
+    dropdownButton.className = 'btn btn-outline-light rounded-pill p-1 px-3 col- d-flex align-items-center justify-content-center gap-1 text-align-start'
+    dropdownButton.setAttribute('data-bs-toggle', 'dropdown')
+    dropdownButton.setAttribute('aria-expanded', 'false')
+    dropdownButton.style.maxWidth = '60vw !important'
+
     const img = document.createElement('img')
+    img.src = './assets/icons/person-circle.svg'
+    dropdownButton.appendChild(img)
+
     const span = document.createElement('span')
-    const ul = document.createElement('ul')
-    const li = document.createElement('li')
-    const divFlex = document.createElement('div')
-    const input = document.createElement('input')
-    const loginButton = document.createElement('button')
-    const icon = document.createElement('i')
-    containerFluid.className = 'container-fluid p-0 m-0'
-    divP1.className = 'p-1 d-flex align-items-center justify-content-center'
-    button.className = 'btn btn-outline-light rounded-pill p-1 px-3 col- d-flex align-items-center justify-content-center gap-1 text-align-start'
-    button.setAttribute('style', 'max-width: 60vw !important;')
-    button.setAttribute('type', 'button')
-    button.setAttribute('data-bs-toggle', 'dropdown')
-    button.setAttribute('aria-expanded', 'false')
-    img.setAttribute('src', './assets/icons/person-circle.svg')
-    span.className = 'text-light'
     span.textContent = 'Login'
-    ul.className = 'dropdown-menu dropdown-menu-login p-1 rounded-3'
-    divFlex.className = 'd-flex align-items-center'
+    dropdownButton.appendChild(span)
+
+    dropdownDiv.appendChild(dropdownButton)
+
+    const dropdownMenu = document.createElement('ul')
+    dropdownMenu.className = 'dropdown-menu dropdown-menu-login p-1 rounded-3'
+
+    const listItem = document.createElement('li')
+
+    const inputDiv = document.createElement('div')
+    inputDiv.className = 'd-flex align-items-center'
+
+    const input = document.createElement('input')
     input.className = 'form-control form-control-sm'
     input.setAttribute('type', 'text')
     input.setAttribute('placeholder', 'Inserisci nome utente')
     input.setAttribute('aria-label', '.form-control-sm example')
-    loginButton.className = 'btn btn-sm btn-primary text-light'
+
+    const loginButton = document.createElement('button')
     loginButton.setAttribute('type', 'button')
-    icon.className = 'bi bi-person-check-fill'
-    button.appendChild(img)
-    button.appendChild(span)
-    divFlex.appendChild(input)
-    divFlex.appendChild(loginButton)
-    loginButton.appendChild(icon)
-    li.appendChild(divFlex)
-    ul.appendChild(li)
-    divP1.appendChild(button)
-    divP1.appendChild(ul)
-    containerFluid.appendChild(divP1)
-    document.getElementById('navBarLogin').appendChild(containerFluid)
+    loginButton.className = 'btn btn-sm btn-primary text-light'
+    const loginIcon = document.createElement('i')
+    loginIcon.className = 'bi bi-person-check-fill'
+    loginButton.appendChild(loginIcon)
+
+    inputDiv.appendChild(input)
+    inputDiv.appendChild(loginButton)
+    listItem.appendChild(inputDiv)
+    dropdownMenu.appendChild(listItem)
+
+    dropdownDiv.appendChild(dropdownMenu)
+    outerDiv.appendChild(dropdownDiv)
+    document.getElementById('navBar').appendChild(outerDiv)
 }
 
 
@@ -91,3 +146,5 @@ const updateUser = function () {
 
 // INIZIO ESECUZIONE
 updateUser()
+window.addEventListener('resize', settaDirezioneDropDown)
+settaDirezioneDropDown()
