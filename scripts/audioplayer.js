@@ -375,6 +375,7 @@ const audioPlayer = function (tracklist, index) {
   currentTrack.play();
   currentTrack.volume = 0.2;
   console.log("Fine audioplayer")
+  console.log(currentTrack);
   return mainDiv;
 };
 
