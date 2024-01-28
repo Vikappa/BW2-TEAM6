@@ -1,7 +1,7 @@
-import { Album } from './albumClass.js'
-import { Artist } from './artistClass.js'
-import { Genre } from './genreClass.js'
-import { Track } from './tracksClass.js'
+import { Album } from '../classi/albumClass.js'
+import { Artist } from '../classi/artistClass.js'
+import { Genre } from '../classi/genreClass.js'
+import { Track } from '../classi/tracksClass.js'
 // RITORNA UN ARRAY DI MASSIMO 25 OGGETTI TRACK
 const searchAlbum = function (querySearch) {
     return new Promise((resolve, reject) => {

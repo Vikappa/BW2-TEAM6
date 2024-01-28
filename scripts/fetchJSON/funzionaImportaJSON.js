@@ -1,4 +1,4 @@
-import { PlayList } from './playListClass.js'
+import { PlayList } from '../classi/playListClass.js'
 
 export function fetchJSON() {
     return fetch('../playlistPreconfezionate/suggerimenti_premade.json')

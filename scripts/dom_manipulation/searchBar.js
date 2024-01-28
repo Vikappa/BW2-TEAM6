@@ -1,4 +1,4 @@
-import { searchAlbum } from './searchAlbumQuery.js'
+import { searchAlbum } from '../fetchAPI/searchAlbumQuery.js'
 import { updatePlayBar } from './index.js'
 const ripristino = function () {
     document.getElementById('inputRicerca').remove()

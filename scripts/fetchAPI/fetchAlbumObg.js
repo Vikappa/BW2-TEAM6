@@ -1,7 +1,7 @@
-import { Album } from './albumClass.js'
-import { Artist } from './artistClass.js'
-import { Genre } from './genreClass.js'
-import { Track } from './tracksClass.js'
+import { Album } from '../classi/albumClass.js'
+import { Artist } from '../classi/artistClass.js'
+import { Genre } from '../classi/genreClass.js'
+import { Track } from '../tracksClass.js'
 const catchAlbum = function (queryAlbumID) {
     return fetch("https://striveschool-api.herokuapp.com/api/deezer/album/" + queryAlbumID, {
         headers: {}

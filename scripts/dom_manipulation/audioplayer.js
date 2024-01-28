@@ -1,0 +1,2 @@
+let currentTrack = new Audio();
+

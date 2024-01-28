@@ -1,5 +1,5 @@
 
-import { Track } from './tracksClass.js'
+import { Track } from '../classi/tracksClass.js'
 
 const artistPlaylistFetch = function (artistId) {
     return fetch("https://striveschool-api.herokuapp.com/api/deezer/artist/" + artistId + "/top?limit=10", {
