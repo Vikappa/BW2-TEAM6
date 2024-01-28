@@ -233,7 +233,7 @@ const updateHero = function (tracklist, ntraccia) {
 };
 
 const start = function () {
-  if (isOnSpecificPage() === "index.html") {
+  if (isOnSpecificPage() ==! "album.html" && isOnSpecificPage() ==! "artist.html") {
     searchAlbum("Salmo")
       .then((arrayRitorno) => {
         updateHero(arrayRitorno, 0);
