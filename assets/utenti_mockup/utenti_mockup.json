@@ -1,0 +1,12 @@
+{
+
+    "array_user":[
+        {
+            "nome": "Vincenzo",
+            "img": "https://scontent-fco2-1.xx.fbcdn.net/v/t39.30808-6/332322660_229280442872270_1966642424894709984_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=efb6e6&_nc_ohc=UgYOZBV-GdIAX8VJfM4&_nc_ht=scontent-fco2-1.xx&oh=00_AfB47c9-O405RW4ylmne2F9shTe79CFh4Q1Dyk0xS98Wsg&oe=65BB1A6B",
+            "array_artisti_piaciuti": ["12874", "406", "1956", "464", "534258"],
+            "array_canzoni_piaciute": []
+        }
+    ]
+
+}
