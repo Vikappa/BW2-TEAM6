@@ -15,3 +15,7 @@ a{
 .dropdown-menu-login input{
     background-color: var(--bs-secondary);
 }
+
+.customLiHover:hover{
+color: black !important;
+}

@@ -7,23 +7,26 @@
             "array_artisti_piaciuti": ["12874", "406", "1956", "464", "534258"],
             "array_canzoni_piaciute": ["1122999552", "1643321", "630595142", "1122999512", "6715839", "6278230", "129658548"],
             "array_ultime_ricerche": ["Infant Annihilator", "Du Hast", "Wii Techno meme"],
-            "array_album_visualizzati": ["168551", "13729912", "13729912"]
+            "array_album_visualizzati": ["168551", "13729912", "13729912"],
+            "array_playlist_personali": ["Cosa ascolta Vikappa mentre scrive codice alle 3 nel buio della sua caverna"]
         },
         {
             "nome": "Fabio",
-            "img": "",
+            "img": "https://raw.githubusercontent.com/Vikappa/BW2-TEAM6/main/assets/media/imgs/placeholder/IMG-Fabio.jpg",
             "array_artisti_piaciuti": ["182"],
             "array_canzoni_piaciute": ["725274", "725254"],
             "array_ultime_ricerche": ["Californication", "Red Hot"],
-            "array_album_visualizzati": ["86511"]
+            "array_album_visualizzati": ["86511"],
+            "array_playlist_personali": ""
         },
         {
             "nome": "Francesco",
-            "img": "https://raw.githubusercontent.com/Vikappa/BW2-TEAM6/main/assets/media/imgs/placeholder/IMG-Fabio.jpg",
+            "img": "https://raw.githubusercontent.com/Vikappa/BW2-TEAM6/main/assets/media/imgs/placeholder/img-francesco.jpeg",
             "array_artisti_piaciuti": ["12874", "406", "1956", "464", "534258"],
             "array_canzoni_piaciute": ["129658548"],
             "array_ultime_ricerche": ["Body Parts", "Marra"],
-            "array_album_visualizzati": ["137556512"]
+            "array_album_visualizzati": ["137556512"],
+            "array_playlist_personali": ""
         },
         {
             "nome": "Giuseppe",
@@ -31,7 +34,8 @@
             "array_artisti_piaciuti": ["92719900"],
             "array_canzoni_piaciute": ["92719900"],
             "array_ultime_ricerche": ["ACDC"],
-            "array_album_visualizzati": ["9410086"]
+            "array_album_visualizzati": ["9410086"],
+            "array_playlist_personali": ""
         }
     ]
 

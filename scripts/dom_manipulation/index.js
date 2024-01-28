@@ -1,9 +1,15 @@
 // IMPORT
-
+import { User } from '../classi/userClass.js'
+import { fetchJSONUsers } from '../fetchJSON/fetch_utenti_mockup.js'
 
 // VARIABILI UNICHE DELLA CLASSE
 let currentUser = "User"
 let loadedUsers = []
+const albumDaSuggerire = []
+const artistiDaSuggerire = []
+const playstDaSuggerire = []
+const trackDegliAltri = []
+ 
 // METODI LISTENER 
 
 const settaDirezioneDropDown = function () { // Imposta la direzione del dropdown in base alla dimensione dello schermo
@@ -28,9 +34,11 @@ function isValidUser(userValue) {
     }
 }
 
+
+
 // DOM MANIPULATION
 
-const setLoginForm = function() { //Imposta la navBar col form per l'iscrizione e gli utenti esistenti
+const setLoginForm = function(arrayUser) { //Imposta la navBar col form per l'iscrizione e gli utenti esistenti
     const outerDiv = document.createElement('div')
     outerDiv.className = 'container-fluid p-0 p-md-2 m-0'
 
@@ -89,7 +97,10 @@ dropdownDiv.id = 'navDropLogin'
     const dropdownMenu = document.createElement('ul')
     dropdownMenu.className = 'dropdown-menu dropdown-menu-login p-1 rounded-3'
 
-    const listItem = document.createElement('li')
+    
+
+    const listItemInputDiv = document.createElement('li')
+
 
     const inputDiv = document.createElement('div')
     inputDiv.className = 'd-flex align-items-center'
@@ -97,20 +108,43 @@ dropdownDiv.id = 'navDropLogin'
     const input = document.createElement('input')
     input.className = 'form-control form-control-sm'
     input.setAttribute('type', 'text')
-    input.setAttribute('placeholder', 'Inserisci nome utente')
+    input.setAttribute('placeholder', 'Nome utente')
     input.setAttribute('aria-label', '.form-control-sm example')
 
     const loginButton = document.createElement('button')
     loginButton.setAttribute('type', 'button')
-    loginButton.className = 'btn btn-sm btn-primary text-light'
+    loginButton.className = 'btn btn-sm btn-primary text-light m-0 p-0 px-1'
     const loginIcon = document.createElement('i')
-    loginIcon.className = 'bi bi-person-check-fill'
+    loginIcon.className = 'bi bi-person-add p-0 m-0 fs-5'
     loginButton.appendChild(loginIcon)
 
     inputDiv.appendChild(input)
     inputDiv.appendChild(loginButton)
-    listItem.appendChild(inputDiv)
-    dropdownMenu.appendChild(listItem)
+    listItemInputDiv.appendChild(inputDiv)
+
+    const listItemUserLi = function(user) {
+        const listItem = document.createElement('li')
+        listItem.className = 'd-flex align-items-center bg-dark'
+        const userImg = document.createElement('img')
+        userImg.className = 'rounded-circle img-fluid m-0 p-0'
+        userImg.src = user.img
+        userImg.style.width = '20px'
+    userImg.style.height = '20px'
+        listItem.appendChild(userImg)
+        const userLi = document.createElement('a')
+        userLi.className = 'dropdown-item text-white fs-6 m-0 p-0 customLiHover'
+        userLi.setAttribute('href', '#')
+        userLi.textContent = user.nome
+        listItem.appendChild(userLi)
+
+        return listItem
+    }
+
+for (let indiceUtenti = 0; indiceUtenti < arrayUser.length; indiceUtenti++) {
+    dropdownMenu.appendChild(listItemUserLi(arrayUser[indiceUtenti]))
+}
+
+    dropdownMenu.appendChild(listItemInputDiv)
 
     dropdownDiv.appendChild(dropdownMenu)
     outerDiv.appendChild(dropdownDiv)
@@ -118,11 +152,12 @@ dropdownDiv.id = 'navDropLogin'
 }
 
 
+
 const login = function(user) {
     console.log("Utente valido:", user)
   }
 
-const updateUser = function () {
+const updateUser = function (arrayUser) {
     currentUser = JSON.parse(sessionStorage.getItem("CFy_CurrentUser"))
   
     if (currentUser !== null && isValidUser(currentUser)) {
@@ -130,21 +165,25 @@ const updateUser = function () {
       login(currentUser)
 
     } else {
-        setLoginForm()
+        setLoginForm(arrayUser)
     }
 }
-  
-
-  
-
   
 
 
 
 // LISTENER DOM
+window.addEventListener('resize', settaDirezioneDropDown)//Cambia la classe dropdown dropstar alla navbar in base alla larghezza dello schermo
 
 
 // INIZIO ESECUZIONE
-updateUser()
-window.addEventListener('resize', settaDirezioneDropDown)
-settaDirezioneDropDown()
+
+
+fetchJSONUsers()
+.then(arrayUser => {
+    updateUser(arrayUser) // Mette sullo schermo il pulsante per il login
+settaDirezioneDropDown() // Modifica il pulsante per il login, necessario usare dopo
+})
+.catch(error => {
+    console.error('Errore durante il caricamento degli utenti:', error)
+})
