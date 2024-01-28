@@ -108,6 +108,8 @@ const updateHero = function (tracklist, ntraccia) {
 
 const isOnSpecificPage = function () {
   let pathname = window.location.pathname;
+  console.log(pathname)
+  
   return pathname.split("/").pop();
 };
 
